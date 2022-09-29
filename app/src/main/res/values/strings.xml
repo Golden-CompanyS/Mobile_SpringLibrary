@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">Mobile_SpringLibrary</string>
+    <string name="app_name">AppMobileSpringLibrary</string>
+    <string name="action_settings">Settings</string>
+    <!-- Tela de Splash -->
+    <string name="BemVindo">BEM-VINDO!</string>
+    <string name="SpringLibrary">Spring Library</string>
+    <string name="Versao">v. 1.7.10</string>
+
+    <!-- Tela de Splash -->
+    <string name="Entre">Entre com sua conta</string>
+    <string name="Email">Email</string>
+    <string name="Senha">Senha</string>
+    <string name="Login">Login</string>
+    <string name="SemConta">Não possui uma conta?</string>
+    <string name="Registre">Registre-se no site</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>
