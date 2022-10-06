@@ -15,6 +15,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="140dp"
+            app:srcCompat="@drawable/logomarca" />
+
+        <ImageButton
+            android:id="@+id/imageButton7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="360dp"
+            android:layout_marginTop="1dp"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/Login"
+            android:minHeight="48dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/iconuser" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -42,11 +60,20 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/athiti_medium"
+                android:text="@string/Livros"
+                android:textSize="24dp" />
+
             <HorizontalScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="120dp">
+                android:layout_marginStart="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -58,6 +85,7 @@
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:backgroundTint="#00FFFFFF"
+                        android:contentDescription="@string/Livro1Desc"
                         android:scaleType="centerInside"
                         app:srcCompat="@drawable/livro1" />
 
@@ -66,6 +94,7 @@
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:backgroundTint="#00FFFFFF"
+                        android:contentDescription="@string/Livro2Desc"
                         android:scaleType="centerInside"
                         app:srcCompat="@drawable/livro2" />
 
@@ -74,17 +103,27 @@
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:backgroundTint="#00FFFFFF"
+                        android:contentDescription="@string/Livro3Desc"
                         android:scaleType="centerInside"
                         app:srcCompat="@drawable/livro3" />
 
                 </LinearLayout>
             </HorizontalScrollView>
 
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/athiti_medium"
+                android:text="@string/Promocoes"
+                android:textSize="24dp" />
+
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="40dp">
+                android:layout_marginLeft="10dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -96,6 +135,7 @@
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:backgroundTint="#00FFFFFF"
+                        android:contentDescription="@string/Livro4Desc"
                         android:scaleType="centerInside"
                         app:srcCompat="@drawable/livropromo1" />
 
@@ -104,6 +144,7 @@
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:backgroundTint="#00FFFFFF"
+                        android:contentDescription="@string/Livro5Desc"
                         android:scaleType="centerInside"
                         app:srcCompat="@drawable/livropromo2" />
 
@@ -112,42 +153,64 @@
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:backgroundTint="#00FFFFFF"
+                        android:contentDescription="@string/Livro6Desc"
                         android:scaleType="centerInside"
                         app:srcCompat="@drawable/livropromo3" />
 
                 </LinearLayout>
             </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/athiti_medium"
+                android:text="@string/Souvenires"
+                android:textSize="24dp" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="150dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/imageButton9"
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:backgroundTint="#00FFFFFF"
+                        android:contentDescription="@string/Souvenir1Desc"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/souvenir1" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton10"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#00FFFFFF"
+                        android:contentDescription="@string/Souvenir2Desc"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/souvenir2" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton11"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#00FFFFFF"
+                        android:contentDescription="@string/Souvenir3Desc"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/souvenir3" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
         </LinearLayout>
     </ScrollView>
-
-    <ImageButton
-        android:id="@+id/imageButton10"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerInside"
-        app:srcCompat="@drawable/souvenir2"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="590dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton11"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerInside"
-        app:srcCompat="@drawable/souvenir3"
-        tools:layout_editor_absoluteX="228dp"
-        tools:layout_editor_absoluteY="626dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton9"
-        android:layout_width="150dp"
-        android:layout_height="200dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerInside"
-        app:srcCompat="@drawable/souvenir1"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="626dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

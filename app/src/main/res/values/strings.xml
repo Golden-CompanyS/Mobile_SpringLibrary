@@ -6,13 +6,27 @@
     <string name="SpringLibrary">Spring Library</string>
     <string name="Versao">v. 1.7.10</string>
 
-    <!-- Tela de Splash -->
+    <!-- Tela de Login -->
     <string name="Entre">Entre com sua conta</string>
     <string name="Email">Email</string>
     <string name="Senha">Senha</string>
     <string name="Login">Login</string>
     <string name="SemConta">Não possui uma conta?</string>
     <string name="Registre">Registre-se no site</string>
+
+    <!-- Tela de Home -->
+    <string name="Livros">Livros</string>
+    <string name="Promocoes">Promoções</string>
+    <string name="Souvenires">Souvenires</string>
+    <string name="Livro1Desc">Escravidão Volume II - Lauren Gomes</string>
+    <string name="Livro2Desc">Anexos - Rainbow Rowell</string>
+    <string name="Livro3Desc">A Lei do Triunfo - Napoleão Hill</string>
+    <string name="Livro4Desc">A Garota do Lago - Charlie Donlea</string>
+    <string name="Livro5Desc">Mais Esperto que o Diabo - Napoleão Hill</string>
+    <string name="Livro6Desc">Arte da Sabedoria - Baltasar Gracián</string>
+    <string name="Souvenir1Desc">Harry Potter - A Ordem da Phenix</string>
+    <string name="Souvenir2Desc">Harry Potter - Prisioneiro de Askaban</string>
+    <string name="Souvenir3Desc">Harry Potter - O Cálice de Fogo</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
