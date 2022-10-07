@@ -44,6 +44,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+        <ImageButton
+            android:id="@+id/imageButton13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:backgroundTint="#00FFFFFF"
+            android:minHeight="48dp"
+            app:srcCompat="@drawable/iconsearchoff" />
+
+        <ImageButton
+            android:id="@+id/imageButton12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="280dp"
+            android:backgroundTint="#00FFFFFF"
+            android:minHeight="48dp"
+            app:srcCompat="@drawable/iconcarrinhooff" />
+
+        <ImageButton
+            android:id="@+id/imageButton8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="180dp"
+            android:backgroundTint="#00FFFFFF"
+            android:minHeight="48dp"
+            app:srcCompat="@drawable/iconhomeon" />
     </androidx.cardview.widget.CardView>
 
     <ScrollView
