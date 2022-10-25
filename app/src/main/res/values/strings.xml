@@ -6,6 +6,11 @@
     <string name="SpringLibrary">Spring Library</string>
     <string name="Versao">v. 1.7.10</string>
 
+    <!-- Tela de Speakable Text -->
+    <string name="HomeIcon">Home</string>
+    <string name="PesquisaIcon">Pesquisar</string>
+    <string name="CarrinhoIcon">Carrinho</string>
+
     <!-- Tela de Login -->
     <string name="Entre">Entre com sua conta</string>
     <string name="Email">Email</string>
@@ -27,6 +32,55 @@
     <string name="Souvenir1Desc">Harry Potter - A Ordem da Phenix</string>
     <string name="Souvenir2Desc">Harry Potter - Prisioneiro de Askaban</string>
     <string name="Souvenir3Desc">Harry Potter - O Cálice de Fogo</string>
+
+    <!-- Tela de Livros -->
+    <string name="Suspense">Suspense</string>
+    <string name="Romance">Romance</string>
+    <string name="Drama">Drama</string>
+    <string name="Suspense1Desc">Escravidão Volume II - Lauren Gomes</string>
+    <string name="Suspense2Desc">Anexos - Rainbow Rowell</string>
+    <string name="Suspense3Desc">A Lei do Triunfo - Napoleão Hill</string>
+    <string name="RomanceDesc1">A Garota do Lago - Charlie Donlea</string>
+    <string name="RomanceDesc2">Mais Esperto que o Diabo - Napoleão Hill</string>
+    <string name="RomanceDesc3">Arte da Sabedoria - Baltasar Gracián</string>
+    <string name="Drama1Desc">Harry Potter - A Ordem da Phenix</string>
+    <string name="Drama2Desc">Harry Potter - Prisioneiro de Askaban</string>
+    <string name="Drama3Desc">Harry Potter - O Cálice de Fogo</string>
+
+    <!-- Tela de Livro Especifico -->
+    <string name="LivroTitulo">Os Sete Maridos de Evelyn Hugo</string>
+    <string name="AddCarrinho">Adicionar ao carrinho</string>
+    <string name="Preco">R$00,00</string>
+    <string name="CodLivro">(Cód: 0000001)</string>
+    <string name="Desc">Descrição</string>
+    <string name="Autor">Autor: Reid, Evelyn Hugo</string>
+    <string name="AnoEdit">Ano de edição: 2019</string>
+    <string name="Marca">Marca: Washington Square</string>
+
+    <!-- Tela de Pesquisa -->
+    <string name="Pesquisar">Pesquisar</string>
+
+    <!-- Tela de Resultados -->
+    <string name="EvelynHugo">Evelyn Hugo</string>
+    <string name="ResultEvelynHugo">Resultados para "Evelyn Hugo"</string>
+
+    <!-- Tela de Dados Pessoais-->
+    <string name="DadosPessoais">Dados Pessoais</string>
+    <string name="PrimeiroNome">Primeiro Nome</string>
+    <string name="Sobrenome">Sobrenome</string>
+    <string name="CPF">CPF</string>
+    <string name="Telefone">Telefone</string>
+    <string name="CEP">CEP</string>
+    <string name="Número">Número</string>
+    <string name="Complemento">Complemento</string>
+    <string name="IrPag">Ir para o pagamento</string>
+    <string name="HinTel">9999-9999</string>
+    <string name="HintCel">(DDD) + Número</string>
+    <string name="HintCEP">00000-000</string>
+    <string name="HintCpf">999.999.999-99</string>
+    <string name="HintComplemento">Opcional</string>
+
+
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>

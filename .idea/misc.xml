@@ -15,10 +15,15 @@
         <entry key="..\:/Users/3etimds/Mobile_SpringLibrary/app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="..\:/Users/3etimds/Mobile_SpringLibrary/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/3etimds/Mobile_SpringLibrary/app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="..\:/Users/Wesley Spiandorim/StudioProjects/Mobile_SpringLibrary5/app/src/main/res/layout/activity_carrinho.xml" value="0.1641337386018237" />
+        <entry key="..\:/Users/Wesley Spiandorim/StudioProjects/Mobile_SpringLibrary5/app/src/main/res/layout/activity_cartao.xml" value="0.1641337386018237" />
+        <entry key="..\:/Users/Wesley Spiandorim/StudioProjects/Mobile_SpringLibrary5/app/src/main/res/layout/activity_compra.xml" value="0.1641337386018237" />
+        <entry key="..\:/Users/Wesley Spiandorim/StudioProjects/Mobile_SpringLibrary5/app/src/main/res/layout/activity_dados.xml" value="0.1641337386018237" />
+        <entry key="..\:/Users/Wesley Spiandorim/StudioProjects/Mobile_SpringLibrary5/app/src/main/res/layout/activity_pagamento.xml" value="0.1641337386018237" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

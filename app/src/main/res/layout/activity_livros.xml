@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -94,7 +93,7 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="40dp"
                 android:fontFamily="@font/athiti_medium"
-                android:text="@string/Livros"
+                android:text="@string/Suspense"
                 android:textSize="24dp" />
 
             <HorizontalScrollView
@@ -145,7 +144,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/athiti_medium"
-                android:text="@string/Promocoes"
+                android:text="@string/Romance"
                 android:textSize="24dp" />
 
             <HorizontalScrollView
@@ -196,7 +195,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/athiti_medium"
-                android:text="@string/Souvenires"
+                android:text="@string/Drama"
                 android:textSize="24dp" />
 
             <HorizontalScrollView
