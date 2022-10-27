@@ -89,10 +89,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:fontFamily="@font/athiti_medium"
+        android:backgroundTint="#00FFFFFF"
         android:text="@string/ResultEvelynHugo"
-        android:textSize="24dp"
-        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchView" />
@@ -121,4 +121,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/livroevelynhugo1" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

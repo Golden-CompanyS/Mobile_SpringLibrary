@@ -22,8 +22,8 @@
         android:id="@+id/imageView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="420dp"
-        app:layout_constraintBottom_toTopOf="@+id/cardView2"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,71 +31,88 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
-        android:layout_width="wrap_content"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="@string/NomeUser"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPhone2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="276dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber4"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:inputType="number"
+        android:minHeight="48dp"
+        android:text="@string/NumEndUser"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="526dp" />
+        app:layout_constraintStart_toEndOf="@+id/editTextNumber2" />
 
     <EditText
         android:id="@+id/editTextNumber2"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:inputType="number"
+        android:minHeight="48dp"
+        android:text="@string/CEPUser"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="469dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress2"
-        android:layout_width="wrap_content"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
         android:ems="10"
         android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:text="@string/EmailUser"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="406dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextPhone2"
-        android:layout_width="wrap_content"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:inputType="phone"
+        android:minHeight="48dp"
+        android:text="@string/CelUser"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="343dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextTextPersonName7"
-        android:layout_width="wrap_content"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:minHeight="48dp"
+        android:text="@string/CompUser"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNumberPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="579dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton27"
@@ -108,6 +125,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
         app:srcCompat="@drawable/arrow_left" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="310dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#F448B0"
+        android:text="@string/Salvar"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/cardView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -181,13 +210,15 @@
 
     <EditText
         android:id="@+id/editTextNumberPassword"
-        android:layout_width="wrap_content"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="90dp"
         android:ems="10"
         android:inputType="numberPassword"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="637dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

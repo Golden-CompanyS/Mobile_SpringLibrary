@@ -62,24 +62,46 @@
 
     <!-- Tela de Resultados -->
     <string name="EvelynHugo">Evelyn Hugo</string>
-    <string name="ResultEvelynHugo">Resultados para "Evelyn Hugo"</string>
+    <string name="ResultEvelynHugo">Resultados para
+        "Evelyn Hugo"</string>
 
     <!-- Tela de Dados Pessoais-->
     <string name="DadosPessoais">Dados Pessoais</string>
     <string name="PrimeiroNome">Primeiro Nome</string>
     <string name="Sobrenome">Sobrenome</string>
     <string name="CPF">CPF</string>
-    <string name="Telefone">Telefone</string>
+    <string name="Telefone">Telefone Residencial</string>
     <string name="CEP">CEP</string>
-    <string name="Número">Número</string>
+    <string name="Celular">Celular</string>
+    <string name="DataNasc">Data de Nascimento</string>
+    <string name="NumEnd">Número de Endereço</string>
     <string name="Complemento">Complemento</string>
     <string name="IrPag">Ir para o pagamento</string>
-    <string name="HinTel">9999-9999</string>
+    <string name="HintCpf">999.999.999-99</string>
+    <string name="HinTel">(DDD) + Número</string>
     <string name="HintCel">(DDD) + Número</string>
     <string name="HintCEP">00000-000</string>
-    <string name="HintCpf">999.999.999-99</string>
+    <string name="HintDataNasc">dd/mm/yy</string>
     <string name="HintComplemento">Opcional</string>
 
+    <!-- Tela de Perfil-->
+    <string name="ConfigPerfil">Configurações do perfil</string>
+    <string name="Nome">Nome</string>
+    <string name="NomeUser">Kirill</string>
+    <string name="EmailUser">ivcswebofficial@gmail.com</string>
+    <string name="CEPUser">05670-130</string>
+    <string name="CelUser">(11) 99765-1965</string>
+    <string name="NumEndUser">42</string>
+    <string name="CompUser">Apartamento</string>
+    <string name="Editar">Editar</string>
+    <string name="Sair">Sair</string>
+    <string name="Salvar">Salvar alterações</string>
+
+    <!-- Tela de Pagamento-->
+    <string name="FormaPag">Selecione a forma de pagamento</string>
+    <string name="Debito">Débito</string>
+    <string name="Credito">Crédito</string>
+    <string name="Pix">Pix</string>
 
 
     <string name="hello_first_fragment">Hello first fragment</string>

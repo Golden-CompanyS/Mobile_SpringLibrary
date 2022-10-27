@@ -10,7 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
-        android:text="@string/DadosPessoais"
+        android:text="@string/FormaPag"
+        android:textAlignment="center"
         android:textSize="28dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,10 +102,10 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="410dp"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
         android:backgroundTint="#00FFFFFF"
-        android:text="Button"
+        android:text="@string/Credito"
         android:textAlignment="textStart"
         android:textAllCaps="false"
         android:textColor="#000000"
@@ -117,10 +118,10 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="410dp"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
         android:backgroundTint="#00FFFFFF"
-        android:text="Button"
+        android:text="@string/Debito"
         android:textAlignment="textStart"
         android:textAllCaps="false"
         android:textColor="#000000"
@@ -133,11 +134,12 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="410dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="352dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="280dp"
         android:backgroundTint="#00FFFFFF"
-        android:text="Button"
+        android:text="@string/Pix"
         android:textAlignment="textStart"
         android:textAllCaps="false"
         android:textColor="#000000"
