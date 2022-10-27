@@ -62,8 +62,7 @@
 
     <!-- Tela de Resultados -->
     <string name="EvelynHugo">Evelyn Hugo</string>
-    <string name="ResultEvelynHugo">Resultados para
-        "Evelyn Hugo"</string>
+    <string name="ResultEvelynHugo">Resultados para Evelyn Hugo</string>
 
     <!-- Tela de Dados Pessoais-->
     <string name="DadosPessoais">Dados Pessoais</string>
@@ -90,11 +89,10 @@
     <string name="NomeUser">Kirill</string>
     <string name="EmailUser">ivcswebofficial@gmail.com</string>
     <string name="CEPUser">05670-130</string>
+    <string name="CPFUser">506.501.609-69</string>
     <string name="CelUser">(11) 99765-1965</string>
-    <string name="NumEndUser">42</string>
-    <string name="CompUser">Apartamento</string>
+    <string name="SenhaUser">********</string>
     <string name="Editar">Editar</string>
-    <string name="Sair">Sair</string>
     <string name="Salvar">Salvar alterações</string>
 
     <!-- Tela de Pagamento-->
@@ -102,6 +100,19 @@
     <string name="Debito">Débito</string>
     <string name="Credito">Crédito</string>
     <string name="Pix">Pix</string>
+
+    <!-- Tela de Cartão de Crédito-->
+    <string name="CartaoCred">Cartão de crédito</string>
+    <string name="NumCartao">Número do cartão</string>
+    <string name="NomeCartao">Nome Impresso no Cartão</string>
+    <string name="Val">Validade</string>
+    <string name="Mes">Mês</string>
+    <string name="Ano">Ano</string>
+    <string name="CodCartao">Código de Segurança</string>
+    <string name="Pagar">Pagar</string>
+
+    <!-- Tela de Compra finalizada-->
+    <string name="CompraFinal">Compra finalizada com sucesso!</string>
 
 
     <string name="hello_first_fragment">Hello first fragment</string>

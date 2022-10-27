@@ -157,9 +157,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
                 android:ems="10"
+                android:hint="@string/HintCpf"
                 android:inputType="number"
-                android:minHeight="48dp"
-                android:text="@string/HintCpf" />
+                android:minHeight="48dp" />
 
             <TextView
                 android:id="@+id/textView39"
@@ -175,9 +175,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="220dp"
                 android:ems="10"
+                android:hint="@string/HinTel"
                 android:inputType="phone"
-                android:minHeight="48dp"
-                android:text="@string/HinTel" />
+                android:minHeight="48dp" />
 
             <TextView
                 android:id="@+id/textView40"
@@ -194,9 +194,9 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="0dp"
                 android:ems="10"
+                android:hint="@string/HintCEP"
                 android:inputType="number"
-                android:minHeight="48dp"
-                android:text="@string/HintCEP" />
+                android:minHeight="48dp" />
 
             <TextView
                 android:id="@+id/textView41"
@@ -212,9 +212,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="220dp"
                 android:ems="10"
+                android:hint="@string/HintCel"
                 android:inputType="phone"
-                android:minHeight="48dp"
-                android:text="@string/HintCel" />
+                android:minHeight="48dp" />
 
             <TextView
                 android:id="@+id/textView42"
@@ -230,9 +230,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
                 android:ems="10"
+                android:hint="@string/HintDataNasc"
                 android:inputType="number"
-                android:minHeight="48dp"
-                android:text="@string/HintDataNasc" />
+                android:minHeight="48dp" />
 
             <TextView
                 android:id="@+id/textView43"
@@ -265,9 +265,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
                 android:ems="10"
+                android:hint="@string/HintComplemento"
                 android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:text="@string/HintComplemento" />
+                android:minHeight="48dp" />
 
             <Button
                 android:id="@+id/button7"
