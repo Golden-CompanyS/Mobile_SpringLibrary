@@ -73,6 +73,7 @@
             android:contentDescription="@string/HomeIcon"
             android:minHeight="48dp"
             app:srcCompat="@drawable/iconhomeon" />
+
     </androidx.cardview.widget.CardView>
 
     <TextView
@@ -80,33 +81,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
-        android:text="@string/DadosPessoais"
+        android:text="@string/MeuCarrinho"
         android:textSize="28dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
-
-    <TextView
-        android:id="@+id/textView29"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="300dp"
-        android:layout_marginBottom="280dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/cardView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView30"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="250dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/cardView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton22"
@@ -120,59 +100,133 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView"
         app:srcCompat="@drawable/arrow_left" />
 
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="70dp"
+        android:backgroundTint="#F448B0"
+        android:text="@string/Continuar"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/cardView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="299dp" >
-
-        <ImageButton
-            android:id="@+id/imageButton26"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_input_delete" />
-
-        <ImageButton
-            android:id="@+id/imageButton23"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_input_add" />
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
             android:id="@+id/imageButton25"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_delete" />
+            android:layout_marginLeft="335dp"
+            android:backgroundTint="#00FFFFFF"
+            app:srcCompat="@android:drawable/ic_delete"
+            tools:layout_editor_absoluteX="493dp"
+            tools:layout_editor_absoluteY="523dp" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/livroevelynhugo1" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="152dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/LivroTitulo"
+            tools:layout_editor_absoluteX="193dp"
+            tools:layout_editor_absoluteY="523dp" />
+
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="152dp"
+            android:layout_marginTop="65dp"
+            android:dropDownWidth="wrap_content"
+            android:entries="@array/QtdLivro1"
+            android:minHeight="48dp"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/textView23"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:layout_marginLeft="152dp"
+            android:layout_marginTop="139dp"
+            android:text="@string/Preco1"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/button6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/imageButton26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="335dp"
+            android:backgroundTint="#00FFFFFF"
+            app:srcCompat="@android:drawable/ic_delete"
+            tools:layout_editor_absoluteX="493dp"
+            tools:layout_editor_absoluteY="523dp" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/_1erhmlhizl__sx334_bo1_204_203_200_" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="152dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/LivroExemplo"
+            tools:layout_editor_absoluteX="193dp"
+            tools:layout_editor_absoluteY="523dp" />
+
+        <Spinner
+            android:id="@+id/spinner4"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="152dp"
+            android:layout_marginTop="65dp"
+            android:dropDownWidth="wrap_content"
+            android:entries="@array/QtdLivro2"
+            android:minHeight="48dp"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/textView24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
-
-        <TextView
-            android:id="@+id/textView25"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-
+            android:layout_marginLeft="152dp"
+            android:layout_marginTop="139dp"
+            android:text="@string/Preco2"
+            android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="475dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

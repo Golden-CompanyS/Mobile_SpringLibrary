@@ -77,7 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
-        android:text="@string/DadosPessoais"
+        android:text="@string/Titulo"
         android:textSize="28dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,7 +96,7 @@
         android:id="@+id/textView31"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/Rua"
         tools:layout_editor_absoluteX="82dp"
         tools:layout_editor_absoluteY="331dp" />
 
@@ -104,7 +104,7 @@
         android:id="@+id/textView32"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/Vila"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="80dp" />
@@ -113,7 +113,7 @@
         android:id="@+id/textView33"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/SaoPaulo"
         tools:layout_editor_absoluteX="80dp"
         tools:layout_editor_absoluteY="384dp" />
 
@@ -121,7 +121,7 @@
         android:id="@+id/textView34"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/Horarios"
         tools:layout_editor_absoluteX="80dp"
         tools:layout_editor_absoluteY="418dp" />
 
@@ -129,7 +129,7 @@
         android:id="@+id/textView35"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/SegSex"
         tools:layout_editor_absoluteX="80dp"
         tools:layout_editor_absoluteY="441dp" />
 
@@ -137,7 +137,7 @@
         android:id="@+id/textView36"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/SabDom"
         tools:layout_editor_absoluteX="80dp"
         tools:layout_editor_absoluteY="467dp" />
 
@@ -145,7 +145,7 @@
         android:id="@+id/textView37"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/TelContato"
         tools:layout_editor_absoluteX="82dp"
         tools:layout_editor_absoluteY="505dp" />
 

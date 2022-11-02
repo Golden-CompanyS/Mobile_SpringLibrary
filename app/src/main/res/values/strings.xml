@@ -114,6 +114,32 @@
     <!-- Tela de Compra finalizada-->
     <string name="CompraFinal">Compra finalizada com sucesso!</string>
 
+    <!-- Tela de Compra finalizada-->
+    <string name="Titulo">Já conhece nossa loja?</string>
+    <string name="Rua">Rua Guaipá, 678</string>
+    <string name="Vila">Vila Leopoldina</string>
+    <string name="SaoPaulo">São Paulo, São Paulo - 05089-000</string>
+    <string name="Horarios">Horários:</string>
+    <string name="SegSex">Segunda a Sexta 9h - 22h</string>
+    <string name="SabDom">Sábado e Dom.	10h - 20h</string>
+    <string name="TelContato">Telefone: (11) 9999-9999</string>
+
+    <!-- Tela de Carrinho-->
+    <string name="MeuCarrinho">MEU CARRINHO</string>
+    <string name="LivroExemplo">The Lion, the Witch and the Wardrobe</string>
+    <string name="Preco1">R$23,99</string>
+    <string name="Preco2">R$59,99</string>
+    <string name="ValorTotal">R$83,99</string>
+    <string name="Continuar">Continuar</string>
+    
+    <string-array name="QtdLivro1">
+        <item>1</item>
+    </string-array>
+    <string-array name="QtdLivro2">
+        <item>5</item>
+    </string-array>
+
+
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
