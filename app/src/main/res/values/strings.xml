@@ -131,6 +131,12 @@
     <string name="Preco2">R$59,99</string>
     <string name="ValorTotal">R$83,99</string>
     <string name="Continuar">Continuar</string>
+
+    <!-- Tela de Carrinho-->
+    <string name="ConfirmarSenha">Confirmar senha</string>
+    <string name="Cadastrar">Cadastrar</string>
+    <string name="CliFis">Cliente físico</string>
+    <string name="CliJuri">Cliente jurídico</string>
     
     <string-array name="QtdLivro1">
         <item>1</item>
