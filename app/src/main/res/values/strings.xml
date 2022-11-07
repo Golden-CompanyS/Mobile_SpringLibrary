@@ -69,7 +69,9 @@
     <string name="PrimeiroNome">Primeiro Nome</string>
     <string name="Sobrenome">Sobrenome</string>
     <string name="CPF">CPF</string>
+    <string name="CNPJ">CNPJ</string>
     <string name="Telefone">Telefone Residencial</string>
+    <string name="TelefoneEmpresa">Telefone Empresarial</string>
     <string name="CEP">CEP</string>
     <string name="Celular">Celular</string>
     <string name="DataNasc">Data de Nascimento</string>
@@ -77,6 +79,7 @@
     <string name="Complemento">Complemento</string>
     <string name="IrPag">Ir para o pagamento</string>
     <string name="HintCpf">999.999.999-99</string>
+    <string name="HintCnpj">00.000.000/0001-00</string>
     <string name="HinTel">(DDD) + Número</string>
     <string name="HintCel">(DDD) + Número</string>
     <string name="HintCEP">00000-000</string>
