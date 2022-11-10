@@ -14,11 +14,11 @@
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewHeader"
         app:srcCompat="@drawable/arrow_left" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/cardViewHeader"
         android:layout_width="0dp"
         android:layout_height="50dp"
         app:cardBackgroundColor="#FF9CC0"
@@ -34,7 +34,7 @@
             app:srcCompat="@drawable/logo_spring_library_3_2" />
 
         <ImageButton
-            android:id="@+id/imageButton7"
+            android:id="@+id/imgBtnPerfil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="360dp"
@@ -47,7 +47,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
+        android:id="@+id/cardViewFooter"
         android:layout_width="0dp"
         android:layout_height="50dp"
         app:cardBackgroundColor="#F6CFE0"
@@ -57,7 +57,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton13"
+            android:id="@+id/imgBtnPesquisa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="80dp"
@@ -67,7 +67,7 @@
             app:srcCompat="@drawable/iconsearchoff" />
 
         <ImageButton
-            android:id="@+id/imageButton12"
+            android:id="@+id/imgBtnCarrinho"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="280dp"
@@ -77,7 +77,7 @@
             app:srcCompat="@drawable/iconcarrinhooff" />
 
         <ImageButton
-            android:id="@+id/imageButton8"
+            android:id="@+id/imgBtnHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="180dp"
@@ -88,7 +88,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/textView26"
+        android:id="@+id/txtTituloLivroCarrinho2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/CompraFinal"
@@ -96,8 +96,8 @@
         android:textColor="#04AB01"
         android:textSize="32dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/cardView2"
+        app:layout_constraintBottom_toTopOf="@+id/cardViewFooter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintTop_toBottomOf="@+id/cardViewHeader" />
 </androidx.constraintlayout.widget.ConstraintLayout>

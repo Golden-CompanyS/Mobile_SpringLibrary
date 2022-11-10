@@ -6,31 +6,33 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/textInputLayoutConfirmarSenha"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginBottom="90dp"
         android:hint="@string/ConfirmarSenha"
-        android:textColorHint="#9C9C9C"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogin2"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toTopOf="@+id/btnContinuarCad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:passwordToggleEnabled="true">
 
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/TextInputEditTextConfirmarSenha"
             android:layout_width="300dp"
             android:layout_height="match_parent"
             android:backgroundTint="#00FFFFFF"
             android:fontFamily="@font/athiti_medium"
             android:inputType="textPassword"
-            android:textColorHint="#00000000"
-            android:textSize="18dp"
-            app:textInputLayoutFocusedRectEnabled="true" />
+            android:textColorHint="#757575"
+            android:textSize="18sp"
+            app:textInputLayoutFocusedRectEnabled="true"
+            tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/textView29"
+        android:id="@+id/txtVersao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="342dp"
@@ -38,25 +40,25 @@
         android:layout_marginBottom="16dp"
         android:text="@string/Versao"
         android:textColor="#99000000"
-        android:textSize="14dp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView30"
+        android:id="@+id/txtTituloCad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:text="@string/Entre"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnLogin2"
+        android:id="@+id/btnContinuarCad"
         android:layout_width="270dp"
         android:layout_height="65dp"
         android:layout_marginBottom="200dp"
@@ -64,48 +66,55 @@
         android:fontFamily="@font/athiti_medium"
         android:text="@string/Continuar"
         android:textAllCaps="false"
-        android:textSize="14dp"
+        android:textSize="14sp"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress3"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
+        android:autofillHints=""
         android:ems="10"
         android:fontFamily="@font/athiti_medium"
         android:hint="@string/Email"
         android:inputType="textEmailAddress"
         android:paddingStart="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayoutSenha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/textInputLayoutSenha"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginBottom="150dp"
         android:hint="@string/Senha"
-        android:textColorHint="#9C9C9C"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogin2"
+        android:textColorHint="#757575"
+        app:hintTextColor="#757575"
+        app:layout_constraintBottom_toTopOf="@+id/btnContinuarCad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:passwordToggleEnabled="true">
 
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/TextInputEditTextSenha"
             android:layout_width="300dp"
             android:layout_height="match_parent"
             android:backgroundTint="#00FFFFFF"
             android:fontFamily="@font/athiti_medium"
             android:inputType="textPassword"
-            android:textColorHint="#00000000"
-            android:textSize="18dp"
-            app:textInputLayoutFocusedRectEnabled="true" />
+            android:textColor="#757575"
+            android:textColorHint="#757575"
+            android:textSize="18sp"
+            app:textInputLayoutFocusedRectEnabled="true"
+            tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <RadioButton
@@ -116,7 +125,7 @@
         android:layout_marginBottom="20dp"
         android:backgroundTint="#F448B0"
         android:text="@string/CliFis"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogin2"
+        app:layout_constraintBottom_toTopOf="@+id/btnContinuarCad"
         app:layout_constraintEnd_toStartOf="@+id/radioButton2"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -128,7 +137,7 @@
         android:layout_marginBottom="20dp"
         android:backgroundTint="#0085FF"
         android:text="@string/CliJuri"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogin2"
+        app:layout_constraintBottom_toTopOf="@+id/btnContinuarCad"
         app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

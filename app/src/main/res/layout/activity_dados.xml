@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
+        android:id="@+id/cardViewFooter"
         android:layout_width="0dp"
         android:layout_height="50dp"
         app:cardBackgroundColor="#F6CFE0"
@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton13"
+            android:id="@+id/imgBtnPesquisa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="80dp"
@@ -26,7 +26,7 @@
             app:srcCompat="@drawable/iconsearchoff" />
 
         <ImageButton
-            android:id="@+id/imageButton12"
+            android:id="@+id/imgBtnCarrinho"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="280dp"
@@ -36,7 +36,7 @@
             app:srcCompat="@drawable/iconcarrinhooff" />
 
         <ImageButton
-            android:id="@+id/imageButton8"
+            android:id="@+id/imgBtnHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="180dp"
@@ -47,7 +47,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/cardViewHeader"
         android:layout_width="0dp"
         android:layout_height="50dp"
         app:cardBackgroundColor="#FF9CC0"
@@ -63,7 +63,7 @@
             app:srcCompat="@drawable/logo_spring_library_3_2" />
 
         <ImageButton
-            android:id="@+id/imageButton7"
+            android:id="@+id/imgBtnPerfil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="360dp"
@@ -100,45 +100,29 @@
                 app:srcCompat="@drawable/arrow_left" />
 
             <TextView
-                android:id="@+id/textView17"
-                android:layout_width="wrap_content"
+                android:id="@+id/textDadosPessoais"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="110dp"
+                android:layout_marginLeft="0dp"
                 android:layout_marginTop="20dp"
                 android:text="@string/DadosPessoais"
+                android:textAlignment="center"
                 android:textSize="28dp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView18"
+                android:id="@+id/txtNomeFantasia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="40dp"
-                android:text="@string/PrimeiroNome" />
+                android:text="@string/Nome" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
-                android:layout_width="150dp"
+                android:id="@+id/editTextNomeFantasia"
+                android:layout_width="330dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:minHeight="48dp" />
-
-            <TextView
-                android:id="@+id/textView19"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="220dp"
-                android:layout_marginTop="-68dp"
-                android:text="@string/Sobrenome" />
-
-            <EditText
-                android:id="@+id/editTextTextPersonName2"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="220dp"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:minHeight="48dp" />
@@ -149,16 +133,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="10dp"
-                android:text="@string/CPF" />
+                android:text="@string/Telefone" />
 
             <EditText
-                android:id="@+id/editTextNumber"
+                android:id="@+id/editTextPhoneTelFixo"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
                 android:ems="10"
-                android:hint="@string/HintCpf"
-                android:inputType="number"
+                android:inputType="phone"
                 android:minHeight="48dp" />
 
             <TextView
@@ -167,20 +150,19 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="220dp"
                 android:layout_marginTop="-67dp"
-                android:text="@string/Telefone" />
+                android:text="@string/Celular" />
 
             <EditText
-                android:id="@+id/editTextPhone"
+                android:id="@+id/editTextPhoneCel"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="220dp"
                 android:ems="10"
-                android:hint="@string/HinTel"
                 android:inputType="phone"
                 android:minHeight="48dp" />
 
             <TextView
-                android:id="@+id/textView40"
+                android:id="@+id/txtCEP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
@@ -188,67 +170,30 @@
                 android:text="@string/CEP" />
 
             <EditText
-                android:id="@+id/editTextNumber3"
+                android:id="@+id/editTextNumberCEP"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="0dp"
                 android:ems="10"
-                android:hint="@string/HintCEP"
                 android:inputType="number"
                 android:minHeight="48dp" />
 
             <TextView
-                android:id="@+id/textView41"
+                android:id="@+id/txtCel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="220dp"
                 android:layout_marginTop="-67dp"
-                android:text="@string/Celular" />
-
-            <EditText
-                android:id="@+id/editTextPhone3"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="220dp"
-                android:ems="10"
-                android:hint="@string/HintCel"
-                android:inputType="phone"
-                android:minHeight="48dp" />
-
-            <TextView
-                android:id="@+id/textView42"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/DataNasc" />
-
-            <EditText
-                android:id="@+id/editTextNumber5"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:ems="10"
-                android:hint="@string/HintDataNasc"
-                android:inputType="number"
-                android:minHeight="48dp" />
-
-            <TextView
-                android:id="@+id/textView43"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="220dp"
-                android:layout_marginTop="-68dp"
                 android:text="@string/NumEnd" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName4"
+                android:id="@+id/editTextNumberNumEnd"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="220dp"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:minHeight="48dp" />
 
             <TextView
@@ -260,23 +205,22 @@
                 android:text="@string/Complemento" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName5"
+                android:id="@+id/editTextPersonComplemento"
                 android:layout_width="330dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
                 android:ems="10"
-                android:hint="@string/HintComplemento"
                 android:inputType="textPersonName"
                 android:minHeight="48dp" />
 
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/buttonConfirmar"
                 android:layout_width="330dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="#F448B0"
-                android:text="@string/IrPag"
+                android:text="@string/Confirmar"
                 android:textAllCaps="false" />
 
         </LinearLayout>

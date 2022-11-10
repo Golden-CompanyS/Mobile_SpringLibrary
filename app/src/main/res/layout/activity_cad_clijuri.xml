@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -21,46 +22,56 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView17"
+                android:id="@+id/textDadosPessoais"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="65dp"
+                android:layout_marginStart="70dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/DadosPessoais"
-                android:textSize="28dp"
+                android:text="@string/CliJuri"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView18"
+                android:id="@+id/txtNomeFantasia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:text="@string/PrimeiroNome" />
+                android:text="@string/NomeFantasia" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
-                android:layout_width="150dp"
+                android:id="@+id/editTextNomeFantasia"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
+                android:autofillHints=""
                 android:ems="10"
+                android:hint="@string/NomeFantasia"
                 android:inputType="textPersonName"
-                android:minHeight="48dp" />
+                android:minHeight="48dp"
+                android:textColorHint="#757575"
+                android:textSize="16sp"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <TextView
-                android:id="@+id/textView19"
+                android:id="@+id/txtRepresentante"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="180dp"
+                android:layout_marginStart="180dp"
                 android:layout_marginTop="-68dp"
-                android:text="@string/Sobrenome" />
+                android:text="@string/ReprCliJuri" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName2"
-                android:layout_width="150dp"
+                android:id="@+id/editTextRepresentante"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="180dp"
+                android:layout_marginStart="180dp"
+                android:autofillHints=""
                 android:ems="10"
+                android:hint="@string/ReprCliJuri"
                 android:inputType="textPersonName"
-                android:minHeight="48dp" />
+                android:minHeight="48dp"
+                android:textColorHint="#757575"
+                android:textSize="16sp"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <TextView
                 android:id="@+id/textView38"
@@ -70,13 +81,16 @@
                 android:text="@string/CNPJ" />
 
             <EditText
-                android:id="@+id/editTextNumber"
-                android:layout_width="150dp"
+                android:id="@+id/editTextNumberCNPJ"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/HintCnpj"
                 android:inputType="number"
-                android:minHeight="48dp" />
+                android:minHeight="48dp"
+                android:textColorHint="#757575"
+                android:textSize="16sp"
+                android:autofillHints="" />
 
             <TextView
                 android:id="@+id/textView39"
@@ -87,34 +101,41 @@
                 android:text="@string/TelefoneEmpresa" />
 
             <EditText
-                android:id="@+id/editTextPhone"
-                android:layout_width="150dp"
+                android:id="@+id/editTextPhoneCel"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="180dp"
+                android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/HinTel"
                 android:inputType="phone"
-                android:minHeight="48dp" />
+                android:minHeight="48dp"
+                android:textColorHint="#757575"
+                android:textSize="16sp"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <TextView
-                android:id="@+id/textView40"
+                android:id="@+id/txtCEP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="@string/CEP" />
 
             <EditText
-                android:id="@+id/editTextNumber3"
-                android:layout_width="150dp"
+                android:id="@+id/editTextNumberCEP"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
+                android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/HintCEP"
                 android:inputType="number"
-                android:minHeight="48dp" />
+                android:minHeight="48dp"
+                android:textColorHint="#757575"
+                android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/textView41"
+                android:id="@+id/txtCel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="180dp"
@@ -122,47 +143,37 @@
                 android:text="@string/Celular" />
 
             <EditText
-                android:id="@+id/editTextPhone3"
-                android:layout_width="150dp"
+                android:id="@+id/editTextNumberCel"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="180dp"
+                android:layout_marginStart="180dp"
                 android:ems="10"
                 android:hint="@string/HintCel"
                 android:inputType="phone"
-                android:minHeight="48dp" />
+                android:minHeight="48dp"
+                android:textColorHint="#757575"
+                android:textSize="16sp"
+                android:autofillHints="" />
 
             <TextView
                 android:id="@+id/textView42"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="@string/DataNasc" />
-
-            <EditText
-                android:id="@+id/editTextNumber5"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/HintDataNasc"
-                android:inputType="number"
-                android:minHeight="48dp" />
-
-            <TextView
-                android:id="@+id/textView43"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="180dp"
-                android:layout_marginTop="-68dp"
                 android:text="@string/NumEnd" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName4"
-                android:layout_width="150dp"
+                android:id="@+id/editTextNumber5"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="180dp"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:minHeight="48dp" />
+                android:hint="@string/NumEnd"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:textColorHint="#757575"
+                android:textSize="16sp"
+                tools:ignore="DuplicateSpeakableTextCheck"
+                android:autofillHints="" />
 
             <TextView
                 android:id="@+id/textView44"
@@ -172,18 +183,21 @@
                 android:text="@string/Complemento" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName5"
-                android:layout_width="330dp"
+                android:id="@+id/editTextPersonComplemento"
+                android:layout_width="340dp"
                 android:layout_height="wrap_content"
+                android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/HintComplemento"
                 android:inputType="textPersonName"
-                android:minHeight="48dp" />
+                android:minHeight="48dp"
+                android:textColorHint="#757575" />
 
             <Button
                 android:id="@+id/button7"
                 android:layout_width="330dp"
                 android:layout_height="60dp"
+                android:layout_marginStart="6dp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="#F448B0"
                 android:text="@string/Cadastrar"
