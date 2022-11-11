@@ -19,7 +19,7 @@
             android:id="@+id/imgBtnPesquisa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
+            android:layout_marginStart="80dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/PesquisaIcon"
             android:minHeight="48dp"
@@ -29,7 +29,7 @@
             android:id="@+id/imgBtnCarrinho"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="280dp"
+            android:layout_marginStart="280dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/CarrinhoIcon"
             android:minHeight="48dp"
@@ -39,11 +39,12 @@
             android:id="@+id/imgBtnHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="180dp"
+            android:layout_marginStart="180dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/HomeIcon"
             android:minHeight="48dp"
-            app:srcCompat="@drawable/iconhomeon" />
+            app:srcCompat="@drawable/iconhomeon"
+            tools:ignore="ImageContrastCheck" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -57,22 +58,25 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imgLogomarca"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/logo_spring_library_3_2" />
+            android:contentDescription="TODO"
+            app:srcCompat="@drawable/logo_spring_library_3_2"
+            tools:ignore="ImageContrastCheck" />
 
         <ImageButton
             android:id="@+id/imgBtnPerfil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="360dp"
+            android:layout_marginStart="360dp"
             android:layout_marginTop="1dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/Login"
             android:minHeight="48dp"
             android:scaleType="centerInside"
-            app:srcCompat="@drawable/iconuser" />
+            app:srcCompat="@drawable/iconuser"
+            tools:ignore="ImageContrastCheck" />
     </androidx.cardview.widget.CardView>
 
     <ScrollView
@@ -87,51 +91,56 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/imageButton17"
+                android:id="@+id/imgBtnVoltar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00FFFFFF"
+                android:contentDescription="@string/VoltarIcon"
                 android:minHeight="48dp"
-                app:srcCompat="@drawable/arrow_left" />
+                app:srcCompat="@drawable/arrow_left"
+                tools:ignore="ImageContrastCheck" />
 
             <TextView
-                android:id="@+id/textDadosPessoais"
+                android:id="@+id/txtDadosPessoais"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="0dp"
                 android:layout_marginTop="20dp"
                 android:text="@string/DadosPessoais"
                 android:textAlignment="center"
-                android:textSize="28dp"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtNomeFantasia"
+                android:id="@+id/txtNomeDados"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="40dp"
                 android:text="@string/Nome" />
 
             <EditText
-                android:id="@+id/editTextNomeFantasia"
+                android:id="@+id/editTextNomeDados"
                 android:layout_width="330dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
+                android:layout_marginStart="40dp"
+                android:autofillHints=""
                 android:ems="10"
+                android:hint="@string/Nome"
                 android:inputType="textPersonName"
-                android:minHeight="48dp" />
+                android:minHeight="48dp"
+                android:textColorHint="#00FFFFFF"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <TextView
-                android:id="@+id/textView38"
+                android:id="@+id/txtTelRes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/Telefone" />
 
@@ -139,13 +148,17 @@
                 android:id="@+id/editTextPhoneTelFixo"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
+                android:layout_marginStart="40dp"
+                android:autofillHints=""
                 android:ems="10"
+                android:hint="@string/Telefone"
                 android:inputType="phone"
-                android:minHeight="48dp" />
+                android:minHeight="48dp"
+                android:textColorHint="#00FFFFFF"
+                tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
             <TextView
-                android:id="@+id/textView39"
+                android:id="@+id/txtCel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="220dp"
@@ -157,15 +170,19 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="220dp"
+                android:autofillHints=""
                 android:ems="10"
+                android:hint="@string/Celular"
                 android:inputType="phone"
-                android:minHeight="48dp" />
+                android:minHeight="48dp"
+                android:textColorHint="#00FFFFFF"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <TextView
                 android:id="@+id/txtCEP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/CEP" />
 
@@ -173,14 +190,18 @@
                 android:id="@+id/editTextNumberCEP"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="0dp"
+                android:autofillHints=""
                 android:ems="10"
+                android:hint="@string/CEP"
                 android:inputType="number"
-                android:minHeight="48dp" />
+                android:minHeight="48dp"
+                android:textColorHint="#00FFFFFF"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <TextView
-                android:id="@+id/txtCel"
+                android:id="@+id/txtNumEnd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="220dp"
@@ -191,16 +212,20 @@
                 android:id="@+id/editTextNumberNumEnd"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="220dp"
+                android:layout_marginStart="220dp"
+                android:autofillHints=""
                 android:ems="10"
+                android:hint="@string/NumEnd"
                 android:inputType="number"
-                android:minHeight="48dp" />
+                android:minHeight="48dp"
+                android:textColorHint="#00FFFFFF"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <TextView
-                android:id="@+id/textView44"
+                android:id="@+id/txtComplemento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/Complemento" />
 
@@ -208,20 +233,25 @@
                 android:id="@+id/editTextPersonComplemento"
                 android:layout_width="330dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
+                android:layout_marginStart="40dp"
+                android:autofillHints=""
                 android:ems="10"
+                android:hint="@string/Complemento"
                 android:inputType="textPersonName"
-                android:minHeight="48dp" />
+                android:minHeight="48dp"
+                android:textColorHint="#00FFFFFF"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <Button
-                android:id="@+id/buttonConfirmar"
+                android:id="@+id/btnConfirmarDados"
                 android:layout_width="330dp"
                 android:layout_height="60dp"
-                android:layout_marginLeft="40dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="#F448B0"
                 android:text="@string/Confirmar"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                tools:ignore="TextContrastCheck" />
 
         </LinearLayout>
     </ScrollView>

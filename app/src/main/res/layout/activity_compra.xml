@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageButton
-        android:id="@+id/imageButton24"
+        android:id="@+id/imgBtnVoltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="350dp"
@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imgLogomarca"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/logo_spring_library_3_2" />
@@ -88,7 +88,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/txtTituloLivroCarrinho2"
+        android:id="@+id/txtCompraFinalizada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/CompraFinal"

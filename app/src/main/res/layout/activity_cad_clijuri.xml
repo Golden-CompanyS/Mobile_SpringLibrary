@@ -74,7 +74,7 @@
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
             <TextView
-                android:id="@+id/textView38"
+                android:id="@+id/txtCPNJ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -93,7 +93,7 @@
                 android:autofillHints="" />
 
             <TextView
-                android:id="@+id/textView39"
+                android:id="@+id/txtTelEmpr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="180dp"
@@ -156,27 +156,27 @@
                 android:autofillHints="" />
 
             <TextView
-                android:id="@+id/textView42"
+                android:id="@+id/txtNumEnd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="@string/NumEnd" />
 
             <EditText
-                android:id="@+id/editTextNumber5"
+                android:id="@+id/editTextNumberNumEndJuri"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
+                android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/NumEnd"
                 android:inputType="number"
                 android:minHeight="48dp"
-                android:textColorHint="#757575"
+                android:textColorHint="#00757575"
                 android:textSize="16sp"
-                tools:ignore="DuplicateSpeakableTextCheck"
-                android:autofillHints="" />
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <TextView
-                android:id="@+id/textView44"
+                android:id="@+id/txtComplementoJuri"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -194,7 +194,7 @@
                 android:textColorHint="#757575" />
 
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/btnCadastrarJuri"
                 android:layout_width="330dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="6dp"

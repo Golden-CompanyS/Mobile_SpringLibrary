@@ -155,26 +155,26 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/textView42"
+                android:id="@+id/txtDataNasc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="@string/DataNasc" />
 
             <EditText
-                android:id="@+id/editTextNumber5"
+                android:id="@+id/editTextDateDataNasc"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/HintDataNasc"
-                android:inputType="number"
+                android:inputType="date"
                 android:minHeight="48dp"
                 android:textColorHint="#757575"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/textView43"
+                android:id="@+id/txtNumEndFis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="180dp"
@@ -196,7 +196,7 @@
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
             <TextView
-                android:id="@+id/textView44"
+                android:id="@+id/txtComplementoFis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -215,7 +215,7 @@
                 android:textSize="16sp" />
 
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/btnCadastrarFis"
                 android:layout_width="330dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="5dp"

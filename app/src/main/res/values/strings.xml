@@ -10,6 +10,8 @@
     <string name="HomeIcon">Home</string>
     <string name="PesquisaIcon">Pesquisar</string>
     <string name="CarrinhoIcon">Carrinho</string>
+    <string name="VoltarIcon">Voltar</string>
+    <string name="RemoverIcon">Remover</string>
 
     <!-- Tela de Login -->
     <string name="Entre">Entre com sua conta</string>

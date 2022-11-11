@@ -74,7 +74,7 @@
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress3"
+        android:id="@+id/editTextTextEmailCad"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -83,6 +83,7 @@
         android:fontFamily="@font/athiti_medium"
         android:hint="@string/Email"
         android:inputType="textEmailAddress"
+        android:minHeight="48dp"
         android:paddingStart="15dp"
         android:textColorHint="#757575"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayoutSenha"
@@ -118,7 +119,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <RadioButton
-        android:id="@+id/radioButton"
+        android:id="@+id/radioButtonCliFis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -126,11 +127,11 @@
         android:backgroundTint="#F448B0"
         android:text="@string/CliFis"
         app:layout_constraintBottom_toTopOf="@+id/btnContinuarCad"
-        app:layout_constraintEnd_toStartOf="@+id/radioButton2"
+        app:layout_constraintEnd_toStartOf="@+id/radioButtonCliJuri"
         app:layout_constraintStart_toStartOf="parent" />
 
     <RadioButton
-        android:id="@+id/radioButton2"
+        android:id="@+id/radioButtonCliJuri"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="75dp"
