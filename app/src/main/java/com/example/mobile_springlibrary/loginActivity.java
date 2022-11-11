@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
@@ -13,7 +14,9 @@ import android.widget.Toast;
 
 import com.example.appmobilespringlibrary.R;
 import com.example.mobile_springlibrary.ClassesBanco.Cliente;
+import com.example.mobile_springlibrary.ClassesBanco.DatabaseHelper;
 import com.example.mobile_springlibrary.DAO.CliDAO;
+import com.google.gson.Gson;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -26,6 +29,9 @@ public class loginActivity extends AppCompatActivity {
     private TextView txtcadastro;
     private Button btnLogin;
     private CliDAO cliDAO;
+    //Acesso Banco de dados
+    private DatabaseHelper mydb ;
+    int id_to_update = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +42,10 @@ public class loginActivity extends AppCompatActivity {
         edtTxtPassword = findViewById(R.id.edtSenha);
         txtcadastro = findViewById(R.id.txtCadastro);
         btnLogin = findViewById(R.id.btnLogin);
+
+        mydb = new DatabaseHelper(this);
+
+
 
         // ON CLICK DO BOTÃO DE LOGIN - LIGAR A VERIFICAÇÃO COM OS DADOS DA API
         btnLogin.setOnClickListener(v -> {
@@ -48,8 +58,9 @@ public class loginActivity extends AppCompatActivity {
 
             if(cliDAO.checkLogin(emailLogin, passwordLogin)){
                 Cliente cli = cliDAO.selectUserByEmail(emailLogin);
-
-                Gson gson = new Gson();
+                //CONECTAR COM A API E ARRUMAR A INSERÇÃO DO CLIENTE NO BANCO COM O RESTANTE DAS INFORMAÇÕES
+                //new Cliente(emailLogin, passwordLogin);
+                    Gson gson = new Gson();
                 String json = gson.toJson(cli);
                 printUser(json);
 
@@ -62,7 +73,7 @@ public class loginActivity extends AppCompatActivity {
         });
 
         txtcadastro.setOnClickListener(v -> {
-            Intent intent = new Intent(this, RegisterActivity.class);
+            Intent intent = new Intent(this, cadastroActivity.class);
             startActivity(intent);
         });
     }
