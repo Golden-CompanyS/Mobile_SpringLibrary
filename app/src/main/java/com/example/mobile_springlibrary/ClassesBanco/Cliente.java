@@ -4,16 +4,19 @@ import java.io.Serializable;
 
 public class Cliente implements Serializable {
     private String UserCode, UserName, UserEmail, UserPassword;
-    private byte[] UserImage;
 
     public Cliente(){ }
 
-    public Cliente(String userCode, String userName, String userEmail, String userPassword, byte[] userImage){
+    public Cliente(String userCode, String userName, String userEmail, String userPassword){
         UserCode = userCode;
         UserName = userName;
         UserEmail = userEmail;
         UserPassword = userPassword;
-        UserImage = userImage;
+    }
+
+    public Cliente(String userEmail, String userPassword){
+        UserEmail = userEmail;
+        UserPassword = userPassword;
     }
 
     public String getUserCode() {
@@ -48,11 +51,4 @@ public class Cliente implements Serializable {
         UserPassword = userPassword;
     }
 
-    public byte[] getUserImage() {
-        return UserImage;
-    }
-
-    public void setUserImage(byte[] userImage) {
-        UserImage = userImage;
-    }
 }

@@ -1,10 +1,12 @@
 package com.example.mobile_springlibrary;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
@@ -18,11 +20,15 @@ import com.example.mobile_springlibrary.ClassesBanco.DatabaseHelper;
 import com.example.mobile_springlibrary.DAO.CliDAO;
 import com.google.gson.Gson;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class loginActivity extends AppCompatActivity {
+public class loginActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
 
     private static final String FILE_NAME = "usuarioLogado.json";
     private EditText edtTxtEmail, edtTxtPassword;
@@ -44,7 +50,9 @@ public class loginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
 
         mydb = new DatabaseHelper(this);
-
+        if(getSupportLoaderManager().getLoader(0) != null) {
+            getSupportLoaderManager().initLoader(0, null, this);
+        }
 
 
         // ON CLICK DO BOTÃO DE LOGIN - LIGAR A VERIFICAÇÃO COM OS DADOS DA API
@@ -59,7 +67,7 @@ public class loginActivity extends AppCompatActivity {
             if(cliDAO.checkLogin(emailLogin, passwordLogin)){
                 Cliente cli = cliDAO.selectUserByEmail(emailLogin);
                 //CONECTAR COM A API E ARRUMAR A INSERÇÃO DO CLIENTE NO BANCO COM O RESTANTE DAS INFORMAÇÕES
-                //new Cliente(emailLogin, passwordLogin);
+                new Cliente(emailLogin, passwordLogin);
                     Gson gson = new Gson();
                 String json = gson.toJson(cli);
                 printUser(json);
@@ -127,5 +135,47 @@ public class loginActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    @NonNull
+    @Override
+    public Loader<String> onCreateLoader(int id, @Nullable Bundle args) {
+        String queryString = "";
+        if (args != null) {
+            queryString = args.getString("queryString");
+        }
+        return new LoadCli(this, queryString);
+    }
+
+    @Override
+    public void onLoadFinished(@NonNull Loader<String> loader, String data) {
+        String nomCli = null;
+        String emailCli = null;
+        String senhaCli= null;
+
+        try{
+            JSONArray jsonArray = new JSONArray(data);
+            String stringArray = jsonArray.toString();
+            String[] arrayCli = stringArray.split(",");
+
+            JSONObject jsonObject = new JSONObject();
+
+            jsonObject.put("nomCli", arrayCli[2]);
+            jsonObject.put("emailCli", arrayCli[3]);
+            jsonObject.put("senhaCli", arrayCli[4]);
+
+            Intent it = new Intent(getApplicationContext(), HomeActivity.class);
+            startActivity(it);
+            if(emailCli != null && nomCli != null && senhaCli != null){
+                getSupportLoaderManager().destroyLoader(0);
+            }
+        }catch(JSONException e){
+           e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onLoaderReset(@NonNull Loader<String> loader) {
+
     }
 }

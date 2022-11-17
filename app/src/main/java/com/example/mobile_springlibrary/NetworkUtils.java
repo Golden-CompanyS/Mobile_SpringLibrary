@@ -85,44 +85,40 @@ public class NetworkUtils {
 
             String IdCli = null;
             String nomCli = null;
-            String titOriLiv = null;
-            String sinopLiv = null;
+            String emailCli = null;
+            String senhaCli = null;
             String imgLiv = null;
             String numPagLiv = null;
             String anoLiv = null;
             String numEdicaoLiv = null;
 
             try{
-                ISBN = bookJSONObject.getString("isbn");
-                titLiv = bookJSONObject.getString("titLiv");
-                titOriLiv = bookJSONObject.getString("titOriLiv");
-                sinopLiv = bookJSONObject.getString("sinopLiv");
-                // imgLiv = imgLiv.get("product_type");
-                numPagLiv = bookJSONObject.getString("numPagLiv");
-                anoLiv = bookJSONObject.getString("anoLiv");
-                numEdicaoLiv = bookJSONObject.getString("numEdicaoLiv");
+                IdCli = cliJSONObject.getString("IdCli");
+                nomCli = cliJSONObject.getString("nomCli");
+                emailCli = cliJSONObject.getString("emailCli");
+                senhaCli = cliJSONObject.getString("senhaCli");
+                // imgCli = imgLiv.get("product_type");
             } catch (JSONException e){
                 e.printStackTrace();
             }
 
-            JSONObject productJSONObject = new JSONObject();
+            JSONObject ClienteJSONObject = new JSONObject();
             try{
-                productJSONObject.put("isbn", ISBN);
-                productJSONObject.put("titLiv", titLiv);
-                productJSONObject.put("titOriLiv", titOriLiv);
-                productJSONObject.put("sinopLiv", sinopLiv);
-                productJSONObject.put("numPagLiv", numPagLiv);
-                productJSONObject.put("anoLiv", anoLiv);
-                productJSONObject.put("numEdicaoLiv", numEdicaoLiv);
+                ClienteJSONObject.put("IdCli", IdCli);
+                ClienteJSONObject.put("nomCli", nomCli);
+                ClienteJSONObject.put("emailCli", emailCli);
+                ClienteJSONObject.put("senhaCli", senhaCli);
 
-                BookJSONString = bookJSONObject.toString();
+
+                cliJSONString = cliJSONObject.toString();
             } catch (JSONException e){
                 e.printStackTrace();
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        Log.d(LOG_TAG, BookJSONString);
-        return BookJSONString;
+        Log.d(LOG_TAG, cliJSONString);
+        return cliJSONString;
     }
+    //MÉTODO DE INSERIR NA API O REGISTRO DE CLIENTE
 }
