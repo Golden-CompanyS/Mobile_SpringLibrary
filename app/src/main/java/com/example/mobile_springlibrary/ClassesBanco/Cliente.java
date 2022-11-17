@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Cliente implements Serializable {
     private String UserCode, UserName, UserEmail, UserPassword;
+    private byte[] UserImage;
 
     public Cliente(){ }
 
@@ -51,4 +52,7 @@ public class Cliente implements Serializable {
         UserPassword = userPassword;
     }
 
+    public byte[] getUserImage(){return UserImage;}
+
+    public void setUserImage(byte[] userImage){UserImage=userImage;}
 }

@@ -3,6 +3,7 @@ package com.example.mobile_springlibrary;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -14,9 +15,12 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appmobilespringlibrary.R;
+import com.example.mobile_springlibrary.ClassesBanco.DatabaseHelper;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class PerfilUser extends AppCompatActivity {
     //IMAGE PICKER Para Imagem do Usuário
@@ -29,7 +33,12 @@ public class PerfilUser extends AppCompatActivity {
     private boolean mImageUser;
     public static final String PREFERENCIAS_NAME = "com.example.android.usuario";
     private SharedPreferences mPreferences;
+    // Banco de Dados
+    private DatabaseHelper mydb ;
+    int id_to_update = 0;
 
+    // A IMPLEMENTAR
+    // - RESTANTE DOS CAMPOS PARA ALTERAÇÃO NO BANCO (CHECAR FRONT) - LARISSA 17/11
 
 
     @Override
@@ -52,16 +61,40 @@ public class PerfilUser extends AppCompatActivity {
             }
         });
 
+        SharedPreferences preferencias = getSharedPreferences(ARQUIVO_PREFERENCIAS, MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferencias.edit();
+
+        //inicializa as preferências do usuário
+        mPreferences = getSharedPreferences(PREFERENCIAS_NAME, MODE_PRIVATE);
+        //recupera as preferencias
+        recuperar();
+
         // Recupera o estado da aplicação quando é recriado
         if (savedInstanceState != null) {
             mImageUser = savedInstanceState.getBoolean(
                     IMAGE_KEY);
         }
 
-        //inicializa as preferências do usuário
-        mPreferences = getSharedPreferences(PREFERENCIAS_NAME, MODE_PRIVATE);
-        //recupera as preferencias
-        recuperar();
+        mydb = new DatabaseHelper(this);
+        // Banco de Dados
+        id_to_update = preferencias.getInt("cliIdSession", 0);
+
+        if (id_to_update == 0){
+            Intent intent = new Intent(this, PerfilUser.class);
+            startActivity(intent);
+            finish();
+        }
+        id_to_update = preferencias.getInt("cliIdSession", 0);
+
+        // pegar imagem automaticamente
+        String imagemBase64 = preferencias.getString("imgSource", null);
+        if (imagemBase64 != null) {
+
+            byte[] bytes = Base64.decode(imagemBase64, Base64.DEFAULT);
+            InputStream inputStream = new ByteArrayInputStream(bytes);
+            Bitmap imagemBitmap = BitmapFactory.decodeStream(inputStream);
+            imgUser.setImageBitmap(imagemBitmap);
+        }
 
     }
 
@@ -104,7 +137,7 @@ public class PerfilUser extends AppCompatActivity {
 
     private void recuperar() {
         SharedPreferences mPreferences = getSharedPreferences(PREFERENCIAS_NAME, 0);
-
+        
     }
 
     @Override

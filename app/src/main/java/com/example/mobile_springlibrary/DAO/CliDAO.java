@@ -65,6 +65,7 @@ public class CliDAO {
         return database.update("tbUser", values, "userCode = ?", new String[]{cli.getUserCode()});
     }
 
+
     public Boolean checkLogin(String email, String password){
         Cursor cursor = database.rawQuery("SELECT * FROM Cliente WHERE userEmail = ? AND userPassword = ?", new String[]{email, password});
 
