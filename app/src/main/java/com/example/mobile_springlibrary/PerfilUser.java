@@ -66,7 +66,7 @@ public class PerfilUser extends AppCompatActivity {
     }
 
     //IMAGE PICKER
-    public void viewGallery(View view){
+    public void viewGallery(){
         //inicia uma intent com ação de Seleção de Imagens
         Intent intent =     new Intent(Intent.ACTION_PICK,
                 android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
@@ -101,9 +101,10 @@ public class PerfilUser extends AppCompatActivity {
         }
     }
 
+
     private void recuperar() {
         SharedPreferences mPreferences = getSharedPreferences(PREFERENCIAS_NAME, 0);
-        imagemBase64 = mPreferences.getString(IMAGE_KEY, "");
+
     }
 
     @Override
@@ -111,5 +112,8 @@ public class PerfilUser extends AppCompatActivity {
         outState.putBoolean(IMAGE_KEY, mImageUser);
         super.onSaveInstanceState(outState);
     }
+
+    //BANCO DE DADOS - UPDATE DE CLIENTE
+
 
 }

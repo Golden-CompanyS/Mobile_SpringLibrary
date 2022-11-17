@@ -11,6 +11,7 @@ import java.io.BufferedReader;
 import java.net.HttpURLConnection;
 
 public class NetworkUtils {
+    //Adicionar a URL para a API e concatenar com a parte da URL de busca (getCliByEmail)
     private static final String URL_API = "";
     private static HttpURLConnection connec;
     private static BufferedReader reader;
@@ -97,7 +98,11 @@ public class NetworkUtils {
                 nomCli = cliJSONObject.getString("nomCli");
                 emailCli = cliJSONObject.getString("emailCli");
                 senhaCli = cliJSONObject.getString("senhaCli");
+
                 // imgCli = imgLiv.get("product_type");
+                numPagLiv = cliJSONObject.getString("numPagCli");
+                anoLiv = cliJSONObject.getString("anoLiv");
+                numEdicaoLiv = cliJSONObject.getString("numEdicaoLiv");
             } catch (JSONException e){
                 e.printStackTrace();
             }
@@ -108,6 +113,9 @@ public class NetworkUtils {
                 ClienteJSONObject.put("nomCli", nomCli);
                 ClienteJSONObject.put("emailCli", emailCli);
                 ClienteJSONObject.put("senhaCli", senhaCli);
+                ClienteJSONObject.put("numPagLiv", numPagLiv);
+                ClienteJSONObject.put("anoLiv", anoLiv);
+                ClienteJSONObject.put("numEdicaoLiv", numEdicaoLiv);
 
 
                 cliJSONString = cliJSONObject.toString();
@@ -120,5 +128,6 @@ public class NetworkUtils {
         Log.d(LOG_TAG, cliJSONString);
         return cliJSONString;
     }
+
     //MÉTODO DE INSERIR NA API O REGISTRO DE CLIENTE
 }

@@ -6,9 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -38,6 +42,8 @@ public class loginActivity extends AppCompatActivity implements LoaderManager.Lo
     //Acesso Banco de dados
     private DatabaseHelper mydb ;
     int id_to_update = 0;
+    String emailUser;
+    String senhaUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +90,13 @@ public class loginActivity extends AppCompatActivity implements LoaderManager.Lo
             Intent intent = new Intent(this, cadastroActivity.class);
             startActivity(intent);
         });
+
+        //ADICIONAR ONCLICK DO BOTÃO DE CADASTRAR
+
+        //SUPORTE DO LOADER MANAGER
+        if (getSupportLoaderManager().getLoader(0) != null) {
+            getSupportLoaderManager().initLoader(0, null, this);
+        }
     }
 
     // VALIDAR CAMPOS
@@ -105,6 +118,68 @@ public class loginActivity extends AppCompatActivity implements LoaderManager.Lo
     private boolean nullField (String field){
         boolean verification = (TextUtils.isEmpty(field) || field.trim().isEmpty());
         return verification;
+    }
+
+    //Verificação de dados com a API
+    private View.OnClickListener onClickSearch = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+
+            // TODO Auto-generated method stub
+            // Verifica o status da conexão de rede
+            ConnectivityManager connMgr = (ConnectivityManager)
+                    getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo networkInfo = null;
+            if (connMgr != null) {
+                networkInfo = connMgr.getActiveNetworkInfo();
+            }
+
+            // resgata o texto de busca
+            emailUser = edtTxtEmail.getText().toString();
+            senhaUser = edtTxtPassword.getText().toString();
+
+            // Se a rede estiver disponivel e o campo de busca não estiver vazio, iniciar o Loader CarregaInvocador
+            if (networkInfo != null && networkInfo.isConnected()
+                    && emailUser.length() != 0 && senhaUser.length() != 0) {
+
+                Bundle queryBundle = new Bundle();
+                queryBundle.putString("emailUser", emailUser);
+                getSupportLoaderManager().restartLoader(0, queryBundle, loginActivity.this);
+                Toast.makeText(getApplicationContext(), "Procurando pelo personagem...", Toast.LENGTH_SHORT).show();
+            }
+            // atualiza a textview para informar que não há conexão ou termo de busca
+            else {
+                if (emailUser.length() == 0 || senhaUser.length() == 0) {
+                   Toast.makeText(loginActivity.this, "Preencha o campo", Toast.LENGTH_SHORT).show();
+                } else {
+
+                    Toast.makeText(loginActivity.this, "⚠  Verifique sua conexão!", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            //Consultar o Cliente
+            CliDAO cliDAO = new CliDAO(loginActivity.this);
+
+            try{
+                cliDAO.selectUserByEmail(emailUser);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+
+    };
+
+
+    //Create loader com a busca de usuário pelo email
+    @NonNull
+    @Override
+    public Loader<String> onCreateLoader(int id, @Nullable Bundle args) {
+        String emailUser = "";
+        if (args != null) {
+            emailUser = args.getString("emailUser");
+        }
+        return new LoadCli(this, emailUser);
     }
 
     // SAVED INSTANCE
@@ -137,15 +212,7 @@ public class loginActivity extends AppCompatActivity implements LoaderManager.Lo
         }
     }
 
-    @NonNull
-    @Override
-    public Loader<String> onCreateLoader(int id, @Nullable Bundle args) {
-        String queryString = "";
-        if (args != null) {
-            queryString = args.getString("queryString");
-        }
-        return new LoadCli(this, queryString);
-    }
+
 
     @Override
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
