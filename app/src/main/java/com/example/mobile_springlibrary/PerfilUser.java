@@ -7,11 +7,13 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -92,7 +94,6 @@ public class PerfilUser extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-        id_to_update = preferencias.getInt("cliIdSession", 0);
 
         // pegar imagem automaticamente
         String imagemBase64 = preferencias.getString("imgSource", null);
@@ -155,6 +156,22 @@ public class PerfilUser extends AppCompatActivity {
     }
 
     //BANCO DE DADOS - UPDATE DE CLIENTE
-        
+    // Banco de Dados
+    public void altInfos(View view){
+        id_to_update = preferencias.getInt("cliIdSession", 0);
+        String emailNovo = edtEmail.getText().toString();
+        String senhaNova = edtSenha.getText().toString();
+
+
+                mydb.updateCli(id_to_update, emailNovo, senhaNova);
+
+                Toast.makeText(getApplicationContext(), "Senha alterada com sucesso!", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(getApplicationContext(), "Senha atual incorreta", Toast.LENGTH_LONG).show();
+            }
+        }
+
+    }
+
 
 }
