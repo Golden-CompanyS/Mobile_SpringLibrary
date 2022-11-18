@@ -129,5 +129,39 @@ public class NetworkUtils {
         return cliJSONString;
     }
 
-    //MÉTODO DE INSERIR NA API O REGISTRO DE CLIENTE
+    //MÉTODO DE INSERIR NA API O REGISTRO DE CLIENTE - UTILIZAR NA TELA DE CADASTRO PARA FÍSICO E JURÍDICO
+
+    //MÉTODO PARA BUSCAR LIVROS
+    static String searchLivros(){
+        String livJSONString = null;
+        try{
+            JSONObject livJSONObject = new JSONObject();
+            String PrecoLiv = null;
+            String titLiv = null;
+            String imgLiv =  null;
+
+            try{
+                titLiv = livJSONObject.getString("titLiv", titLiv);
+                PrecoLiv = livJSONObject.getString("PrecoLiv", PrecoLiv);
+                imgLiv = livJSONObject.getString("imgLiv", imgLiv);
+            }catch (JSONException e){
+                e.printStackTrace();
+            }
+
+            JSONObject LivroJSONObject = new JSONObject();
+            try{
+                LivroJSONObject.put("titLiv", titLiv);
+                LivroJSONObject.put("PrecoLiv", PrecoLiv);
+                LivroJSONObject.put("imgLiv", imgLiv);
+
+                livJSONString = livJSONObject.toString();
+            } catch (JSONException e){
+                e.printStackTrace();
+            }
+        }catch(JSONException e){
+            e.printStackTrace();
+        }
+        Log.d(LOG_TAG, livJSONString);
+        return livJSONString;
+    }
 }

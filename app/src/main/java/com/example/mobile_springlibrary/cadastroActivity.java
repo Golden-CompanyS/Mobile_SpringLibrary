@@ -1,4 +1,7 @@
 package com.example.mobile_springlibrary;
 
-public class cadastroActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class cadastroActivity extends AppCompatActivity {
+
 }

@@ -137,7 +137,7 @@ public class PerfilUser extends AppCompatActivity {
 
     private void recuperar() {
         SharedPreferences mPreferences = getSharedPreferences(PREFERENCIAS_NAME, 0);
-        
+
     }
 
     @Override
@@ -147,6 +147,6 @@ public class PerfilUser extends AppCompatActivity {
     }
 
     //BANCO DE DADOS - UPDATE DE CLIENTE
-
+        
 
 }
