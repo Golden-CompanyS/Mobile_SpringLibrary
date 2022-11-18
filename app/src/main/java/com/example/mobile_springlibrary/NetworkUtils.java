@@ -19,12 +19,12 @@ public class NetworkUtils {
     private static final String LOG_TAG = NetworkUtils.class.getSimpleName();
     static String url = null;
 
-    static String searchBook(String queryString){
+    static String searchBook(String queryString) {
         String BookJSONString = null;
 
-        try{
+        try {
             BookJSONString = searchBook(queryString);
-            if(BookJSONString == null){
+            if (BookJSONString == null) {
                 return null;
             }
 
@@ -39,21 +39,21 @@ public class NetworkUtils {
             String anoLiv = null;
             String numEdicaoLiv = null;
 
-            try{
+            try {
                 ISBN = bookJSONObject.getString("isbn");
                 titLiv = bookJSONObject.getString("titLiv");
                 titOriLiv = bookJSONObject.getString("titOriLiv");
                 sinopLiv = bookJSONObject.getString("sinopLiv");
-               // imgLiv = imgLiv.get("product_type");
+                // imgLiv = imgLiv.get("product_type");
                 numPagLiv = bookJSONObject.getString("numPagLiv");
                 anoLiv = bookJSONObject.getString("anoLiv");
                 numEdicaoLiv = bookJSONObject.getString("numEdicaoLiv");
-            } catch (JSONException e){
+            } catch (JSONException e) {
                 e.printStackTrace();
             }
 
             JSONObject productJSONObject = new JSONObject();
-            try{
+            try {
                 productJSONObject.put("isbn", ISBN);
                 productJSONObject.put("titLiv", titLiv);
                 productJSONObject.put("titOriLiv", titOriLiv);
@@ -63,7 +63,7 @@ public class NetworkUtils {
                 productJSONObject.put("numEdicaoLiv", numEdicaoLiv);
 
                 BookJSONString = bookJSONObject.toString();
-            } catch (JSONException e){
+            } catch (JSONException e) {
                 e.printStackTrace();
             }
         } catch (JSONException e) {
@@ -73,12 +73,12 @@ public class NetworkUtils {
         return BookJSONString;
     }
 
-    static String searchCli(String queryCli){
+    static String searchCli(String queryCli) {
         String cliJSONString = null;
 
-        try{
+        try {
             cliJSONString = searchCli(queryCli);
-            if(cliJSONString == null){
+            if (cliJSONString == null) {
                 return null;
             }
 
@@ -93,7 +93,7 @@ public class NetworkUtils {
             String anoLiv = null;
             String numEdicaoLiv = null;
 
-            try{
+            try {
                 IdCli = cliJSONObject.getString("IdCli");
                 nomCli = cliJSONObject.getString("nomCli");
                 emailCli = cliJSONObject.getString("emailCli");
@@ -103,12 +103,12 @@ public class NetworkUtils {
                 numPagLiv = cliJSONObject.getString("numPagCli");
                 anoLiv = cliJSONObject.getString("anoLiv");
                 numEdicaoLiv = cliJSONObject.getString("numEdicaoLiv");
-            } catch (JSONException e){
+            } catch (JSONException e) {
                 e.printStackTrace();
             }
 
             JSONObject ClienteJSONObject = new JSONObject();
-            try{
+            try {
                 ClienteJSONObject.put("IdCli", IdCli);
                 ClienteJSONObject.put("nomCli", nomCli);
                 ClienteJSONObject.put("emailCli", emailCli);
@@ -119,7 +119,7 @@ public class NetworkUtils {
 
 
                 cliJSONString = cliJSONObject.toString();
-            } catch (JSONException e){
+            } catch (JSONException e) {
                 e.printStackTrace();
             }
         } catch (JSONException e) {
@@ -132,36 +132,39 @@ public class NetworkUtils {
     //MÉTODO DE INSERIR NA API O REGISTRO DE CLIENTE - UTILIZAR NA TELA DE CADASTRO PARA FÍSICO E JURÍDICO
 
     //MÉTODO PARA BUSCAR LIVROS
-    static String searchLivros(){
+    static String searchLivros() {
         String livJSONString = null;
-        try{
+        try {
             JSONObject livJSONObject = new JSONObject();
             String PrecoLiv = null;
             String titLiv = null;
-            String imgLiv =  null;
+            String imgLiv = null;
 
-            try{
-                titLiv = livJSONObject.getString("titLiv", titLiv);
-                PrecoLiv = livJSONObject.getString("PrecoLiv", PrecoLiv);
-                imgLiv = livJSONObject.getString("imgLiv", imgLiv);
-            }catch (JSONException e){
+            try {
+                titLiv = livJSONObject.getString("titLiv");
+                PrecoLiv = livJSONObject.getString("PrecoLiv");
+                imgLiv = livJSONObject.getString("imgLiv");
+            } catch (JSONException e) {
                 e.printStackTrace();
             }
 
             JSONObject LivroJSONObject = new JSONObject();
-            try{
+            try {
                 LivroJSONObject.put("titLiv", titLiv);
                 LivroJSONObject.put("PrecoLiv", PrecoLiv);
                 LivroJSONObject.put("imgLiv", imgLiv);
 
                 livJSONString = livJSONObject.toString();
-            } catch (JSONException e){
+            } catch (JSONException e) {
                 e.printStackTrace();
             }
-        }catch(JSONException e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         Log.d(LOG_TAG, livJSONString);
         return livJSONString;
     }
+
+    //INSTANCIAR ELEMENTOS RECYCLER
+
 }

@@ -5,9 +5,9 @@ import android.content.Context;
 import androidx.annotation.Nullable;
 import androidx.loader.content.AsyncTaskLoader;
 
-public class LoadLiv extends AsyncTaskLoader<String> {
+public class LoadLivros extends AsyncTaskLoader<String> {
     private String mQueryString;
-    LoadLiv(Context context, String queryString) {
+    LoadLivros(Context context, String queryString) {
         super(context);
         mQueryString = queryString;
     }

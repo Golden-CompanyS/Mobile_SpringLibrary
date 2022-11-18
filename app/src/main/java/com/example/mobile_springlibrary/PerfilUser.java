@@ -10,6 +10,7 @@ import android.provider.MediaStore;
 import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,7 +40,7 @@ public class PerfilUser extends AppCompatActivity {
 
     // A IMPLEMENTAR
     // - RESTANTE DOS CAMPOS PARA ALTERAÇÃO NO BANCO (CHECAR FRONT) - LARISSA 17/11
-
+    EditText edtNomCli, edtEmail, edtSenha, edtCPF, edtCEP, edtCel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,13 @@ public class PerfilUser extends AppCompatActivity {
         setContentView(R.layout.activity_perfil);
         btnSave = (Button) findViewById(R.id.btnSave);
         imgUser = (ImageView) findViewById(R.id.imgUser);
+        edtNomCli = (EditText)findViewById(R.id.edtTxtNomCli);
+        edtEmail = (EditText) findViewById(R.id.edtTxtEmailCli);
+        edtCel = (EditText) findViewById(R.id.edtTxtCelCli);
+        edtCEP = (EditText) findViewById(R.id.edtCEPCli);
+        edtSenha = (EditText) findViewById(R.id.edtSenhaCli);
+        edtCPF = (EditText) findViewById(R.id.edtCPFCli);
+
 
         // Listener do botão de localização.
         imgUser.setOnClickListener(new View.OnClickListener() {
