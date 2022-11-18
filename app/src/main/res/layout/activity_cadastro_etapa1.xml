@@ -11,7 +11,7 @@
         android:layout_height="50dp"
         android:layout_marginBottom="90dp"
         android:hint="@string/ConfirmarSenha"
-        android:textColorHint="#757575"
+        android:textColorHint="#9C9C9C"
         app:layout_constraintBottom_toTopOf="@+id/btnContinuarCad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +19,6 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/TextInputEditTextConfirmarSenha"
             android:layout_width="300dp"
             android:layout_height="match_parent"
             android:backgroundTint="#00FFFFFF"
@@ -27,8 +26,7 @@
             android:inputType="textPassword"
             android:textColorHint="#757575"
             android:textSize="18sp"
-            app:textInputLayoutFocusedRectEnabled="true"
-            tools:ignore="TextContrastCheck" />
+            app:textInputLayoutFocusedRectEnabled="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -70,25 +68,22 @@
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextEmailCad"
+        android:id="@+id/editTextEmail"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:autofillHints=""
         android:ems="10"
         android:fontFamily="@font/athiti_medium"
         android:hint="@string/Email"
         android:inputType="textEmailAddress"
-        android:minHeight="48dp"
         android:paddingStart="15dp"
-        android:textColorHint="#757575"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayoutSenha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:autofillHints="" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutSenha"
@@ -96,8 +91,7 @@
         android:layout_height="50dp"
         android:layout_marginBottom="150dp"
         android:hint="@string/Senha"
-        android:textColorHint="#757575"
-        app:hintTextColor="#757575"
+        android:textColorHint="#9C9C9C"
         app:layout_constraintBottom_toTopOf="@+id/btnContinuarCad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -105,17 +99,14 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/TextInputEditTextSenha"
             android:layout_width="300dp"
             android:layout_height="match_parent"
             android:backgroundTint="#00FFFFFF"
             android:fontFamily="@font/athiti_medium"
             android:inputType="textPassword"
-            android:textColor="#757575"
             android:textColorHint="#757575"
             android:textSize="18sp"
-            app:textInputLayoutFocusedRectEnabled="true"
-            tools:ignore="TextContrastCheck" />
+            app:textInputLayoutFocusedRectEnabled="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <RadioButton

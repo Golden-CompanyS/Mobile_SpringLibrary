@@ -16,16 +16,16 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imgLogomarca"
+            android:id="@+id/imgLogoSpring"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="140dp"
-            android:contentDescription="TODO"
             app:srcCompat="@drawable/logomarca"
-            tools:ignore="ImageContrastCheck" />
+            tools:ignore="ImageContrastCheck"
+            android:contentDescription="TODO" />
 
         <ImageButton
-            android:id="@+id/imgBtnPerfil"
+            android:id="@+id/imageBtnConta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="360dp"
@@ -48,7 +48,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:id="@+id/imgBtnPesquisa"
+            android:id="@+id/imgBtnPesquisar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
@@ -95,7 +95,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/txtTituloLivroSelected"
+                android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
@@ -106,17 +106,18 @@
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/imgLivroSelected"
+                android:id="@+id/imgLivroEspecifico"
                 android:layout_width="300dp"
                 android:layout_height="300dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="20dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtTituloLivroSelected"
+                app:layout_constraintTop_toBottomOf="@+id/textView9"
                 app:srcCompat="@drawable/livroevelynhugo1"
                 android:contentDescription="TODO" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/CardViewInfoLivro"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -132,7 +133,7 @@
                     tools:ignore="TextContrastCheck" />
 
                 <TextView
-                    android:id="@+id/txtPrecoLivroSelected"
+                    android:id="@+id/txtPrecoLivroEspecifico"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="200dp"
@@ -141,14 +142,14 @@
                     android:textSize="32sp" />
 
                 <TextView
-                    android:id="@+id/txtCodLivroSelected"
+                    android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="90dp"
                     android:text="@string/CodLivro" />
 
                 <TextView
-                    android:id="@+id/txtDescLivroSelected"
+                    android:id="@+id/textView12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="120dp"
@@ -156,21 +157,21 @@
                     android:textSize="24sp" />
 
                 <TextView
-                    android:id="@+id/txtAutorLivro"
+                    android:id="@+id/textView13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="160dp"
                     android:text="@string/Autor" />
 
                 <TextView
-                    android:id="@+id/txtAnoLivro"
+                    android:id="@+id/textView14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="180dp"
                     android:text="@string/AnoEdit" />
 
                 <TextView
-                    android:id="@+id/txtMarcaLivro"
+                    android:id="@+id/textView15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="200dp"

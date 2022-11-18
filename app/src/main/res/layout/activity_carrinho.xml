@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imgLogomarca"
+            android:id="@+id/imgLogoSpring"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/logo_spring_library_3_2"
@@ -24,7 +24,7 @@
             android:contentDescription="TODO" />
 
         <ImageButton
-            android:id="@+id/imgBtnPerfil"
+            android:id="@+id/imageBtnConta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="360dp"
@@ -48,7 +48,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:id="@+id/imgBtnPesquisa"
+            android:id="@+id/imgBtnPesquisar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
@@ -129,12 +129,12 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:id="@+id/imgBtnRemover"
+            android:id="@+id/imgBtnCancelarLivroCarrinho1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="335dp"
             android:backgroundTint="#00FFFFFF"
-            android:contentDescription="@string/RemoverIcon"
+            android:contentDescription="@string/CancelarIcon"
             app:srcCompat="@android:drawable/ic_delete"
             tools:ignore="DuplicateSpeakableTextCheck"
             tools:layout_editor_absoluteX="493dp"
@@ -146,11 +146,11 @@
             android:layout_height="150dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:contentDescription="TODO"
-            app:srcCompat="@drawable/livroevelynhugo1" />
+            app:srcCompat="@drawable/livroevelynhugo1"
+            android:contentDescription="TODO" />
 
         <TextView
-            android:id="@+id/txtTituloLivroCarrinho1"
+            android:id="@+id/txtLivroCarrinho1"
             android:layout_width="180dp"
             android:layout_height="40dp"
             android:layout_marginStart="152dp"
@@ -160,7 +160,7 @@
             tools:layout_editor_absoluteY="523dp" />
 
         <Spinner
-            android:id="@+id/spinnerQtdLivroCarrinho1"
+            android:id="@+id/spinner3"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="152dp"
@@ -191,18 +191,18 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:id="@+id/imgBtnRemover2"
+            android:id="@+id/imgBtnCancelarLivroCarrinho2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="335dp"
             android:backgroundTint="#00FFFFFF"
-            android:contentDescription="@string/RemoverIcon"
+            android:contentDescription="@string/CancelarIcon"
             app:srcCompat="@android:drawable/ic_delete"
             tools:layout_editor_absoluteX="493dp"
             tools:layout_editor_absoluteY="523dp" />
 
         <ImageView
-            android:id="@+id/imageView9"
+            android:id="@+id/imgLivroCarrinho2"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginTop="10dp"
@@ -211,7 +211,7 @@
             android:contentDescription="TODO" />
 
         <TextView
-            android:id="@+id/txtTituloLivroCarrinho2"
+            android:id="@+id/txtLivroCarrinho2"
             android:layout_width="180dp"
             android:layout_height="40dp"
             android:layout_marginStart="152dp"
@@ -221,7 +221,7 @@
             tools:layout_editor_absoluteY="523dp" />
 
         <Spinner
-            android:id="@+id/spinnerQtdLivroCarrinho2"
+            android:id="@+id/spinner4"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="152dp"
