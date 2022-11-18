@@ -11,7 +11,7 @@
     <string name="PesquisaIcon">Pesquisar</string>
     <string name="CarrinhoIcon">Carrinho</string>
     <string name="VoltarIcon">Voltar</string>
-    <string name="RemoverIcon">Remover</string>
+    <string name="CancelarIcon">Cancelar</string>
 
     <!-- Tela de Login -->
     <string name="Entre">Entre com sua conta</string>
@@ -76,11 +76,12 @@
     <string name="Telefone">Telefone Residencial</string>
     <string name="TelefoneEmpresa">Telefone Empresarial</string>
     <string name="CEP">CEP</string>
+    <string name="Confirmar">Confirmar</string>
     <string name="Celular">Celular</string>
     <string name="DataNasc">Data de Nascimento</string>
     <string name="NumEnd">Número de Endereço</string>
     <string name="Complemento">Complemento</string>
-    <string name="Confirmar">Confirmar</string>
+    <string name="IrPag">Ir para o pagamento</string>
     <string name="HintCpf">999.999.999-99</string>
     <string name="HintCnpj">00.000.000/0001-00</string>
     <string name="HinTel">(DDD) + Número</string>

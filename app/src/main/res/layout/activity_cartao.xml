@@ -6,37 +6,37 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/txtNomeCartao"
+        android:id="@+id/textView52"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="160dp"
         android:text="@string/NomeCartao"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPersonNameNomeCartao"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNomeCartao"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/txtMesCartao"
+        android:id="@+id/textView53"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="300dp"
         android:text="@string/Mes"
-        app:layout_constraintBottom_toTopOf="@+id/spinnerMesCartao"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerMes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/txtAnoCartao"
+        android:id="@+id/textView55"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:text="@string/Ano"
-        app:layout_constraintBottom_toTopOf="@+id/spinnerMesCartao"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerMes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/txtCodCartao"
+        android:id="@+id/textView54"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="195dp"
@@ -46,24 +46,24 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextPersonNameNomeCartao"
+        android:id="@+id/editTextNomeCartao"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
-        android:autofillHints=""
         android:ems="10"
         android:hint="@string/NomeCartao"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColorHint="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/spinnerMesCartao"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerMes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="DuplicateSpeakableTextCheck" />
+        tools:ignore="DuplicateSpeakableTextCheck"
+        android:autofillHints="" />
 
     <TextView
-        android:id="@+id/txtNumCartao"
+        android:id="@+id/textView51"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="212dp"
@@ -83,14 +83,14 @@
         android:inputType="number"
         android:minHeight="48dp"
         android:textColorHint="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPersonNameNomeCartao"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNomeCartao"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <ImageButton
-        android:id="@+id/imgBtnVoltar"
+        android:id="@+id/imageButton20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="350dp"
@@ -114,15 +114,15 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imgLogomarca"
+            android:id="@+id/imgLogoSpring"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:contentDescription="TODO"
             app:srcCompat="@drawable/logo_spring_library_3_2"
-            tools:ignore="ImageContrastCheck" />
+            tools:ignore="ImageContrastCheck"
+            android:contentDescription="TODO" />
 
         <ImageButton
-            android:id="@+id/imgBtnPerfil"
+            android:id="@+id/imageBtnConta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="360dp"
@@ -146,7 +146,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:id="@+id/imgBtnPesquisa"
+            android:id="@+id/imgBtnPesquisar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
@@ -178,7 +178,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/txtTituloCartao"
+        android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
@@ -190,7 +190,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardViewHeader" />
 
     <Spinner
-        android:id="@+id/spinnerMesCartao"
+        android:id="@+id/spinnerMes"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="175dp"
@@ -204,7 +204,7 @@
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Spinner
-        android:id="@+id/spinnerAnoCartao"
+        android:id="@+id/spinnerAno"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
@@ -213,7 +213,7 @@
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/editTextNumberCodCartao"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/spinnerMesCartao"
+        app:layout_constraintStart_toEndOf="@+id/spinnerMes"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <EditText
@@ -222,7 +222,6 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="20dp"
-        android:autofillHints=""
         android:ems="10"
         android:hint="@string/CodCartao"
         android:inputType="number"

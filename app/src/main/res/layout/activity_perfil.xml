@@ -10,8 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:text="@string/ConfigPerfil"
-        android:textSize="28dp"
+        android:text="@string/DadosPessoais"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.48"
@@ -19,15 +19,16 @@
         app:layout_constraintTop_toBottomOf="@+id/cardViewHeader" />
 
     <ImageView
-        android:id="@+id/imgUser"
+        android:id="@+id/imgPerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/edtTxtNomCli"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPersonNomePerfil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/userphoto" />
+        app:srcCompat="@drawable/userphoto"
+        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/textView45"
@@ -35,25 +36,27 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="276dp"
         android:text="@string/Nome"
-        app:layout_constraintBottom_toTopOf="@+id/edtTxtNomCli"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPersonNomePerfil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/edtTxtNomCli"
+        android:id="@+id/editTextPersonNomePerfil"
         android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:text="@string/NomeUser"
-        app:layout_constraintBottom_toTopOf="@+id/edtTxtCelCli"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPhoneCelularPerfil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:autofillHints="" />
 
     <EditText
-        android:id="@+id/edtTxtCelCli"
+        android:id="@+id/editTextPhoneCelularPerfil"
         android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
@@ -61,10 +64,11 @@
         android:inputType="phone"
         android:minHeight="48dp"
         android:text="@string/CelUser"
-        app:layout_constraintBottom_toTopOf="@+id/edtTxtEmailCli"
+        app:layout_constraintBottom_toTopOf="@+id/editTextEmailPerfil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.475"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/textView46"
@@ -72,7 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="270dp"
         android:text="@string/Celular"
-        app:layout_constraintBottom_toTopOf="@+id/edtTxtCelCli"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPhoneCelularPerfil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent" />
@@ -83,12 +87,12 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="280dp"
         android:text="@string/Email"
-        app:layout_constraintBottom_toTopOf="@+id/edtTxtEmailCli"
+        app:layout_constraintBottom_toTopOf="@+id/editTextEmailPerfil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/edtTxtEmailCli"
+        android:id="@+id/editTextEmailPerfil"
         android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="90dp"
@@ -96,10 +100,11 @@
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         android:text="@string/EmailUser"
-        app:layout_constraintBottom_toTopOf="@+id/edtSenhaCli"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNumberSenha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/textView48"
@@ -107,12 +112,12 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="290dp"
         android:text="@string/CEP"
-        app:layout_constraintBottom_toTopOf="@+id/edtCEPCli"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNumberCEPPerfil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/edtCEPCli"
+        android:id="@+id/editTextNumberCEPPerfil"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="160dp"
@@ -121,10 +126,11 @@
         android:inputType="number"
         android:minHeight="48dp"
         android:text="@string/CEPUser"
-        app:layout_constraintBottom_toTopOf="@+id/edtSenhaCli"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNumberSenha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/textView49"
@@ -132,12 +138,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="33dp"
         android:text="@string/CPF"
-        app:layout_constraintBottom_toTopOf="@+id/edtCPFCli"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNumberCPFPerfil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/edtCPFCli"
+        android:id="@+id/editTextNumberCPFPerfil"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
@@ -146,10 +152,11 @@
         android:inputType="number"
         android:minHeight="48dp"
         android:text="@string/CPFUser"
-        app:layout_constraintBottom_toTopOf="@+id/edtSenhaCli"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNumberSenha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toEndOf="@+id/edtCEPCli" />
+        app:layout_constraintStart_toEndOf="@+id/editTextNumberCEPPerfil"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/textView50"
@@ -157,12 +164,12 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="275dp"
         android:text="@string/Senha"
-        app:layout_constraintBottom_toTopOf="@+id/edtSenhaCli"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNumberSenha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/edtSenhaCli"
+        android:id="@+id/editTextNumberSenha"
         android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
@@ -170,26 +177,29 @@
         android:inputType="numberPassword"
         android:minHeight="48dp"
         android:text="@string/SenhaUser"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSalvar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:autofillHints="" />
 
     <ImageButton
-        android:id="@+id/imageButton27"
+        android:id="@+id/imgBtnVoltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="350dp"
         android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/VoltarIcon"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardViewHeader"
-        app:srcCompat="@drawable/arrow_left" />
+        app:srcCompat="@drawable/arrow_left"
+        tools:ignore="ImageContrastCheck" />
 
     <Button
-        android:id="@+id/btnSave"
+        android:id="@+id/btnSalvar"
         android:layout_width="310dp"
         android:layout_height="60dp"
         android:layout_marginBottom="10dp"
@@ -198,7 +208,8 @@
         android:textAllCaps="false"
         app:layout_constraintBottom_toTopOf="@+id/cardViewFooter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewHeader"
@@ -211,22 +222,25 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imgLogomarca"
+            android:id="@+id/imgLogoSpring"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/logo_spring_library_3_2" />
+            app:srcCompat="@drawable/logo_spring_library_3_2"
+            tools:ignore="ImageContrastCheck"
+            android:contentDescription="TODO" />
 
         <ImageButton
-            android:id="@+id/imgBtnPerfil"
+            android:id="@+id/imageBtnConta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="360dp"
+            android:layout_marginStart="360dp"
             android:layout_marginTop="1dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/Login"
             android:minHeight="48dp"
             android:scaleType="centerInside"
-            app:srcCompat="@drawable/iconuser" />
+            app:srcCompat="@drawable/iconuser"
+            tools:ignore="ImageContrastCheck" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -240,10 +254,10 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:id="@+id/imgBtnPesquisa"
+            android:id="@+id/imgBtnPesquisar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
+            android:layout_marginStart="80dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/PesquisaIcon"
             android:minHeight="48dp"
@@ -253,7 +267,7 @@
             android:id="@+id/imgBtnCarrinho"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="280dp"
+            android:layout_marginStart="280dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/CarrinhoIcon"
             android:minHeight="48dp"
@@ -263,11 +277,12 @@
             android:id="@+id/imgBtnHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="180dp"
+            android:layout_marginStart="180dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/HomeIcon"
             android:minHeight="48dp"
-            app:srcCompat="@drawable/iconhomeon" />
+            app:srcCompat="@drawable/iconhomeon"
+            tools:ignore="ImageContrastCheck" />
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

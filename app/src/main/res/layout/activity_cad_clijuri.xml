@@ -74,7 +74,7 @@
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
             <TextView
-                android:id="@+id/txtCPNJ"
+                android:id="@+id/txtCNPJ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -93,7 +93,7 @@
                 android:autofillHints="" />
 
             <TextView
-                android:id="@+id/txtTelEmpr"
+                android:id="@+id/txtTelefone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="180dp"
@@ -101,7 +101,7 @@
                 android:text="@string/TelefoneEmpresa" />
 
             <EditText
-                android:id="@+id/editTextPhoneCel"
+                android:id="@+id/editTextPhoneTelefone"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="180dp"
@@ -143,7 +143,7 @@
                 android:text="@string/Celular" />
 
             <EditText
-                android:id="@+id/editTextNumberCel"
+                android:id="@+id/editTextPhoneCel"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="180dp"
@@ -163,7 +163,7 @@
                 android:text="@string/NumEnd" />
 
             <EditText
-                android:id="@+id/editTextNumberNumEndJuri"
+                android:id="@+id/editTextNumberNumEnd"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
@@ -176,14 +176,14 @@
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
             <TextView
-                android:id="@+id/txtComplementoJuri"
+                android:id="@+id/txtComplemento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="@string/Complemento" />
 
             <EditText
-                android:id="@+id/editTextPersonComplemento"
+                android:id="@+id/editTextPersonNameComp"
                 android:layout_width="340dp"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
