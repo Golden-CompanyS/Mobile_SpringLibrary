@@ -14,11 +14,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         public DatabaseHelper(Context context){
             super(context, name, null, version);
         }
+        public static final String COLUMN_ID_CLI = "UserCode";
 
         @Override
         public void onCreate(SQLiteDatabase db){
             db.execSQL("CREATE TABLE Cliente(" +
-                    "UserCode INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    COLUMN_ID_CLI +
+                    " INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "UserName TEXT NOT NULL," +
                     "UserEmail TEXT NOT NULL," +
                     "UserPassword TEXT NOT NULL,"+
@@ -95,7 +97,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValuesCli.put("UserPassword", cliente.getUserPassword());
         contentValuesCli.put("UserImage", cliente.getUserImage());
         db.update("Cliente", contentValuesCli,
-                "UserCode" + " = ? ", new String[] { Integer.toString(cliente.getUserCode()) } );
+                COLUMN_ID_CLI + " = ? ", new String[] { Integer.toString(cliente.getUserCode()) } );
         return true;
     }
     // Operações Login
@@ -108,11 +110,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public int getCliIdSession(String email, String senha){
 
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("SELECT c." + "UserCode" + " FROM " + "Cliente" + " AS c"
+        Cursor cursor = db.rawQuery("SELECT c." + COLUMN_ID_CLI + " FROM " + "Cliente" + " AS c"
                 + " WHERE c." + "UserEmail" + " = '" + email + "' AND c." + "UserPassword" + " = '" + senha + "'", null);
         cursor.moveToFirst();
-        int cli_id_session = cursor.getInt(cursor.getColumnIndex(DatabaseHelper.));
-
+        int cli_id_session = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_ID_CLI));
         if (cursor.getCount() > 0){
             return cli_id_session;
         } else {

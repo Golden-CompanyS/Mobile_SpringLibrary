@@ -38,7 +38,6 @@ public class loginActivity extends AppCompatActivity implements LoaderManager.Lo
     private EditText edtTxtEmail, edtTxtPassword;
     private TextView txtcadastro;
     private Button btnLogin;
-    private CliDAO cliDAO;
     //Acesso Banco de dados
     private DatabaseHelper mydb ;
     int id_to_update = 0;

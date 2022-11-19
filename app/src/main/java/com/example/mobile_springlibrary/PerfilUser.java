@@ -48,14 +48,14 @@ public class PerfilUser extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
-        btnSave = (Button) findViewById(R.id.btnSave);
-        imgUser = (ImageView) findViewById(R.id.imgUser);
-        edtNomCli = (EditText)findViewById(R.id.edtTxtNomCli);
-        edtEmail = (EditText) findViewById(R.id.edtTxtEmailCli);
-        edtCel = (EditText) findViewById(R.id.edtTxtCelCli);
-        edtCEP = (EditText) findViewById(R.id.edtCEPCli);
-        edtSenha = (EditText) findViewById(R.id.edtSenhaCli);
-        edtCPF = (EditText) findViewById(R.id.edtCPFCli);
+        btnSave = (Button) findViewById(R.id.btnSalvar);
+        imgUser = (ImageView) findViewById(R.id.imgPerfil);
+        edtNomCli = (EditText)findViewById(R.id.editTextPersonNomePerfil);
+        edtEmail = (EditText) findViewById(R.id.editTextEmailPerfil);
+        edtCel = (EditText) findViewById(R.id.editTextPhoneCelularPerfil);
+        edtCEP = (EditText) findViewById(R.id.editTextNumberCEPPerfil);
+        edtSenha = (EditText) findViewById(R.id.editTextNumberSenha);
+        edtCPF = (EditText) findViewById(R.id.editTextNumberCPFPerfil);
 
 
         // Listener do botão de localização.
@@ -70,9 +70,25 @@ public class PerfilUser extends AppCompatActivity {
                 viewGallery();
             }
         });
-
+        // Luminosidade - Dark Mode
         SharedPreferences preferencias = getSharedPreferences(ARQUIVO_PREFERENCIAS, MODE_PRIVATE);
         SharedPreferences.Editor editor = preferencias.edit();
+
+
+        // Banco de Dados
+        id_to_update = preferencias.getInt("cliIdSession", 0);
+
+        if (id_to_update == 0){
+            Intent intent = new Intent(this, loginActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
+
+        mydb = new DatabaseHelper(this);
+
+        id_to_update = preferencias.getInt("cliIdSession", 0);
+
 
         //inicializa as preferências do usuário
         mPreferences = getSharedPreferences(PREFERENCIAS_NAME, MODE_PRIVATE);
@@ -166,12 +182,9 @@ public class PerfilUser extends AppCompatActivity {
                 mydb.updateCli(id_to_update, emailNovo, senhaNova);
 
                 Toast.makeText(getApplicationContext(), "Senha alterada com sucesso!", Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(getApplicationContext(), "Senha atual incorreta", Toast.LENGTH_LONG).show();
-            }
         }
 
-    }
-
-
 }
+
+
+
