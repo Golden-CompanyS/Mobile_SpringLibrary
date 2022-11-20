@@ -204,6 +204,7 @@
         android:layout_height="60dp"
         android:layout_marginBottom="10dp"
         android:backgroundTint="#F448B0"
+        android:onClick="altInfos"
         android:text="@string/Salvar"
         android:textAllCaps="false"
         app:layout_constraintBottom_toTopOf="@+id/cardViewFooter"

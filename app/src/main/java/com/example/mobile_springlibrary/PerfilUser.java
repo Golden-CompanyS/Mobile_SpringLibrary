@@ -100,7 +100,6 @@ public class PerfilUser extends AppCompatActivity {
             mImageUser = savedInstanceState.getBoolean(
                     IMAGE_KEY);
         }
-
         mydb = new DatabaseHelper(this);
         // Banco de Dados
         id_to_update = preferencias.getInt("cliIdSession", 0);
@@ -174,7 +173,6 @@ public class PerfilUser extends AppCompatActivity {
     //BANCO DE DADOS - UPDATE DE CLIENTE
     // Banco de Dados
     public void altInfos(View view){
-        id_to_update = preferencias.getInt("cliIdSession", 0);
         String emailNovo = edtEmail.getText().toString();
         String senhaNova = edtSenha.getText().toString();
 

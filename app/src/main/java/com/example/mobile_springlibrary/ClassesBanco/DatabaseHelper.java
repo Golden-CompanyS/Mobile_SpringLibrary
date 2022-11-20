@@ -87,17 +87,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public boolean updateCli(Cliente cliente) {
+    public boolean updateCli(int id, String email, String senha) {
         SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("UserEmail", email);
+        contentValues.put("UserPassword", senha);
 
-        // update na tbFuncionario
-        ContentValues contentValuesCli = new ContentValues();
-        contentValuesCli.put("UserName", cliente.getUserName());
-        contentValuesCli.put("UserEmail", cliente.getUserEmail());
-        contentValuesCli.put("UserPassword", cliente.getUserPassword());
-        contentValuesCli.put("UserImage", cliente.getUserImage());
-        db.update("Cliente", contentValuesCli,
-                COLUMN_ID_CLI + " = ? ", new String[] { Integer.toString(cliente.getUserCode()) } );
+        db.update("Cliente", contentValues,
+                COLUMN_ID_CLI + " = ? ", new String[] { Integer.toString(id) } );
         return true;
     }
     // Operações Login
