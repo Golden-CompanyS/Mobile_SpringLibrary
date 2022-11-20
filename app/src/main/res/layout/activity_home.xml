@@ -115,33 +115,9 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <ImageButton
-                        android:id="@+id/imgBtnLivroHome1"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="#00FFFFFF"
-                        android:contentDescription="@string/Livro1Desc"
-                        android:scaleType="centerInside"
-                        app:srcCompat="@drawable/livro1" />
-
-                    <ImageButton
-                        android:id="@+id/imgBtnLivroHome2"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="#00FFFFFF"
-                        android:contentDescription="@string/Livro2Desc"
-                        android:scaleType="centerInside"
-                        app:srcCompat="@drawable/livro2" />
-
-                    <ImageButton
-                        android:id="@+id/imgBtnLivroHome3"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="#00FFFFFF"
-                        android:contentDescription="@string/Livro3Desc"
-                        android:scaleType="centerInside"
-                        app:srcCompat="@drawable/livro3" />
-
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
                 </LinearLayout>
             </HorizontalScrollView>
 
@@ -166,33 +142,9 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <ImageButton
-                        android:id="@+id/imgBtnLivroHome4"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="#00FFFFFF"
-                        android:contentDescription="@string/Livro4Desc"
-                        android:scaleType="centerInside"
-                        app:srcCompat="@drawable/livropromo1" />
-
-                    <ImageButton
-                        android:id="@+id/imgBtnLivroHome5"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="#00FFFFFF"
-                        android:contentDescription="@string/Livro5Desc"
-                        android:scaleType="centerInside"
-                        app:srcCompat="@drawable/livropromo2" />
-
-                    <ImageButton
-                        android:id="@+id/imgBtnLivroHome6"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="#00FFFFFF"
-                        android:contentDescription="@string/Livro6Desc"
-                        android:scaleType="centerInside"
-                        app:srcCompat="@drawable/livropromo3" />
-
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
                 </LinearLayout>
             </HorizontalScrollView>
 
@@ -218,32 +170,9 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <ImageButton
-                        android:id="@+id/imgBtnLivroHome7"
-                        android:layout_width="150dp"
-                        android:layout_height="200dp"
-                        android:backgroundTint="#00FFFFFF"
-                        android:contentDescription="@string/Souvenir1Desc"
-                        android:scaleType="centerInside"
-                        app:srcCompat="@drawable/souvenir1" />
-
-                    <ImageButton
-                        android:id="@+id/imgBtnLivroHome8"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="#00FFFFFF"
-                        android:contentDescription="@string/Souvenir2Desc"
-                        android:scaleType="centerInside"
-                        app:srcCompat="@drawable/souvenir2" />
-
-                    <ImageButton
-                        android:id="@+id/imgBtnLivroHome9"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="#00FFFFFF"
-                        android:contentDescription="@string/Souvenir3Desc"
-                        android:scaleType="centerInside"
-                        app:srcCompat="@drawable/souvenir3" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
                 </LinearLayout>
             </HorizontalScrollView>
 

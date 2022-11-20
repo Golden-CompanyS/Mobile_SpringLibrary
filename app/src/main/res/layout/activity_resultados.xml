@@ -123,4 +123,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/livroevelynhugo1" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="409dp"
+        android:layout_height="269dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="412dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

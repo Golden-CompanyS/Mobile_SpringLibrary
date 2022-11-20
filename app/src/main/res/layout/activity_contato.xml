@@ -18,17 +18,19 @@
             android:id="@+id/imgBtnPesquisa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
+            android:layout_marginStart="80dp"
             android:backgroundTint="#00FFFFFF"
             android:minHeight="48dp"
-            app:srcCompat="@drawable/iconsearchoff" />
+            app:srcCompat="@drawable/iconsearchoff"
+            android:contentDescription="TODO" />
 
         <ImageButton
             android:id="@+id/imgBtnCarrinho"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="280dp"
+            android:layout_marginStart="280dp"
             android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/CarrinhoIcon"
             android:minHeight="48dp"
             app:srcCompat="@drawable/iconcarrinhooff" />
 
@@ -36,10 +38,12 @@
             android:id="@+id/imgBtnHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="180dp"
+            android:layout_marginStart="180dp"
             android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/HomeIcon"
             android:minHeight="48dp"
-            app:srcCompat="@drawable/iconhomeon" />
+            app:srcCompat="@drawable/iconhomeon"
+            tools:ignore="ImageContrastCheck" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -56,20 +60,23 @@
             android:id="@+id/imgLogomarca"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="140dp"
-            app:srcCompat="@drawable/logomarca" />
+            android:layout_marginStart="140dp"
+            app:srcCompat="@drawable/logomarca"
+            tools:ignore="ImageContrastCheck"
+            android:contentDescription="TODO" />
 
         <ImageButton
             android:id="@+id/imgBtnPerfil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="360dp"
+            android:layout_marginStart="360dp"
             android:layout_marginTop="1dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/Login"
             android:minHeight="48dp"
             android:scaleType="centerInside"
-            app:srcCompat="@drawable/iconuser" />
+            app:srcCompat="@drawable/iconuser"
+            tools:ignore="ImageContrastCheck" />
     </androidx.cardview.widget.CardView>
 
     <TextView
@@ -78,7 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
         android:text="@string/Titulo"
-        android:textSize="28dp"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,73 +95,97 @@
         android:id="@+id/imageView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/imagemloja"
-        tools:layout_editor_absoluteX="213dp"
-        tools:layout_editor_absoluteY="182dp" />
+        android:layout_marginStart="150dp"
+        android:layout_marginBottom="250dp"
+        android:contentDescription="@string/Rua"
+        app:layout_constraintBottom_toTopOf="@+id/cardViewFooter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewHeader"
+        app:srcCompat="@drawable/imagemloja" />
 
     <TextView
         android:id="@+id/textView31"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="5dp"
         android:text="@string/Rua"
-        tools:layout_editor_absoluteX="82dp"
-        tools:layout_editor_absoluteY="331dp" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView32"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView32"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="155dp"
+        android:layout_marginBottom="5dp"
         android:text="@string/Vila"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="80dp" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView33"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView33"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/SaoPaulo"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="384dp" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView34"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView34"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="205dp"
+        android:layout_marginBottom="5dp"
         android:text="@string/Horarios"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="418dp" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView35"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView35"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="5dp"
         android:text="@string/SegSex"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="441dp" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView36"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView36"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/SabDom"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="467dp" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView37"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView37"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="150dp"
         android:text="@string/TelContato"
-        tools:layout_editor_absoluteX="82dp"
-        tools:layout_editor_absoluteY="505dp" />
-
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/cardViewFooter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="585dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
