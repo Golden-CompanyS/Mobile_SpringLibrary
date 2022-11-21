@@ -6,6 +6,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.appmobilespringlibrary.Cliente;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
 
@@ -116,5 +118,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         } else {
             return 0;
         }
+    }
+    public Cliente selectCliByEmail(String email){
+        Cliente user = new Cliente();
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.query("Cliente",
+                new String[]{
+                        "UserCode, " +
+                                "UserName, " +
+                                "UserEmail, " +
+                                "UserPassword," +
+                                "UserImage"
+                },
+                "UserEmail = ?",
+                new String[]{email},
+                null,
+                null,
+                null,
+                String.valueOf(1));
+
+        while (cursor.moveToNext()){
+            user.setUserCode(Integer.parseInt(cursor.getString(0)));
+            user.setUserName(cursor.getString(1));
+            user.setUserEmail(cursor.getString(2));
+            user.setUserPassword(cursor.getString(3));
+            user.setUserImage(cursor.getBlob(4));
+        }
+
+        return user;
     }
 }

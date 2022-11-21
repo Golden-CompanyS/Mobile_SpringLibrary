@@ -1,4 +1,4 @@
-package com.example.mobile_springlibrary;
+package com.example.appmobilespringlibrary;
 
 import android.content.Context;
 

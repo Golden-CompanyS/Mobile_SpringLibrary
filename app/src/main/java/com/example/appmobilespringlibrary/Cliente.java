@@ -1,4 +1,4 @@
-package com.example.mobile_springlibrary.ClassesBanco;
+package com.example.appmobilespringlibrary;
 
 import java.io.Serializable;
 

@@ -17,52 +17,40 @@
         android:theme="@style/Theme.AppMobileSpringLibrary"
         tools:targetApi="31">
         <activity
-            android:name=".Compra"
+            android:name="com.example.appmobilespringlibrary.Compra"
             android:exported="false"/>
         <activity
-            android:name=".Credito"
+            android:name="com.example.appmobilespringlibrary.Credito"
             android:exported="false"/>
         <activity
-            android:name=".Pagamento"
+            android:name="com.example.appmobilespringlibrary.Pagamento"
             android:exported="false"/>
         <activity
-            android:name=".Dados"
+            android:name="com.example.appmobilespringlibrary.Dados"
             android:exported="false"/>
         <activity
-            android:name=".Carrinho"
+            android:name="com.example.appmobilespringlibrary.Carrinho"
             android:exported="false"/>
         <activity
-            android:name=".LivroEspecifico"
+            android:name="com.example.appmobilespringlibrary.Livro"
             android:exported="false"/>
         <activity
-            android:name=".Livros"
+            android:name="com.example.appmobilespringlibrary.Livros"
             android:exported="false"/>
         <activity
-            android:name=".Resultado"
+            android:name="com.example.appmobilespringlibrary.Resultado"
             android:exported="false"/>
         <activity
-            android:name=".Pesquisa"
+            android:name="com.example.appmobilespringlibrary.Pesquisa"
             android:exported="false"/>
         <activity
-            android:name=".Perfil"
+            android:name="com.example.appmobilespringlibrary.PerfilUser"
             android:exported="false"/>
         <activity
-            android:name=".Home"
+            android:name="com.example.appmobilespringlibrary.HomeActivity"
             android:exported="false"/>
         <activity
-            android:name=".Login"
-            android:exported="false"/>
-        <activity
-            android:name=".CadCliJuri"
-            android:exported="false"/>
-        <activity
-            android:name=".CadCliFis"
-            android:exported="false"/>
-        <activity
-            android:name=".Cadastro"
-            android:exported="false"/>
-        <activity
-            android:name=".SplashClass"
+            android:name="com.example.appmobilespringlibrary.loginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -70,7 +58,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <meta-data />
+        <meta-data android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

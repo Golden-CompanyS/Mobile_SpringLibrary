@@ -6,6 +6,8 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.appmobilespringlibrary.R;
+
 public class SplashClass extends AppCompatActivity {
 
     @Override
@@ -16,7 +18,7 @@ public class SplashClass extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(getBaseContext(), Login.class));
+                startActivity(new Intent(getBaseContext(), loginActivity.class));
                 finish();
             }
         }, 4000);

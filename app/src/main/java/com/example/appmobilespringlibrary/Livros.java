@@ -1,6 +1,5 @@
 package com.example.appmobilespringlibrary;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -22,7 +21,7 @@ public class Livros extends AppCompatActivity {
         recycleViewRomance.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getBaseContext(), LivroEspecifico.class));
+                startActivity(new Intent(getBaseContext(), Livro.class));
                 finish();
             }
         });

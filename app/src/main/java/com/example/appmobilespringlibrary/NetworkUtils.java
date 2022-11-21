@@ -1,6 +1,4 @@
-package com.example.mobile_springlibrary;
-
-import static androidx.core.content.PackageManagerCompat.LOG_TAG;
+package com.example.appmobilespringlibrary;
 
 import android.util.Log;
 
