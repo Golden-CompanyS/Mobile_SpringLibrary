@@ -17,19 +17,60 @@
         android:theme="@style/Theme.AppMobileSpringLibrary"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.AppMobileSpringLibrary.NoActionBar">
+            android:name=".Compra"
+            android:exported="false"/>
+        <activity
+            android:name=".Credito"
+            android:exported="false"/>
+        <activity
+            android:name=".Pagamento"
+            android:exported="false"/>
+        <activity
+            android:name=".Dados"
+            android:exported="false"/>
+        <activity
+            android:name=".Carrinho"
+            android:exported="false"/>
+        <activity
+            android:name=".LivroEspecifico"
+            android:exported="false"/>
+        <activity
+            android:name=".Livros"
+            android:exported="false"/>
+        <activity
+            android:name=".Resultado"
+            android:exported="false"/>
+        <activity
+            android:name=".Pesquisa"
+            android:exported="false"/>
+        <activity
+            android:name=".Perfil"
+            android:exported="false"/>
+        <activity
+            android:name=".Home"
+            android:exported="false"/>
+        <activity
+            android:name=".Login"
+            android:exported="false"/>
+        <activity
+            android:name=".CadCliJuri"
+            android:exported="false"/>
+        <activity
+            android:name=".CadCliFis"
+            android:exported="false"/>
+        <activity
+            android:name=".Cadastro"
+            android:exported="false"/>
+        <activity
+            android:name=".SplashClass"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+        <meta-data />
     </application>
 
 </manifest>

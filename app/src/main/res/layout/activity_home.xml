@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".Home">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewHeader"
@@ -25,7 +26,7 @@
             android:contentDescription="TODO" />
 
         <ImageButton
-            android:id="@+id/imageBtnConta"
+            android:id="@+id/imgBtnConta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="360dp"
@@ -105,6 +106,7 @@
                 android:textSize="24sp" />
 
             <HorizontalScrollView
+                android:id="@+id/ScrollViewLivros"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -116,6 +118,7 @@
                     android:orientation="horizontal">
 
                     <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyleViewLivros"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
                 </LinearLayout>
@@ -132,6 +135,7 @@
                 android:textSize="24sp" />
 
             <HorizontalScrollView
+                android:id="@+id/ScrollViewPromos"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
@@ -143,6 +147,7 @@
                     android:orientation="horizontal">
 
                     <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycleViewPromos"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
                 </LinearLayout>
@@ -159,6 +164,7 @@
                 android:textSize="24sp" />
 
             <HorizontalScrollView
+                android:id="@+id/ScrollViewSouvenires"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
@@ -171,6 +177,7 @@
                     android:orientation="horizontal">
 
                     <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycleViewSouvenires"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
                 </LinearLayout>
