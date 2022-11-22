@@ -20,6 +20,7 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtInputConfSenha"
             android:layout_width="300dp"
             android:layout_height="match_parent"
             android:backgroundTint="#00FFFFFF"
@@ -100,6 +101,7 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtInputTextSenha"
             android:layout_width="300dp"
             android:layout_height="match_parent"
             android:backgroundTint="#00FFFFFF"

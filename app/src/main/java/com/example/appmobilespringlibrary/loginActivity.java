@@ -1,11 +1,18 @@
 package com.example.appmobilespringlibrary;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -13,12 +20,17 @@ import android.widget.Toast;
 
 import com.example.mobile_springlibrary.ClassesBanco.DatabaseHelper;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.gson.Gson;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class loginActivity extends AppCompatActivity /*implements LoaderManager.LoaderCallbacks<String> */{
+public class loginActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
 
     private static final String FILE_NAME = "usuarioLogado.json";
     private EditText edtTxtEmail;
@@ -38,19 +50,19 @@ public class loginActivity extends AppCompatActivity /*implements LoaderManager.
 
         edtTxtEmail = findViewById(R.id.editTextEmailLogin);
         edtTxtPassword = findViewById(R.id.TextInputLayoutSenhaLogin);
-        //txtcadastro = findViewById(R.id.txtCadastro);
+        txtcadastro = findViewById(R.id.txtCadastro);
         btnLogin = findViewById(R.id.btnLogin);
 
         mydb = new DatabaseHelper(this);
-        //if(getSupportLoaderManager().getLoader(0) != null) {
-          //  getSupportLoaderManager().initLoader(0, null, this);
-        //}
+        if(getSupportLoaderManager().getLoader(0) != null) {
+            getSupportLoaderManager().initLoader(0, null, this);
+        }
 
 
         // ON CLICK DO BOTÃO DE LOGIN - LIGAR A VERIFICAÇÃO COM OS DADOS DA API
         btnLogin.setOnClickListener(v -> {
-           /* String emailLogin = String.valueOf(edtTxtEmail.getText());
-            String passwordLogin = String.valueOf(edtTxtPassword.getText());
+            String emailLogin = String.valueOf(edtTxtEmail.getText());
+            String passwordLogin = String.valueOf(edtTxtPassword.getEditText().toString());
 
             checkField();
 
@@ -62,27 +74,28 @@ public class loginActivity extends AppCompatActivity /*implements LoaderManager.
                 new Cliente(emailLogin, passwordLogin);
                     Gson gson = new Gson();
                 String json = gson.toJson(cli);
-                printUser(json);*/
+                printUser(json);
 
                 Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                 startActivity(intent);
-            //}
-            //else{
-            //    Toast.makeText(loginActivity.this, "Usuário ou senha não correspondem", Toast.LENGTH_SHORT).show();
-           // }
+            }
+            else{
+                Toast.makeText(loginActivity.this, "Usuário ou senha não correspondem", Toast.LENGTH_SHORT).show();
+            }
         });
 
-        //txtcadastro.setOnClickListener(v -> {
-        //    Intent intent = new Intent(this, cadastroActivity.class);
-        //    startActivity(intent);
-        //});
+        txtcadastro.setOnClickListener(v -> {
+                    Intent intent = new Intent(this, cadastroActivity.class);
+                    startActivity(intent);
+                    //});
 
-        //ADICIONAR ONCLICK DO BOTÃO DE CADASTRAR
+                    //ADICIONAR ONCLICK DO BOTÃO DE CADASTRAR
 
-        //SUPORTE DO LOADER MANAGER
-       // if (getSupportLoaderManager().getLoader(0) != null) {
-          //  getSupportLoaderManager().initLoader(0, null, this);
-        //}
+                    //SUPORTE DO LOADER MANAGER
+                    if (getSupportLoaderManager().getLoader(0) != null) {
+                        getSupportLoaderManager().initLoader(0, null, this);
+                    }
+                });
     }
 
     // VALIDAR CAMPOS
@@ -101,13 +114,13 @@ public class loginActivity extends AppCompatActivity /*implements LoaderManager.
         }
     }
 
-    private boolean nullField (String field){
+    private boolean nullField(String field){
         boolean verification = (TextUtils.isEmpty(field) || field.trim().isEmpty());
         return verification;
     }
 
     //Verificação de dados com a API
-   /* private View.OnClickListener onClickSearch = new View.OnClickListener() {
+   private View.OnClickListener onClickSearch = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
 
@@ -122,7 +135,7 @@ public class loginActivity extends AppCompatActivity /*implements LoaderManager.
 
             // resgata o texto de busca
             emailUser = edtTxtEmail.getText().toString();
-            senhaUser = edtTxtPassword.getText().toString();
+            senhaUser = edtTxtPassword.getEditText().toString();
 
             // Se a rede estiver disponivel e o campo de busca não estiver vazio, iniciar o Loader CarregaInvocador
             if (networkInfo != null && networkInfo.isConnected()
@@ -144,12 +157,18 @@ public class loginActivity extends AppCompatActivity /*implements LoaderManager.
             }
 
             //Consultar o Cliente
-            CliDAO cliDAO = new CliDAO(loginActivity.this);
+            if(mydb.checkLogin(emailUser, senhaUser)){
+                Cliente cliente = mydb.selectCliByEmail(emailUser);
 
-            try{
-                cliDAO.selectUserByEmail(emailUser);
-            } catch (Exception e) {
-                e.printStackTrace();
+                Gson gson = new Gson();
+                String json = gson.toJson(cliente);
+                printUser(json);
+
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                startActivity(intent);
+            }
+            else{
+                Toast.makeText(loginActivity.this, "Usuário ou senha não correspondem", Toast.LENGTH_SHORT).show();
             }
 
         }
@@ -166,7 +185,7 @@ public class loginActivity extends AppCompatActivity /*implements LoaderManager.
             emailUser = args.getString("emailUser");
         }
         return new LoadCli(this, emailUser);
-    }*/
+    }
 
     // SAVED INSTANCE
     @Override
@@ -200,7 +219,7 @@ public class loginActivity extends AppCompatActivity /*implements LoaderManager.
 
 
 
-   /* @Override
+    @Override
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
         String nomCli = null;
         String emailCli = null;
@@ -230,5 +249,5 @@ public class loginActivity extends AppCompatActivity /*implements LoaderManager.
     @Override
     public void onLoaderReset(@NonNull Loader<String> loader) {
 
-    }*/
+    }
 }
