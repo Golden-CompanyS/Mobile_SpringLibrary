@@ -67,8 +67,30 @@ public class loginActivity extends AppCompatActivity implements LoaderManager.Lo
             checkField();
 
             mydb = new DatabaseHelper(getApplicationContext());
+            // Verifica o status da conexão de rede
+            ConnectivityManager connMgr = (ConnectivityManager)
+                    getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo networkInfo = null;
+            if (connMgr != null) {
+                networkInfo = connMgr.getActiveNetworkInfo();
+            }
+            // Se a rede estiver disponivel e o campo de busca não estiver vazio, iniciar o Loader CarregaInvocador
+            if (networkInfo != null && networkInfo.isConnected()
+                    && edtTxtEmail.length() != 0 ) {
 
-            if(mydb.checkLogin(emailLogin, passwordLogin)){
+                Bundle queryBundle = new Bundle();
+                queryBundle.putString("email", emailLogin);
+                getSupportLoaderManager().restartLoader(0, queryBundle, this);
+            }
+            // atualiza a textview para informar que não há conexão ou termo de busca
+            else {
+                if (edtTxtEmail.length() == 0) {
+                    Toast.makeText(getApplicationContext(), "⚠  Informe seu email", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "⚠  Verifique sua conexão!", Toast.LENGTH_SHORT).show();
+                }
+            }
+            /*if(mydb.checkLogin(emailLogin, passwordLogin)){
                 Cliente cli = mydb.selectCliByEmail(emailLogin);
                 //CONECTAR COM A API E ARRUMAR A INSERÇÃO DO CLIENTE NO BANCO COM O RESTANTE DAS INFORMAÇÕES
                 new Cliente(emailLogin, passwordLogin);
@@ -81,7 +103,7 @@ public class loginActivity extends AppCompatActivity implements LoaderManager.Lo
             }
             else{
                 Toast.makeText(loginActivity.this, "Usuário ou senha não correspondem", Toast.LENGTH_SHORT).show();
-            }
+            }*/
         });
 
         txtcadastro.setOnClickListener(v -> {

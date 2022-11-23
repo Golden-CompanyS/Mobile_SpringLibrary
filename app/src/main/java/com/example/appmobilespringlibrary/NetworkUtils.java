@@ -1,16 +1,22 @@
 package com.example.appmobilespringlibrary;
 
+import android.net.Uri;
 import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class NetworkUtils {
     //Adicionar a URL para a API e concatenar com a parte da URL de busca (getCliByEmail)
-    private static final String URL_API = "";
+    private static final String URL_API = "https://foundorangeleaf83.conveyor.cloud/";
     private static HttpURLConnection connec;
     private static BufferedReader reader;
     private static String springLib;
@@ -71,10 +77,52 @@ public class NetworkUtils {
         return BookJSONString;
     }
 
-    static String searchCli(String queryCli) {
+    static String searchCli(String queryCli) throws IOException {
+        HttpURLConnection urlConnection = null;
+        BufferedReader reader = null;
         String cliJSONString = null;
 
-        try {
+    try {
+        // Construção da URI de Busca
+        Uri builtURI = Uri.parse(URL_API).buildUpon()
+                .appendEncodedPath("api")
+                .appendEncodedPath("SpringLibrary")
+                .appendQueryParameter("email", queryCli)
+                .build();
+        // Converte a URI para a URL.
+        URL requestURL = new URL(builtURI.toString());
+        // Abre a conexão de rede
+        urlConnection = (HttpURLConnection) requestURL.openConnection();
+        urlConnection.setRequestMethod("GET");
+        urlConnection.connect();
+        // Busca o InputStream.
+        InputStream inputStream = urlConnection.getInputStream();
+        // Cria o buffer para o input stream
+        reader = new BufferedReader(new InputStreamReader(inputStream));
+        // Usa o StringBuilder para receber a resposta.
+        StringBuilder builder = new StringBuilder();
+        String linha;
+        while ((linha = reader.readLine()) != null) {
+            // Adiciona a linha a string.
+            builder.append(linha);
+            builder.append("\n");
+        }
+        if (builder.length() == 0) {
+            // se o stream estiver vazio não faz nada
+            return null;
+        }
+        cliJSONString = builder.toString();
+        // fecha a conexão e o buffer.
+        if (urlConnection != null) {
+            urlConnection.disconnect();
+        }
+        if (reader != null) {
+            try {
+                reader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
             cliJSONString = searchCli(queryCli);
             if (cliJSONString == null) {
                 return null;
@@ -86,21 +134,12 @@ public class NetworkUtils {
             String nomCli = null;
             String emailCli = null;
             String senhaCli = null;
-            String imgLiv = null;
-            String numPagLiv = null;
-            String anoLiv = null;
-            String numEdicaoLiv = null;
 
             try {
                 IdCli = cliJSONObject.getString("IdCli");
                 nomCli = cliJSONObject.getString("nomCli");
                 emailCli = cliJSONObject.getString("emailCli");
                 senhaCli = cliJSONObject.getString("senhaCli");
-
-                // imgCli = imgLiv.get("product_type");
-                numPagLiv = cliJSONObject.getString("numPagCli");
-                anoLiv = cliJSONObject.getString("anoLiv");
-                numEdicaoLiv = cliJSONObject.getString("numEdicaoLiv");
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -111,10 +150,6 @@ public class NetworkUtils {
                 ClienteJSONObject.put("nomCli", nomCli);
                 ClienteJSONObject.put("emailCli", emailCli);
                 ClienteJSONObject.put("senhaCli", senhaCli);
-                ClienteJSONObject.put("numPagLiv", numPagLiv);
-                ClienteJSONObject.put("anoLiv", anoLiv);
-                ClienteJSONObject.put("numEdicaoLiv", numEdicaoLiv);
-
 
                 cliJSONString = cliJSONObject.toString();
             } catch (JSONException e) {
@@ -126,6 +161,7 @@ public class NetworkUtils {
         Log.d(LOG_TAG, cliJSONString);
         return cliJSONString;
     }
+
 
     //MÉTODO DE INSERIR NA API O REGISTRO DE CLIENTE - UTILIZAR NA TELA DE CADASTRO PARA FÍSICO E JURÍDICO
 

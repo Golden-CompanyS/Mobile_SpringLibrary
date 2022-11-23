@@ -5,6 +5,8 @@ import android.content.Context;
 import androidx.annotation.Nullable;
 import androidx.loader.content.AsyncTaskLoader;
 
+import java.io.IOException;
+
 public class LoadCli extends AsyncTaskLoader<String> {
     private String mQueryString;
     LoadCli(Context context, String queryString) {
@@ -22,6 +24,11 @@ public class LoadCli extends AsyncTaskLoader<String> {
     @Nullable
     @Override
     public String loadInBackground() {
-        return NetworkUtils.searchCli(mQueryString);
+        try {
+            return NetworkUtils.searchCli(mQueryString);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
