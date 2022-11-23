@@ -3,13 +3,13 @@ package com.example.appmobilespringlibrary;
 import java.io.Serializable;
 
 public class Cliente implements Serializable {
-    private int  UserCode;
-    private String UserName, UserEmail, UserPassword;
+   // private int  UserCode;
+    private String UserCode, UserName, UserEmail, UserPassword;
     private byte[] UserImage;
 
     public Cliente(){ }
 
-    public Cliente(int userCode, String userName, String userEmail, String userPassword){
+    public Cliente(String userCode, String userName, String userEmail, String userPassword){
         UserCode = userCode;
         UserName = userName;
         UserEmail = userEmail;
@@ -21,11 +21,11 @@ public class Cliente implements Serializable {
         UserPassword = userPassword;
     }
 
-    public int getUserCode() {
+    public String getUserCode() {
         return UserCode;
     }
 
-    public void setUserCode(int userCode) {
+    public void setUserCode(String userCode) {
         UserCode = userCode;
     }
 

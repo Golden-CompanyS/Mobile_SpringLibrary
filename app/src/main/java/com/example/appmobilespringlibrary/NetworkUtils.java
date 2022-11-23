@@ -16,7 +16,7 @@ import java.net.URL;
 
 public class NetworkUtils {
     //Adicionar a URL para a API e concatenar com a parte da URL de busca (getCliByEmail)
-    private static final String URL_API = "https://foundorangeleaf83.conveyor.cloud/";
+    private static final String URL_API = "https://widegoldlamp96.conveyor.cloud/";
     private static HttpURLConnection connec;
     private static BufferedReader reader;
     private static String springLib;

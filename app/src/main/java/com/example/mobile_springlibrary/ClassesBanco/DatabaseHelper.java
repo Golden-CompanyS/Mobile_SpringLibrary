@@ -138,7 +138,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 String.valueOf(1));
 
         while (cursor.moveToNext()){
-            user.setUserCode(Integer.parseInt(cursor.getString(0)));
+            user.setUserCode(cursor.getString(0));
             user.setUserName(cursor.getString(1));
             user.setUserEmail(cursor.getString(2));
             user.setUserPassword(cursor.getString(3));

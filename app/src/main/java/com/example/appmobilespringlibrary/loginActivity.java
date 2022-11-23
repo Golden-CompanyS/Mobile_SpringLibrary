@@ -30,7 +30,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class loginActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
+public class loginActivity extends AppCompatActivity /*implements LoaderManager.LoaderCallbacks<String> */{
 
     private static final String FILE_NAME = "usuarioLogado.json";
     private EditText edtTxtEmail;
@@ -54,9 +54,6 @@ public class loginActivity extends AppCompatActivity implements LoaderManager.Lo
         btnLogin = findViewById(R.id.btnLogin);
 
         mydb = new DatabaseHelper(this);
-        if(getSupportLoaderManager().getLoader(0) != null) {
-            getSupportLoaderManager().initLoader(0, null, this);
-        }
 
 
         // ON CLICK DO BOTÃO DE LOGIN - LIGAR A VERIFICAÇÃO COM OS DADOS DA API
@@ -67,7 +64,7 @@ public class loginActivity extends AppCompatActivity implements LoaderManager.Lo
             checkField();
 
             mydb = new DatabaseHelper(getApplicationContext());
-            // Verifica o status da conexão de rede
+            /*/ Verifica o status da conexão de rede
             ConnectivityManager connMgr = (ConnectivityManager)
                     getSystemService(Context.CONNECTIVITY_SERVICE);
             NetworkInfo networkInfo = null;
@@ -89,8 +86,8 @@ public class loginActivity extends AppCompatActivity implements LoaderManager.Lo
                 } else {
                     Toast.makeText(getApplicationContext(), "⚠  Verifique sua conexão!", Toast.LENGTH_SHORT).show();
                 }
-            }
-            /*if(mydb.checkLogin(emailLogin, passwordLogin)){
+            }*/
+            if(mydb.checkLogin(emailLogin, passwordLogin)){
                 Cliente cli = mydb.selectCliByEmail(emailLogin);
                 //CONECTAR COM A API E ARRUMAR A INSERÇÃO DO CLIENTE NO BANCO COM O RESTANTE DAS INFORMAÇÕES
                 new Cliente(emailLogin, passwordLogin);
@@ -103,21 +100,13 @@ public class loginActivity extends AppCompatActivity implements LoaderManager.Lo
             }
             else{
                 Toast.makeText(loginActivity.this, "Usuário ou senha não correspondem", Toast.LENGTH_SHORT).show();
-            }*/
+            }
         });
 
         txtcadastro.setOnClickListener(v -> {
-                    Intent intent = new Intent(this, cadastroActivity.class);
-                    startActivity(intent);
-                    //});
-
-                    //ADICIONAR ONCLICK DO BOTÃO DE CADASTRAR
-
-                    //SUPORTE DO LOADER MANAGER
-                    if (getSupportLoaderManager().getLoader(0) != null) {
-                        getSupportLoaderManager().initLoader(0, null, this);
-                    }
-                });
+            Intent intent = new Intent(this, cadastroActivity.class);
+            startActivity(intent);
+        });
     }
 
     // VALIDAR CAMPOS
@@ -142,7 +131,7 @@ public class loginActivity extends AppCompatActivity implements LoaderManager.Lo
     }
 
     //Verificação de dados com a API
-   private View.OnClickListener onClickSearch = new View.OnClickListener() {
+   /*private View.OnClickListener onClickSearch = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
 
@@ -207,7 +196,7 @@ public class loginActivity extends AppCompatActivity implements LoaderManager.Lo
             emailUser = args.getString("emailUser");
         }
         return new LoadCli(this, emailUser);
-    }
+    }*/
 
     // SAVED INSTANCE
     @Override
@@ -241,7 +230,7 @@ public class loginActivity extends AppCompatActivity implements LoaderManager.Lo
 
 
 
-    @Override
+   /* @Override
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
         String nomCli = null;
         String emailCli = null;
@@ -271,5 +260,5 @@ public class loginActivity extends AppCompatActivity implements LoaderManager.Lo
     @Override
     public void onLoaderReset(@NonNull Loader<String> loader) {
 
-    }
+    }*/
 }
