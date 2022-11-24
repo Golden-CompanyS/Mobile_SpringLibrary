@@ -48,12 +48,6 @@
             android:exported="false"/>
         <activity
             android:name="com.example.appmobilespringlibrary.HomeActivity"
-            android:exported="false"/>
-        <activity
-            android:name="com.example.appmobilespringlibrary.cadastroActivity"
-            android:exported="false"/>
-        <activity
-            android:name="com.example.appmobilespringlibrary.loginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

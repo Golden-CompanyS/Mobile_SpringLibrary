@@ -63,6 +63,7 @@
         android:layout_height="65dp"
         android:layout_marginBottom="200dp"
         android:backgroundTint="#F448B0"
+        android:clickable="true"
         android:fontFamily="@font/athiti_medium"
         android:text="@string/Continuar"
         android:textAllCaps="false"
@@ -127,28 +128,5 @@
             android:textSize="18sp"
             app:textInputLayoutFocusedRectEnabled="true" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <RadioButton
-        android:id="@+id/radioButtonCliFis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="#F448B0"
-        android:text="@string/CliFis"
-        app:layout_constraintBottom_toTopOf="@+id/btnContinuarCad"
-        app:layout_constraintEnd_toStartOf="@+id/radioButtonCliJuri"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <RadioButton
-        android:id="@+id/radioButtonCliJuri"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="75dp"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="#0085FF"
-        android:text="@string/CliJuri"
-        app:layout_constraintBottom_toTopOf="@+id/btnContinuarCad"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
