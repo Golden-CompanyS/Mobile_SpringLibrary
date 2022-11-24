@@ -80,8 +80,9 @@
     <EditText
         android:id="@+id/editTextEmailLogin"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginTop="70dp"
+        android:autofillHints=""
         android:ems="10"
         android:fontFamily="@font/athiti_medium"
         android:hint="@string/Email"
@@ -89,13 +90,12 @@
         android:paddingStart="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/TextInputLayoutSenhaLogin"
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_marginTop="5dp"
         android:hint="@string/Senha"
         android:textColorHint="#9C9C9C"
@@ -108,7 +108,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/TextInputEditTextSenhaLogin"
             android:layout_width="300dp"
-            android:layout_height="match_parent"
+            android:layout_height="60dp"
             android:backgroundTint="#00FFFFFF"
             android:fontFamily="@font/athiti_medium"
             android:inputType="textPassword"
