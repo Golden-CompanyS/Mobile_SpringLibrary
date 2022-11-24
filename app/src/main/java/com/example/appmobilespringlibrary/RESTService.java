@@ -10,10 +10,10 @@ public interface RESTService {
 
     //LIVROS
     @GET("prodCategoria?")
-    Call<List<Livro>> MostraProd();
+    Call<List<Livro>> MostraProd(@Query("gen") String genero);
 
     @GET("ProdDetalhado?")
-    Call<Livro> MostraProdDetalhes(@Query("idProd") int codProd);
+    Call<Livro> MostraProdDetalhes(@Query("isbn") int codProd);
 
     @GET("PesquisaProd?")
     Call<List<Livro>>  PesquisaProduto(@Query("txtPesquisa") String txtPesquisa);

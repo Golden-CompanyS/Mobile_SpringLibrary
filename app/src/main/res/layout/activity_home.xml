@@ -40,7 +40,18 @@
             app:srcCompat="@drawable/iconuser"
             tools:ignore="ImageContrastCheck" />
     </androidx.cardview.widget.CardView>
-
+    <LinearLayout
+        android:id="@+id/mainContent"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@+id/cardViewFooter"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewHeader" />
+    </LinearLayout>
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewFooter"
         android:layout_width="0dp"
@@ -89,6 +100,7 @@
     </androidx.cardview.widget.CardView>
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scrollbars="none"
@@ -102,7 +114,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
 
 
         </LinearLayout>

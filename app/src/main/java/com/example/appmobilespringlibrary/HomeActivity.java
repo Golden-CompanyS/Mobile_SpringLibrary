@@ -44,7 +44,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        //CONFIGURAR RECYCLER VIEW
+        /*CONFIGURAR RECYCLER VIEW
         RecyclerView recycleViewLivros = (RecyclerView) findViewById(R.id.recyleViewLivros);
         recycleViewLivros.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -52,7 +52,7 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(getBaseContext(), LivrosActivity.class));
                 finish();
             }
-        });
+        });*/
     }
 
 
