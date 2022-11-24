@@ -53,7 +53,7 @@ class fragment_livros extends Fragment {
                     .build();
 
             //lista os Livros
-            MostraLivros();
+            MostraLivrosFantasia();
         }
 
         @SuppressLint("MissingInflatedId")
@@ -88,13 +88,13 @@ class fragment_livros extends Fragment {
             return view;
         }
 
-        private void MostraLivrosPromo() {
+        private void MostraLivrosFantasia() {
             //pega categoria
-            String sCat = "Tiro";
+            String sGen = "Fantasia";
 
             //pesquisa
             RESTService restService = retrofitHomeProd.create(RESTService.class);
-            Call<List<Livro>> call= restService.MostraProd();
+            Call<List<Livro>> call = restService.MostraProd(sGen);
             //executa e mostra a requisisao
             call.enqueue(new Callback<List<Livro>>() {
                 @Override
@@ -103,7 +103,7 @@ class fragment_livros extends Fragment {
                         produtoList = response.body();
                         adapterLivro.setMovieList(produtoList);
 
-                        progressBar.setVisibility(View.GONE);
+                      //  progressBar.setVisibility(View.GONE);
                         TelaToda.setVisibility(View.VISIBLE);
                     }
                 }
@@ -125,12 +125,12 @@ class fragment_livros extends Fragment {
         }
 
         public  void Pesquisa(){
-            String TxtPesquisa=editPesquisa.getText().toString();
-            editPesquisa.set("");
+            //String TxtPesquisa=editPesquisa.getText().toString();
+            //editPesquisa.set("");
 
             //abre a tela pesquisa
             Intent TelaPesquisa = new Intent(getContext(),Pesquisa.class);
-            TelaPesquisa.putExtra("TxtPesquisa",TxtPesquisa);
+           // TelaPesquisa.putExtra("TxtPesquisa",TxtPesquisa);
             startActivity(TelaPesquisa);
         }
 
@@ -154,4 +154,3 @@ class fragment_livros extends Fragment {
             }
         }
     }
-}
