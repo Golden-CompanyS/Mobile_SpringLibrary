@@ -56,19 +56,14 @@ public class PerfilUser extends AppCompatActivity {
         edtCPF = (EditText) findViewById(R.id.editTextNumberCPFPerfil);
 
 
-        // Listener do botão de localização.
         imgUser.setOnClickListener(new View.OnClickListener() {
-            /**
-             * Toggle the tracking state.
-             * @param v The track location button.
-             */
+
             @Override
             public void onClick(View v) {
                 //ADD MÉTODO PARA IMAGE PICKER
                 viewGallery();
             }
         });
-        // Luminosidade - Dark Mode
         SharedPreferences preferencias = getSharedPreferences(ARQUIVO_PREFERENCIAS, MODE_PRIVATE);
         SharedPreferences.Editor editor = preferencias.edit();
 
@@ -76,16 +71,7 @@ public class PerfilUser extends AppCompatActivity {
         // Banco de Dados
         id_to_update = preferencias.getInt("cliIdSession", 0);
 
-        if (id_to_update == 0){
-            Intent intent = new Intent(this, loginActivity.class);
-            startActivity(intent);
-            finish();
-        }
-
-
         mydb = new DatabaseHelper(this);
-
-        id_to_update = preferencias.getInt("cliIdSession", 0);
 
 
         //inicializa as preferências do usuário
@@ -98,15 +84,27 @@ public class PerfilUser extends AppCompatActivity {
             mImageUser = savedInstanceState.getBoolean(
                     IMAGE_KEY);
         }
-        mydb = new DatabaseHelper(this);
         // Banco de Dados
-        id_to_update = preferencias.getInt("cliIdSession", 0);
 
-        if (id_to_update == 0){
-            Intent intent = new Intent(this, PerfilUser.class);
-            startActivity(intent);
-            finish();
-        }
+
+        //BANCO DE DADOS - UPDATE DE CLIENTE
+        btnSave.setOnClickListener(v -> {
+            String nameCli = edtNomCli.getText().toString();
+            String email = edtEmail.getText().toString();
+            String senha = edtSenha.getText().toString();
+            Cliente cli = new Cliente(null, nameCli, email, senha);
+
+            DatabaseHelper mydb = new DatabaseHelper(PerfilUser.this);
+
+            try {
+                mydb.UpdateCli(cli);
+                Toast.makeText(getApplicationContext(), "Alterações salvas com sucesso", Toast.LENGTH_SHORT).show();
+            } catch (Exception e) {
+                e.printStackTrace();
+                Toast.makeText(getApplicationContext(), "Ocorreu um erro ao tentar salvar", Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
         // pegar imagem automaticamente
         String imagemBase64 = preferencias.getString("imgSource", null);
@@ -168,17 +166,7 @@ public class PerfilUser extends AppCompatActivity {
         super.onSaveInstanceState(outState);
     }
 
-    //BANCO DE DADOS - UPDATE DE CLIENTE
-    // Banco de Dados
-    public void altInfos(View view){
-        String emailNovo = edtEmail.getText().toString();
-        String senhaNova = edtSenha.getText().toString();
 
-
-                mydb.updateCli(id_to_update, emailNovo, senhaNova);
-
-                Toast.makeText(getApplicationContext(), "Senha alterada com sucesso!", Toast.LENGTH_LONG).show();
-        }
 
 }
 

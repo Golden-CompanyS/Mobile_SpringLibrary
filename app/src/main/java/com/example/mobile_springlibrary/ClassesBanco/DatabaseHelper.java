@@ -63,24 +63,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return cursor;
         }
 
-        /*INSERIR NOVO REGISTRO DE CLIENTE NO BANCO LOCAL
-        public boolean insertCli(Cliente cliente) {
-            SQLiteDatabase db = this.getWritableDatabase();
-
-            db.execSQL("INSERT OR IGNORE INTO " + "Cliente"
-                    + "("
-                    + "UserName,"
-                    + "UserEmail,"
-                    + "UserPassword"
-                    + ") VALUES('"
-                    + cliente.getUserName(),
-                    + cliente.getUserEmail(),
-                    + cliente.getUserPassword()
-                    + "')"
-            );
-            return  true;
-        }*/
-
+        //INSERIR NOVO REGISTRO DE CLIENTE NO BANCO LOCAL
     public long insertCli(Cliente cliente){
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -99,15 +82,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public boolean updateCli(int id, String email, String senha) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("UserEmail", email);
-        contentValues.put("UserPassword", senha);
+    public long UpdateCli(Cliente cliente){
+            SQLiteDatabase db = this.getWritableDatabase();
 
-        db.update("Cliente", contentValues,
-                COLUMN_ID_CLI + " = ? ", new String[] { Integer.toString(id) } );
-        return true;
+        ContentValues values = new ContentValues();
+        values.put("UserName", cliente.getUserName());
+        values.put("UserEmail", cliente.getUserEmail());
+        values.put("UserPassword", cliente.getUserPassword());
+
+        return db.update("Cliente", values, "userCode = ?", new String[]{cliente.getUserCode()});
     }
     // Operações Login
 
@@ -116,6 +99,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return cursor.getCount() > 0;
     }
+
     public int getCliIdSession(String email, String senha){
 
         SQLiteDatabase db = this.getWritableDatabase();

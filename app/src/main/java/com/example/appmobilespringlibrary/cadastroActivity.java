@@ -36,13 +36,15 @@ public class cadastroActivity extends AppCompatActivity {
 
             DatabaseHelper mydb = new DatabaseHelper(cadastroActivity.this);
 
-            //try {
+            try {
                 mydb.insertCli(cli);
                 Toast.makeText(getApplicationContext(), "Cadastro efetuado com sucesso", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getBaseContext(), loginActivity.class));
-           // } catch (Exception e) {
-             //   e.printStackTrace();
-            //}
+            } catch (Exception e) {
+               e.printStackTrace();
+                Toast.makeText(getApplicationContext(), "Ocorreu um erro ao processar seu cadastro", Toast.LENGTH_SHORT).show();
+
+            }
         });
 
     }

@@ -58,10 +58,6 @@ public class loginActivity extends AppCompatActivity /*implements LoaderManager.
 
         // ON CLICK DO BOTÃO DE LOGIN - LIGAR A VERIFICAÇÃO COM OS DADOS DA API
         btnLogin.setOnClickListener(v -> {
-            String emailLogin = String.valueOf(edtTxtEmail.getText());
-            String passwordLogin = String.valueOf(edtTxtPassword.getEditText().toString());
-
-            checkField();
 
             mydb = new DatabaseHelper(getApplicationContext());
             /*/ Verifica o status da conexão de rede
@@ -87,12 +83,18 @@ public class loginActivity extends AppCompatActivity /*implements LoaderManager.
                     Toast.makeText(getApplicationContext(), "⚠  Verifique sua conexão!", Toast.LENGTH_SHORT).show();
                 }
             }*/
-            if(mydb.checkLogin(emailLogin, passwordLogin)){
-                Cliente cli = mydb.selectCliByEmail(emailLogin);
-                //CONECTAR COM A API E ARRUMAR A INSERÇÃO DO CLIENTE NO BANCO COM O RESTANTE DAS INFORMAÇÕES
-                new Cliente(emailLogin, passwordLogin);
-                    Gson gson = new Gson();
-                String json = gson.toJson(cli);
+            String email = String.valueOf(edtTxtEmail.getText());
+            String password = String.valueOf(edtTxtPassword.getEditText().getText());
+
+            checkField();
+
+            mydb = new DatabaseHelper(getApplicationContext());
+
+            if(mydb.checkLogin(email, password)){
+                Cliente cliente = mydb.selectCliByEmail(email);
+
+                Gson gson = new Gson();
+                String json = gson.toJson(cliente);
                 printUser(json);
 
                 Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
