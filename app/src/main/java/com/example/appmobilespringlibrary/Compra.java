@@ -18,7 +18,7 @@ public class Compra extends AppCompatActivity {
         ImgBtnHome.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getBaseContext(), Home.class));
+                startActivity(new Intent(getBaseContext(), HomeActivity.class));
                 finish();
             }
         });

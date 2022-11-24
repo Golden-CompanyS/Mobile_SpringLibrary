@@ -25,8 +25,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     " INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "UserName TEXT NOT NULL," +
                     "UserEmail TEXT NOT NULL," +
-                    "UserPassword TEXT NOT NULL,"+
-                    "UserImage BYTE)");
+                    "UserPassword TEXT NOT NULL)");
             db.execSQL("CREATE TABLE Livro(" +
                     "ISBNLivro INTEGER PRIMARY KEY," +
                     "titLivro TEXT NOT NULL," +
@@ -64,7 +63,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return cursor;
         }
 
-        //INSERIR NOVO REGISTRO DE CLIENTE NO BANCO LOCAL
+        /*INSERIR NOVO REGISTRO DE CLIENTE NO BANCO LOCAL
         public boolean insertCli(Cliente cliente) {
             SQLiteDatabase db = this.getWritableDatabase();
 
@@ -74,13 +73,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     + "UserEmail,"
                     + "UserPassword"
                     + ") VALUES('"
-                    + cliente.getUserName()
-                    + cliente.getUserEmail()
+                    + cliente.getUserName(),
+                    + cliente.getUserEmail(),
                     + cliente.getUserPassword()
                     + "')"
             );
             return  true;
-        }
+        }*/
+
+    public long insertCli(Cliente cliente){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("UserName", cliente.getUserName());
+        values.put("UserEmail", cliente.getUserEmail());
+        values.put("UserPassword", cliente.getUserPassword());
+
+        return db.insert("Cliente", null, values);
+    }
         //Consultar dados e apresentar na tela do perfil do usuário (selecionar a apartir do email
     public Cursor getDataCli(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -127,8 +137,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                         "UserCode, " +
                                 "UserName, " +
                                 "UserEmail, " +
-                                "UserPassword," +
-                                "UserImage"
+                                "UserPassword"
                 },
                 "UserEmail = ?",
                 new String[]{email},
@@ -142,7 +151,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             user.setUserName(cursor.getString(1));
             user.setUserEmail(cursor.getString(2));
             user.setUserPassword(cursor.getString(3));
-            user.setUserImage(cursor.getBlob(4));
         }
 
         return user;
