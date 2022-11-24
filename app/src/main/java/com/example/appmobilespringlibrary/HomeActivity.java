@@ -8,9 +8,10 @@ import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.appmobilespringlibrary.R;
+import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
+    private List<LivrosActivity> mlistLiv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,14 +44,17 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        //CONFIGURAR RECYCLER VIEW
         RecyclerView recycleViewLivros = (RecyclerView) findViewById(R.id.recyleViewLivros);
         recycleViewLivros.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getBaseContext(), Livros.class));
+                startActivity(new Intent(getBaseContext(), LivrosActivity.class));
                 finish();
             }
         });
     }
+
+
 
 }

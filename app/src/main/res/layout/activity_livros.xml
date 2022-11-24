@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Livros">
+    tools:context=".LivrosActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewHeader"
@@ -139,7 +139,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
                 android:scrollbars="none"
-                tools:context=".Livros">
+                tools:context=".LivrosActivity">
 
                 <LinearLayout
                     android:layout_width="wrap_content"

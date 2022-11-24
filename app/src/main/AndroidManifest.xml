@@ -35,7 +35,7 @@
             android:name="com.example.appmobilespringlibrary.Livro"
             android:exported="false"/>
         <activity
-            android:name="com.example.appmobilespringlibrary.Livros"
+            android:name="com.example.appmobilespringlibrary.LivrosActivity"
             android:exported="false"/>
         <activity
             android:name="com.example.appmobilespringlibrary.Resultado"

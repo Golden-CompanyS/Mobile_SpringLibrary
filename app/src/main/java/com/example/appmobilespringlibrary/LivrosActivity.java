@@ -7,7 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class Livros extends AppCompatActivity {
+public class LivrosActivity extends AppCompatActivity {
 
     public RecyclerView recycleViewRomances;
 

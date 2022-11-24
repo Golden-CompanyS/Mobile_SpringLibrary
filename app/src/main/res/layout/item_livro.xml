@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="140dp"
+    android:layout_height="250dp"
+    android:layout_marginEnd="4dp"
+    android:layout_marginStart="12dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/cardview_light_background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/imgviewProd"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@mipmap/ic_launcher_round" />
+
+        <TextView
+            android:id="@+id/txtViewProdNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgviewProd"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:gravity="start"
+            android:text="@string/LivroTitulo"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/TxtViewProdPreco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtViewProdNome"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:gravity="start"
+            android:text="Preço"
+            android:textColor="@color/purple_200"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
