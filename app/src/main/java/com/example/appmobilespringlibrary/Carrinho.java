@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,6 +20,33 @@ public class Carrinho extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getBaseContext(), Dados.class));
+                finish();
+            }
+        });
+
+        ImageButton ImgBtnConta = (ImageButton) findViewById(R.id.imgBtnConta);
+        ImgBtnConta.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), PerfilUser.class));
+                finish();
+            }
+        });
+
+        ImageButton ImgBtnHome = (ImageButton) findViewById(R.id.imgBtnHome);
+        ImgBtnHome.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), HomeActivity.class));
+                finish();
+            }
+        });
+
+        ImageButton ImgBtnPesquisa = (ImageButton) findViewById(R.id.imgBtnPesquisar);
+        ImgBtnPesquisa.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), Pesquisa.class));
                 finish();
             }
         });

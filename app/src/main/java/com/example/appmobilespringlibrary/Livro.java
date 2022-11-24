@@ -10,7 +10,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Livro {
+public class Livro extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_livroespecifico);
+
+
+        Button addCarrinho = (Button) findViewById(R.id.btnAddCarrinho);
+        addCarrinho.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), Carrinho.class));
+                finish();
+            }
+        });
+    }
+
     @SerializedName("isbn")
     @Expose
     public Integer ISBN;
@@ -106,6 +123,7 @@ public class Livro {
                 "\n PrecoLiv: " + getPrecoLiv()+
                 "\n ImgLivro: " + getImgLivro()+"\n";
     }
+
 
     //IMPLEMENTAR URL E CONCATENAR COM O MÉTODO DA API DE ENCONTRAR LIVRO POR NOME
     // /LISTAR TODOS OS LIVROS/INFO DE LIVRO ESPECÍFICO
