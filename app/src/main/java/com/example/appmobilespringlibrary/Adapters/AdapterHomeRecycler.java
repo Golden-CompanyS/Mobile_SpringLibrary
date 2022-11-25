@@ -1,4 +1,4 @@
-package com.example.appmobilespringlibrary;
+package com.example.appmobilespringlibrary.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.appmobilespringlibrary.Livro;
+import com.example.appmobilespringlibrary.LivroEspecifico;
+import com.example.appmobilespringlibrary.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

@@ -38,8 +38,6 @@ public class PerfilUser extends AppCompatActivity {
     private DatabaseHelper mydb ;
     int id_to_update = 0;
 
-    // A IMPLEMENTAR
-    // - RESTANTE DOS CAMPOS PARA ALTERAÇÃO NO BANCO (CHECAR FRONT) - LARISSA 17/11
     EditText edtNomCli, edtEmail, edtSenha, edtCPF, edtCEP, edtCel;
 
     @Override
