@@ -22,9 +22,9 @@
     <string name="Registre">Registre-se no site</string>
 
     <!-- Tela de Home -->
-    <string name="Livros">Livros</string>
+    <string name="Indicados">Indicados</string>
     <string name="Promocoes">Promoções</string>
-    <string name="Souvenires">Souvenires</string>
+    <string name="Populares">Populares</string>
     <string name="Livro1Desc">Escravidão Volume II - Lauren Gomes</string>
     <string name="Livro2Desc">Anexos - Rainbow Rowell</string>
     <string name="Livro3Desc">A Lei do Triunfo - Napoleão Hill</string>
@@ -138,6 +138,8 @@
     <string name="Preco2">R$59,99</string>
     <string name="ValorTotal">R$83,99</string>
     <string name="Continuar">Continuar</string>
+    <string name="AddLivro">Adicionar mais livros</string>
+    <string name="total">Total:</string>
 
     <!-- Tela de Cadastro-->
     <string name="ConfirmarSenha">Confirmar senha</string>
@@ -155,6 +157,12 @@
     <string-array name="QtdLivro2">
         <item>5</item>
     </string-array>
+
+    <!-- Tela de item_livro -->
+    <string name="TxtPreco">Preço</string>
+
+    <!-- Tela de listview_carrinho -->
+    <string name="TxtPrecoExemplo">R$0,00</string>
 
 
     <string name="hello_first_fragment">Hello first fragment</string>

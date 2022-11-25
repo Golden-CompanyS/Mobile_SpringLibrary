@@ -67,14 +67,14 @@ public class AdapterHomeRecycler extends RecyclerView.Adapter<AdapterHomeRecycle
             holder.TxtViewProdPreco.setText("R$ "+precoProd);
 
         //onclick abre produto
-        int idProd= livroList.get(position).getISBN();
+        int ISBN= livroList.get(position).getISBN();
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.i("Id prod:", String.valueOf(idProd));
+                Log.i("ISBN:", String.valueOf(ISBN));
 
                 Intent AbreProd = new Intent(context, LivroEspecifico.class);
-                AbreProd.putExtra("codProduto",idProd);
+                AbreProd.putExtra("ISBN",ISBN);
                 context.startActivity(AbreProd);
             }
         });

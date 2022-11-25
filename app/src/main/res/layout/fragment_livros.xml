@@ -6,18 +6,25 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".fragment_livros">
+
+
     <ScrollView
         android:id="@+id/TelaToda"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:scrollbars="none">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview_livros"
-        style="@style/StyleRecyclerHome"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtViewTiro"
-        tools:listitem="@layout/item_livro"
-        tools:visibility="visible"
-        />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_livros"
+            style="@style/StyleRecyclerHome"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtViewTiro"
+            tools:listitem="@layout/item_livro"
+            tools:visibility="visible">
+
+
+        </androidx.recyclerview.widget.RecyclerView>
     </ScrollView>
 </FrameLayout>
