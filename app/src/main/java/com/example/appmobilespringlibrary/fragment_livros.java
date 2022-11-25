@@ -15,6 +15,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.appmobilespringlibrary.Adapters.AdapterHomeRecycler;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
