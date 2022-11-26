@@ -6,7 +6,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.appmobilespringlibrary.Cliente;
+import com.example.appmobilespringlibrary.BD.Cliente;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 

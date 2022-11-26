@@ -1,24 +1,36 @@
 package com.example.appmobilespringlibrary;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
-import android.widget.SearchView;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.appmobilespringlibrary.Adapters.AdapterHomeRecycler;
+import com.example.appmobilespringlibrary.BD.Livro;
+import com.example.appmobilespringlibrary.R;
+import com.example.appmobilespringlibrary.RESTService;
 
-import java.io.FileInputStream;
-import java.io.IOException;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.List;
 
 import retrofit2.Call;
@@ -27,132 +39,80 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-class fragment_livros extends Fragment {
 
-        private Retrofit retrofitHomeProd;
-
-        List<Livro> produtoList;
-
-        AdapterHomeRecycler adapterLivro;
-        public RecyclerView recyclerViewLivros;
-
-        SearchView editPesquisa;
-        // Link da API
-        String LinkApi = "";
-
-        ProgressBar progressBar;
-        ScrollView TelaToda;
-
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            readDataLinkApi();
-
-            //constrói a url
-            retrofitHomeProd = new Retrofit.Builder()
-                    .baseUrl(LinkApi+"api/SpringLibrary/")      //endere-ço do webservice
-                    .addConverterFactory(GsonConverterFactory.create()) //conversor
-                    .build();
-
-            //lista os Livros
-            MostraLivrosFantasia();
-        }
-
-        @SuppressLint("MissingInflatedId")
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            // Inflate the layout for this fragment
-            View view= inflater.inflate(R.layout.fragment_livros, container, false);
-
-           //FAZER A PARTE DE PESQUISA
+public class fragment_livros extends Fragment {
 
 
-
-            //inicia o recyclerView
-
-            recyclerViewLivros=(RecyclerView)view.findViewById(R.id.recyclerview_livros);
-
-            recyclerViewLivros.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+    List<Livro> produtoList;
+    private Retrofit retrofitHomeProd;
+    AdapterHomeRecycler adapterLivro;
+    public RecyclerView recyclerViewLivros;
 
 
-            adapterLivro = new AdapterHomeRecycler(getContext(), produtoList);
+    TextView txtTitLiv, txtPrecoLiv, txtISBNLiv;
+    ImageView imgLivro;
+    // Link da API
+    String LinkApi = "https://smallbrushedroof2.conveyor.cloud/api/SpringLibrary/";
 
+    ProgressBar progressBar;
+    ScrollView TelaToda;
 
-            recyclerViewLivros.setAdapter(adapterLivro);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        retrofitHomeProd = new Retrofit.Builder()
+              .baseUrl(LinkApi)                                       //endere-ço do webservice
+                .addConverterFactory(GsonConverterFactory.create()) //conversor
+               .build();
 
-            progressBar =(ProgressBar) view.findViewById(R.id.progressBar);
-            progressBar.setVisibility(View.VISIBLE);
-
-            TelaToda =(ScrollView) view.findViewById(R.id.TelaToda);
-            TelaToda.setVisibility(View.GONE);
-
-            return view;
-        }
-
-        private void MostraLivrosFantasia() {
-            //pega categoria
-            String sGen = "Fantasia";
-
-            //pesquisa
-            RESTService restService = retrofitHomeProd.create(RESTService.class);
-            Call<List<Livro>> call = restService.MostraProd(sGen);
-            //executa e mostra a requisisao
-            call.enqueue(new Callback<List<Livro>>() {
-                @Override
-                public void onResponse(Call<List<Livro>> call, Response<List<Livro>> response) {
-                    if (response.isSuccessful()) {
-                        produtoList = response.body();
-                        adapterLivro.setMovieList(produtoList);
-
-                      //  progressBar.setVisibility(View.GONE);
-                        TelaToda.setVisibility(View.VISIBLE);
-                    }
-                }
-
-                @SuppressLint("LongLogTag")
-                @Override
-                public void onFailure(Call<List<Livro>> call, Throwable t) {
-                    Log.i("Ocorreu um erro ao tentar consultar o Perfil. Erro:", t.getMessage());
-                }
-            });
-        }
-
-
-
-        public  void DetalhesProd(){
-            Intent DetelhesProd = new Intent(getActivity(), LivroEspecifico.class);
-            DetelhesProd.putExtra("codProduto",3);
-            startActivity(DetelhesProd);
-        }
-
-        public  void Pesquisa(){
-            //String TxtPesquisa=editPesquisa.getText().toString();
-            //editPesquisa.set("");
-
-            //abre a tela pesquisa
-            Intent TelaPesquisa = new Intent(getContext(),Pesquisa.class);
-           // TelaPesquisa.putExtra("TxtPesquisa",TxtPesquisa);
-            startActivity(TelaPesquisa);
-        }
-
-
-        //ler Link Da api da memoria
-        private void readDataLinkApi() {
-            try {
-                FileInputStream fin = getActivity().openFileInput("LinkApi.txt");
-                int a;
-                //constroi a string letra por letra
-                StringBuilder temp = new StringBuilder();
-                while ((a = fin.read()) != -1) {
-                    temp.append((char)a);
-                }
-
-                LinkApi=temp.toString();
-                fin.close();//fecha busca
-            }
-            catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+        // inicia a mostra de livros
+        MostraLivros();
     }
+
+    @SuppressLint("MissingInflatedId")
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_livros, container, false);
+       // View item_livro = inflater.inflate(R.layout.item_livro, container, false);
+        //INICIA AS TEXT VIEW
+        txtTitLiv = (TextView) view.findViewById(R.id.txtTitLivro);
+        txtPrecoLiv = (TextView) view.findViewById(R.id.TxtViewProdPreco);
+        imgLivro = (ImageView) view.findViewById(R.id.imgviewProd);
+
+        //inicia o recyclerView
+        recyclerViewLivros = (RecyclerView) view.findViewById(R.id.recyclerview_livros);
+        recyclerViewLivros.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+        adapterLivro = new AdapterHomeRecycler(getContext(), produtoList);
+        recyclerViewLivros.setAdapter(adapterLivro);
+
+        //TelaToda = (ScrollView) view.findViewById(R.id.TelaToda);
+        //TelaToda.setVisibility(View.GONE);
+
+        return view;
+    }
+
+    public void MostraLivros() {
+        //pesquisa
+        RESTService restService = retrofitHomeProd.create(RESTService.class);
+        Call<List<Livro>> call = restService.ShowAllLivros();
+        //executa e mostra a requisição
+        call.enqueue(new Callback<List<Livro>>() {
+            @Override
+            public void onResponse(Call<List<Livro>> call, Response<List<Livro>> response) {
+                if (response.isSuccessful()) {
+                    produtoList = response.body();
+                    adapterLivro.setLivroList(produtoList);
+                }
+            }
+
+            @SuppressLint("LongLogTag")
+            @Override
+            public void onFailure(Call<List<Livro>> call, Throwable t) {
+                Log.i("Ocorreu um erro ao tentar consultar o Perfil. Erro:", t.getMessage());
+            }
+        });
+
+    }
+}

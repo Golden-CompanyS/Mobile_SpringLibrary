@@ -1,4 +1,4 @@
-package com.example.appmobilespringlibrary;
+package com.example.appmobilespringlibrary.Activities;
 
 import android.os.Bundle;
 

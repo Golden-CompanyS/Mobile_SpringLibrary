@@ -1,4 +1,4 @@
-package com.example.appmobilespringlibrary;
+package com.example.appmobilespringlibrary.BD;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,56 +7,47 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.appmobilespringlibrary.Activities.Carrinho;
+import com.example.appmobilespringlibrary.R;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Livro extends AppCompatActivity {
+import org.json.JSONArray;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_livroespecifico);
+import java.io.Serializable;
 
-
-        Button addCarrinho = (Button) findViewById(R.id.btnAddCarrinho);
-        addCarrinho.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getBaseContext(), Carrinho.class));
-                finish();
-            }
-        });
-    }
-
-    @SerializedName("isbn")
+public class Livro extends JSONArray implements Serializable {
+    @SerializedName("ISBNLiv")
     @Expose
-    public Integer ISBN;
+    public String ISBN;
 
-    @SerializedName("titLivro")
+    @SerializedName("TitLiv")
     @Expose
     public String titLivro;
 
-    @SerializedName("precoLivro")
+    @SerializedName("PrecoLiv")
     @Expose
     public Double precoLiv;
 
-    @SerializedName("sinopLiv")
+    @SerializedName("SinopLiv")
     @Expose
     public String sinopLiv;
 
-    @SerializedName("anoLiv")
+    @SerializedName("AnoLiv")
     @Expose
     public Integer anoLiv;
 
-    @SerializedName("numPag")
+    @SerializedName("NumPag")
     @Expose
     public Integer numPag;
 
-    @SerializedName("imgLivro")
+    @SerializedName("ImgLiv")
     @Expose
     public String imgLivro;
 
-    public Livro(int isbn, String prodNome, Double prodValor,String sinopLiv, Integer anoLiv, Integer numPag, String imgLivro) {
+    public Livro(){}
+
+    public Livro(String isbn, String prodNome, Double prodValor,String sinopLiv, Integer anoLiv, Integer numPag, String imgLivro) {
         this.ISBN=isbn;
         this.titLivro=prodNome;
         this.precoLiv=prodValor;
@@ -66,11 +57,11 @@ public class Livro extends AppCompatActivity {
         this.imgLivro=imgLivro;
     }
 
-    public Integer getISBN() {
+    public String getISBN() {
         return ISBN;
     }
 
-    public void setISBN(Integer isbn) {
+    public void setISBN(String isbn) {
         ISBN = isbn;
     }
 
@@ -106,6 +97,10 @@ public class Livro extends AppCompatActivity {
     public void setPrecoLiv(Double PrecoLiv) {
         precoLiv = PrecoLiv;
     }
+
+    public Integer getNumPag(){return numPag;}
+
+    public void setNumPag(Integer NumPag){ numPag=NumPag;}
 
     public String getImgLivro() {
         return imgLivro;

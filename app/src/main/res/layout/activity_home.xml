@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    tools:context=".Activities.HomeActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewHeader"
@@ -49,8 +49,10 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/cardViewFooter"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewHeader">
+        app:layout_constraintTop_toBottomOf="@+id/cardViewHeader"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/txtIndicados"
@@ -60,13 +62,16 @@
             android:text="@string/Indicados"
             android:textSize="24sp" />
 
-        <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/cardViewFooter"
-            app:layout_constraintTop_toBottomOf="@+id/cardViewHeader" />
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="412dp"
+        android:layout_height="583dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardViewFooter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainContent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewFooter"

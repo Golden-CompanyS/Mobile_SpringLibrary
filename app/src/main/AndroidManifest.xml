@@ -17,25 +17,25 @@
         android:theme="@style/Theme.AppMobileSpringLibrary"
         tools:targetApi="31">
         <activity
-            android:name="com.example.appmobilespringlibrary.Compra"
+            android:name="com.example.appmobilespringlibrary.Activities.Compra"
             android:exported="false"/>
         <activity
-            android:name="com.example.appmobilespringlibrary.Credito"
+            android:name="com.example.appmobilespringlibrary.Activities.Credito"
             android:exported="false"/>
         <activity
             android:name="com.example.appmobilespringlibrary.Pagamento"
             android:exported="false"/>
         <activity
-            android:name="com.example.appmobilespringlibrary.Dados"
+            android:name="com.example.appmobilespringlibrary.Activities.Dados"
             android:exported="false"/>
         <activity
-            android:name="com.example.appmobilespringlibrary.Carrinho"
+            android:name="com.example.appmobilespringlibrary.Activities.Carrinho"
             android:exported="false"/>
         <activity
-            android:name="com.example.appmobilespringlibrary.LivroEspecifico"
+            android:name="com.example.appmobilespringlibrary.Activities.LivroEspecifico"
             android:exported="true"/>
         <activity
-            android:name="com.example.appmobilespringlibrary.LivrosActivity"
+            android:name="com.example.appmobilespringlibrary.Activities.LivrosActivity"
             android:exported="false"/>
         <activity
             android:name="com.example.appmobilespringlibrary.Resultado"
@@ -44,16 +44,16 @@
             android:name="com.example.appmobilespringlibrary.Pesquisa"
             android:exported="false"/>
         <activity
-            android:name="com.example.appmobilespringlibrary.PerfilUser"
+            android:name="com.example.appmobilespringlibrary.Activities.PerfilUser"
             android:exported="false"/>
         <activity
-            android:name="com.example.appmobilespringlibrary.HomeActivity"
+            android:name="com.example.appmobilespringlibrary.Activities.HomeActivity"
             android:exported="false"/>
         <activity
-            android:name="com.example.appmobilespringlibrary.cadastroActivity"
+            android:name="com.example.appmobilespringlibrary.Activities.cadastroActivity"
             android:exported="false"/>
         <activity
-            android:name="com.example.appmobilespringlibrary.loginActivity"
+            android:name="com.example.appmobilespringlibrary.Activities.loginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

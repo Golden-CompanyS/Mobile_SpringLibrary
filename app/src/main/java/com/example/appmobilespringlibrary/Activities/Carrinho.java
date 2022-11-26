@@ -1,4 +1,4 @@
-package com.example.appmobilespringlibrary;
+package com.example.appmobilespringlibrary.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.appmobilespringlibrary.Pesquisa;
+import com.example.appmobilespringlibrary.R;
 
 public class Carrinho extends AppCompatActivity {
 

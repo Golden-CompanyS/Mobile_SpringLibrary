@@ -1,30 +1,21 @@
-package com.example.appmobilespringlibrary;
+package com.example.appmobilespringlibrary.Activities;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.loader.app.LoaderManager;
-import androidx.loader.content.Loader;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.appmobilespringlibrary.BD.Cliente;
+import com.example.appmobilespringlibrary.R;
 import com.example.mobile_springlibrary.ClassesBanco.DatabaseHelper;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.Gson;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;

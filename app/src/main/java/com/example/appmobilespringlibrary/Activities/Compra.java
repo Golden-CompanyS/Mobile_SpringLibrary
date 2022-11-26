@@ -1,4 +1,4 @@
-package com.example.appmobilespringlibrary;
+package com.example.appmobilespringlibrary.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.appmobilespringlibrary.Activities.HomeActivity;
+import com.example.appmobilespringlibrary.R;
 
 public class Compra extends AppCompatActivity {
 

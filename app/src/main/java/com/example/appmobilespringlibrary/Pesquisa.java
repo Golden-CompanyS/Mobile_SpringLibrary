@@ -7,7 +7,9 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.appmobilespringlibrary.R;
+import com.example.appmobilespringlibrary.Activities.Carrinho;
+import com.example.appmobilespringlibrary.Activities.HomeActivity;
+import com.example.appmobilespringlibrary.Activities.PerfilUser;
 
 public class Pesquisa extends AppCompatActivity {
 

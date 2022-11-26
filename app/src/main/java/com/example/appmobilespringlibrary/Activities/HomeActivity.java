@@ -1,4 +1,4 @@
-package com.example.appmobilespringlibrary;
+package com.example.appmobilespringlibrary.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,16 +6,23 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.List;
+import com.example.appmobilespringlibrary.Pesquisa;
+import com.example.appmobilespringlibrary.R;
+import com.example.appmobilespringlibrary.fragment_livros;
 
 public class HomeActivity extends AppCompatActivity {
-    private List<LivrosActivity> mlistLiv;
+   // private List<LivrosActivity> mlistLiv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        //codigo da fragment
+       // Intent intent = getIntent();
+
+            //inicia na home
+            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,
+                    new fragment_livros()).commit();
 
         ImageButton ImgBtnConta = (ImageButton) findViewById(R.id.imgBtnConta);
         ImgBtnConta.setOnClickListener(new View.OnClickListener(){

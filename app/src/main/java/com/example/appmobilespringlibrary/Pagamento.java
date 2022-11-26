@@ -7,6 +7,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.appmobilespringlibrary.Activities.Credito;
+
 public class Pagamento extends AppCompatActivity {
 
     @Override
