@@ -6,6 +6,84 @@
     android:layout_height="match_parent"
     tools:context=".Activities.LivrosActivity">
 
+    <LinearLayout
+        android:id="@+id/RomanceContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewHeader">
+
+        <TextView
+            android:id="@+id/txtRomance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:text="@string/Romance"
+            android:textSize="24sp" />
+
+        <FrameLayout
+            android:id="@+id/fragment_containerRomance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/cardViewFooter"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewHeader" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/PromoContent"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/PopularContent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RomanceContent">
+
+        <TextView
+            android:id="@+id/txtSuspense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:text="@string/Suspense"
+            android:textSize="24sp" />
+
+        <FrameLayout
+            android:id="@+id/fragment_containerSuspense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/cardViewFooter"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewHeader" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/PopularContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/cardViewFooter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/txtDrama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:text="@string/Drama"
+            android:textSize="24sp" />
+
+        <FrameLayout
+            android:id="@+id/fragment_containerDrama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/cardViewFooter"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewHeader" />
+    </LinearLayout>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewFooter"
         android:layout_width="0dp"
@@ -79,38 +157,5 @@
             app:srcCompat="@drawable/iconuser"
             tools:ignore="ImageContrastCheck" />
     </androidx.cardview.widget.CardView>
-
-    <LinearLayout
-        android:id="@+id/mainContentLivros"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="51dp">
-
-        <FrameLayout
-            android:id="@+id/fragmentContainerLivros"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </FrameLayout>
-    </LinearLayout>
-
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:scrollbars="none"
-        app:layout_constraintBottom_toTopOf="@+id/cardViewFooter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewHeader"
-        app:layout_constraintVertical_bias="0.0">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
