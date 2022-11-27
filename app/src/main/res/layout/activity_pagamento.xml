@@ -6,6 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".Pagamento">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewFooter"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:cardBackgroundColor="#F6CFE0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/imgBtnPesquisar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:backgroundTint="#00FFFFFF"
+            android:clickable="true"
+            android:contentDescription="@string/PesquisaIcon"
+            android:focusable="true"
+            android:minHeight="48dp"
+            app:srcCompat="@drawable/iconsearchoff" />
+
+        <ImageButton
+            android:id="@+id/imgBtnCarrinho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="280dp"
+            android:backgroundTint="#00FFFFFF"
+            android:clickable="true"
+            android:contentDescription="@string/CarrinhoIcon"
+            android:focusable="true"
+            android:minHeight="48dp"
+            app:srcCompat="@drawable/iconcarrinhooff" />
+
+        <ImageButton
+            android:id="@+id/imgBtnHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="170dp"
+            android:backgroundTint="#00FFFFFF"
+            android:clickable="true"
+            android:contentDescription="@string/HomeIcon"
+            android:focusable="true"
+            android:minHeight="48dp"
+            app:srcCompat="@drawable/iconhomeon"
+            tools:ignore="ImageContrastCheck" />
+    </androidx.cardview.widget.CardView>
+
     <TextView
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
@@ -20,11 +67,12 @@
         app:layout_constraintTop_toBottomOf="@+id/cardViewHeader" />
 
     <ImageButton
-        android:id="@+id/imageButton21"
+        android:id="@+id/imgBtnVoltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="350dp"
         android:backgroundTint="#00FFFFFF"
+        android:clickable="true"
         android:contentDescription="@string/VoltarIcon"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,55 +103,13 @@
             android:id="@+id/imgBtnConta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="360dp"
+            android:layout_marginStart="340dp"
             android:layout_marginTop="1dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/Login"
             android:minHeight="48dp"
-            android:scaleType="centerInside"
+            android:scaleType="center"
             app:srcCompat="@drawable/iconuser"
-            tools:ignore="ImageContrastCheck" />
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewFooter"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        app:cardBackgroundColor="#F6CFE0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageButton
-            android:id="@+id/imgBtnPesquisar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:backgroundTint="#00FFFFFF"
-            android:contentDescription="@string/PesquisaIcon"
-            android:minHeight="48dp"
-            app:srcCompat="@drawable/iconsearchoff" />
-
-        <ImageButton
-            android:id="@+id/imgBtnCarrinho"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="280dp"
-            android:backgroundTint="#00FFFFFF"
-            android:contentDescription="@string/CarrinhoIcon"
-            android:minHeight="48dp"
-            app:srcCompat="@drawable/iconcarrinhooff" />
-
-        <ImageButton
-            android:id="@+id/imgBtnHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="180dp"
-            android:backgroundTint="#00FFFFFF"
-            android:contentDescription="@string/HomeIcon"
-            android:minHeight="48dp"
-            app:srcCompat="@drawable/iconhomeon"
             tools:ignore="ImageContrastCheck" />
     </androidx.cardview.widget.CardView>
 
@@ -144,7 +150,7 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="280dp"
+        android:layout_marginBottom="300dp"
         android:backgroundTint="#00FFFFFF"
         android:text="@string/Pix"
         android:textAlignment="textStart"
