@@ -60,77 +60,16 @@
             android:layout_marginStart="35dp"
             android:text="@string/Indicados"
             android:textSize="24sp" />
-
-
-        <FrameLayout
-            android:id="@+id/fragment_containerIndicados"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/cardViewFooter"
-            app:layout_constraintTop_toBottomOf="@+id/cardViewHeader" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/PromoContent"
-        android:layout_width="match_parent"
-        android:layout_height="32dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/PopularContent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/IndicadosContent">
-
-        <TextView
-            android:id="@+id/txtPromocoes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
-            android:text="@string/Promocoes"
-            android:textSize="24sp" />
-
-        <FrameLayout
-            android:id="@+id/fragment_containerPromo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/cardViewFooter"
-            app:layout_constraintTop_toBottomOf="@+id/cardViewHeader" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/PopularContent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/cardViewFooter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/txtPopulares"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
-            android:text="@string/Populares"
-            android:textSize="24sp" />
-
-        <FrameLayout
-            android:id="@+id/fragment_containerPopular"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/cardViewFooter"
-            app:layout_constraintTop_toBottomOf="@+id/cardViewHeader" />
-
     </LinearLayout>
 
     <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="412dp"
-        android:layout_height="583dp"
+        android:id="@+id/fragment_containerIndicados"
+        android:layout_width="403dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/cardViewFooter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainContent" />
+        app:layout_constraintTop_toBottomOf="@+id/IndicadosContent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewFooter"

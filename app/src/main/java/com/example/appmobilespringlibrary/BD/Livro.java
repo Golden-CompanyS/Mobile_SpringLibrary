@@ -1,22 +1,11 @@
 package com.example.appmobilespringlibrary.BD;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.appmobilespringlibrary.Activities.Carrinho;
-import com.example.appmobilespringlibrary.R;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import org.json.JSONArray;
+import java.util.List;
 
-import java.io.Serializable;
-
-public class Livro extends JSONArray implements Serializable {
+public class Livro {
     @SerializedName("ISBNLiv")
     @Expose
     public String ISBN;
@@ -49,7 +38,7 @@ public class Livro extends JSONArray implements Serializable {
     @Expose
     public String Editora;
 
-    public Livro(){}
+    public Livro(List<Livro> livros){}
 
     public Livro(String isbn, String prodNome, Double prodValor,String sinopLiv, Integer anoLiv, Integer numPag, String imgLivro, String editora) {
         this.ISBN=isbn;

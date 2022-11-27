@@ -27,7 +27,7 @@ import java.util.List;
 import jp.wasabeef.picasso.transformations.CropSquareTransformation;
 
 public class AdapterHomeRecycler extends RecyclerView.Adapter<AdapterHomeRecycler.LivroViewHolder>  {
-    private final Context context;
+    Context context;
     List<Livro> livroList = new ArrayList<Livro>();
 
     public AdapterHomeRecycler(Context context, List<Livro> livro1) {
@@ -67,7 +67,7 @@ public class AdapterHomeRecycler extends RecyclerView.Adapter<AdapterHomeRecycle
 
     @Override
     public void onBindViewHolder(@NonNull LivroViewHolder holder, int position) {
-    //define da onde vem os valores
+        //define da onde vem os valores
         Picasso.get()
                 .load(livroList.get(position).getImgLivro())
                 .placeholder(R.mipmap.ic_launcher_round)
@@ -76,27 +76,26 @@ public class AdapterHomeRecycler extends RecyclerView.Adapter<AdapterHomeRecycle
                 .into(holder.imgLivro);
 
         //seta o preço do livro de acordo com a busca na API
-        String prodNome =livroList.get(position).getProdNome();
+        String prodNome = livroList.get(position).getProdNome();
         holder.txtTitLivro.setText(prodNome);
 
         //seta o preço do livro de acordo com a busca na API
-        String precoProd=livroList.get(position).getPrecoLiv().toString();
-        holder.txtPrecoLiv.setText("R$ "+precoProd);
+        String precoProd = livroList.get(position).getPrecoLiv().toString();
+        holder.txtPrecoLiv.setText("R$ " + precoProd);
 
         //onclick abre produto
-        String ISBNLiv= livroList.get(position).getISBN();
+        String ISBNLiv = livroList.get(position).getISBN();
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.i("ISBNLiv:", String.valueOf(ISBNLiv));
 
                 Intent AbreProd = new Intent(context, LivroEspecifico.class);
-                AbreProd.putExtra("ISBNLiv",ISBNLiv);
+                AbreProd.putExtra("ISBNLiv", ISBNLiv);
                 context.startActivity(AbreProd);
             }
         });
+
+
     }
-
-
-
 }
