@@ -52,7 +52,7 @@ public class fragment_livros extends Fragment {
     TextView txtTitLiv, txtPrecoLiv, txtISBNLiv;
     ImageView imgLivro;
     // Link da API
-    String LinkApi = "https://differentgreendog2.conveyor.cloud/api/SpringLibrary/";
+    String LinkApi = "https://nextpurplerock7.conveyor.cloud/api/SpringLibrary/";
 
 
     @Override

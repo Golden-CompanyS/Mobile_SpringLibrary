@@ -32,7 +32,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LivroEspecifico extends AppCompatActivity {
-    String LinkApi = "https://differentgreendog2.conveyor.cloud/api/SpringLibrary/";
+    String LinkApi = "https://nextpurplerock7.conveyor.cloud/api/SpringLibrary/";
 
     private Retrofit retrofitProd;
 
@@ -68,17 +68,16 @@ public class LivroEspecifico extends AppCompatActivity {
         textDesc = (TextView)findViewById(R.id.txtNomeLiv);
         textEditora = (TextView)findViewById(R.id.txtEdit);
 
-        TelaToda =(ScrollView) findViewById(R.id.TelaToda);
-        TelaToda.setVisibility(View.GONE);
+
 
         //ADICIONAR LIVRO NO CARRINHO
         Button addCarrinho = (Button) findViewById(R.id.btnAddCarrinho);
         addCarrinho.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent addCart = new Intent(context, Carrinho.class);
+                Intent addCart = new Intent(LivroEspecifico.this, Carrinho.class);
                 addCart.putExtra("ISBNLiv", ISBN);
-                context.startActivity(addCart);
+                startActivity(addCart);
             }
         });
         MostraLivro();
