@@ -12,6 +12,7 @@ import com.example.appmobilespringlibrary.Activities.Carrinho;
 import com.example.appmobilespringlibrary.Activities.Credito;
 import com.example.appmobilespringlibrary.Activities.Dados;
 import com.example.appmobilespringlibrary.Activities.HomeActivity;
+import com.example.appmobilespringlibrary.Activities.Pesquisa;
 
 public class Pagamento extends AppCompatActivity {
 

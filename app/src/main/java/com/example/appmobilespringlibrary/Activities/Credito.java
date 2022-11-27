@@ -8,9 +8,7 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.appmobilespringlibrary.Activities.Compra;
 import com.example.appmobilespringlibrary.Pagamento;
-import com.example.appmobilespringlibrary.Pesquisa;
 import com.example.appmobilespringlibrary.R;
 
 public class Credito extends AppCompatActivity {

@@ -18,7 +18,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appmobilespringlibrary.BD.Cliente;
-import com.example.appmobilespringlibrary.Pesquisa;
 import com.example.appmobilespringlibrary.R;
 import com.example.mobile_springlibrary.ClassesBanco.DatabaseHelper;
 
