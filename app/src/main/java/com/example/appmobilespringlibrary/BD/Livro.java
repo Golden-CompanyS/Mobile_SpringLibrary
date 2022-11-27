@@ -51,6 +51,10 @@ public class Livro {
         this.Editora=editora;
     }
 
+    public Livro() {
+
+    }
+
     public String getISBN() {
         return ISBN;
     }

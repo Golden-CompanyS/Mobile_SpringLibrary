@@ -52,9 +52,8 @@ public class AdapterHomeRecycler extends RecyclerView.Adapter<AdapterHomeRecycle
         return new LivroViewHolder(view);
     }
     public class LivroViewHolder extends RecyclerView.ViewHolder {
-        TextView txtTitLivro, txtPrecoLiv, txtanoLiv, txtNumPag, txtISBNLiv ;
+        TextView txtTitLivro, txtPrecoLiv;
         ImageView imgLivro;
-        LinearLayout constrait;
 
 
         public LivroViewHolder(@NonNull View itemView) {

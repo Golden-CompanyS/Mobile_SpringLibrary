@@ -1,6 +1,7 @@
 package com.example.appmobilespringlibrary.Activities;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -36,7 +37,8 @@ public class LivroEspecifico extends AppCompatActivity {
     private Retrofit retrofitProd;
 
     List<Livro> livro;
-    ArrayList<Livro> liv = new ArrayList<>();
+    Livro liv = new Livro();
+    Context context;
     ImageView imgProd;
     TextView textNomeProd, textISBN, textDateLanc, textDesc, textPreco, textEditora;
     String ISBN;
@@ -66,13 +68,17 @@ public class LivroEspecifico extends AppCompatActivity {
         textDesc = (TextView)findViewById(R.id.txtNomeLiv);
         textEditora = (TextView)findViewById(R.id.txtEdit);
 
+        TelaToda =(ScrollView) findViewById(R.id.TelaToda);
+        TelaToda.setVisibility(View.GONE);
+
         //ADICIONAR LIVRO NO CARRINHO
         Button addCarrinho = (Button) findViewById(R.id.btnAddCarrinho);
         addCarrinho.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getBaseContext(), Carrinho.class));
-                finish();
+                Intent addCart = new Intent(context, Carrinho.class);
+                addCart.putExtra("ISBNLiv", ISBN);
+                context.startActivity(addCart);
             }
         });
         MostraLivro();
@@ -89,22 +95,21 @@ public class LivroEspecifico extends AppCompatActivity {
             public void onResponse(Call<List<Livro>> call, Response<List<Livro>> response) {
                 if (response.isSuccessful()) {
                     livro = response.body();
-                    
-                    // livro = liv.get(0);
+                    liv = livro.get(0);
                    //mostra dados na tela
                     Picasso.get()
-                            .load(livro.getImgLivro())
+                            .load(liv.getImgLivro())
                             .placeholder(R.mipmap.ic_launcher_round)
                             .transform(new CropSquareTransformation())
                             .error(R.mipmap.ic_launcher_round)
                             .into(imgProd);
-                    textNomeProd.setText(livro.getProdNome());
-                    textISBN.setText(livro.getISBN());
-                    textDateLanc.setText(livro.getAnoLiv());
-                    textDesc.setText(livro.getSinopLiv());
-                    textEditora.setText(livro.getEditora());
+                    textNomeProd.setText(liv.getProdNome());
+                    textISBN.setText(liv.getISBN());
+                    textDateLanc.setText(liv.getAnoLiv().toString());
+                    textDesc.setText(liv.getSinopLiv());
+                    textEditora.setText(liv.getEditora());
 
-                    String precoProd = livro.getPrecoLiv().toString();
+                    String precoProd = liv.getPrecoLiv().toString();
                     String penultimaChar = String.valueOf(precoProd.charAt(precoProd.length() - 2));
                     if (penultimaChar.equals(".")) {
                         textPreco.setText("R$" + precoProd + "0");

@@ -49,6 +49,25 @@
                     android:layout_marginTop="3dp"
                     android:layout_marginEnd="0dp"
                     android:background="@android:drawable/ic_delete" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="qtd"
+                    android:id="@+id/txtqtdProd"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/btnApagar"
+                    />
+                <ImageButton
+                    android:id="@+id/btnAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_below="@+id/txtqtdProd"
+                    android:background="@android:drawable/ic_input_add" />
+
             </RelativeLayout>
 
             <TextView
