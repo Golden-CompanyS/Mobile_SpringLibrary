@@ -79,7 +79,7 @@
     <string name="Confirmar">Confirmar</string>
     <string name="Celular">Celular</string>
     <string name="DataNasc">Data de Nascimento</string>
-    <string name="NumEnd">Número de Endereço</string>
+    <string name="NumEnd">Número</string>
     <string name="Complemento">Complemento</string>
     <string name="IrPag">Ir para o pagamento</string>
     <string name="HintCpf">999.999.999-99</string>
@@ -151,11 +151,32 @@
     <string name="NomeFantasia">Nome Fantasia</string>
     <string name="ReprCliJuri">Representante</string>
 
-    <string-array name="QtdLivro1">
+    <string-array name="MesCartao">
         <item>1</item>
-    </string-array>
-    <string-array name="QtdLivro2">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
         <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+    <string-array name="AnoCartao">
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>21</item>
+        <item>32</item>
     </string-array>
 
     <!-- Tela de item_livro -->

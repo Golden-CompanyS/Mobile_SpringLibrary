@@ -11,12 +11,14 @@ import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appmobilespringlibrary.BD.Cliente;
+import com.example.appmobilespringlibrary.Pesquisa;
 import com.example.appmobilespringlibrary.R;
 import com.example.mobile_springlibrary.ClassesBanco.DatabaseHelper;
 
@@ -40,7 +42,7 @@ public class PerfilUser extends AppCompatActivity {
     private DatabaseHelper mydb ;
     int id_to_update = 0;
 
-    EditText edtNomCli, edtEmail, edtSenha, edtCPF, edtCEP, edtCel;
+    EditText edtNomCli, edtEmail, edtSenha, edtCPF, edtDataNasc, edtCel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +52,46 @@ public class PerfilUser extends AppCompatActivity {
         imgUser = (ImageView) findViewById(R.id.imgPerfil);
         edtNomCli = (EditText)findViewById(R.id.editTextPersonNomePerfil);
         edtEmail = (EditText) findViewById(R.id.editTextEmailPerfil);
-        edtCel = (EditText) findViewById(R.id.editTextPhoneCelularPerfil);
-        edtCEP = (EditText) findViewById(R.id.editTextNumberCEPPerfil);
-        edtSenha = (EditText) findViewById(R.id.editTextNumberSenha);
-        edtCPF = (EditText) findViewById(R.id.editTextNumberCPFPerfil);
+        edtCel = (EditText) findViewById(R.id.editTextCelPerfil);
+        edtCPF = (EditText) findViewById(R.id.editTextNumberCPF);
+        edtDataNasc = (EditText) findViewById(R.id.editTextDateDataNasc);
 
+
+        ImageButton ImgBtnVoltar = (ImageButton) findViewById(R.id.imgBtnVoltar);
+        ImgBtnVoltar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), HomeActivity.class));
+                finish();
+            }
+        });
+
+        ImageButton ImgBtnHome = (ImageButton) findViewById(R.id.imgBtnHome);
+        ImgBtnHome.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), HomeActivity.class));
+                finish();
+            }
+        });
+
+        ImageButton ImgBtnPesquisa = (ImageButton) findViewById(R.id.imgBtnPesquisar);
+        ImgBtnPesquisa.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), Pesquisa.class));
+                finish();
+            }
+        });
+
+        ImageButton ImgBtnCarrinho = (ImageButton) findViewById(R.id.imgBtnCarrinho);
+        ImgBtnCarrinho.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), Carrinho.class));
+                finish();
+            }
+        });
 
         imgUser.setOnClickListener(new View.OnClickListener() {
 

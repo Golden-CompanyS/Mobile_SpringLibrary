@@ -6,14 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".Resultado">>
 
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:queryHint="@string/Pesquisar"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewFooter"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:cardBackgroundColor="#F6CFE0"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewHeader" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/imgBtnPesquisar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:backgroundTint="#00FFFFFF"
+            android:clickable="true"
+            android:contentDescription="@string/PesquisaIcon"
+            android:focusable="true"
+            android:minHeight="48dp"
+            app:srcCompat="@drawable/iconsearchoff" />
+
+        <ImageButton
+            android:id="@+id/imgBtnCarrinho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="280dp"
+            android:backgroundTint="#00FFFFFF"
+            android:clickable="true"
+            android:contentDescription="@string/CarrinhoIcon"
+            android:focusable="true"
+            android:minHeight="48dp"
+            app:srcCompat="@drawable/iconcarrinhooff" />
+
+        <ImageButton
+            android:id="@+id/imgBtnHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="170dp"
+            android:backgroundTint="#00FFFFFF"
+            android:clickable="true"
+            android:contentDescription="@string/HomeIcon"
+            android:focusable="true"
+            android:minHeight="48dp"
+            app:srcCompat="@drawable/iconhomeon"
+            tools:ignore="ImageContrastCheck" />
+    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewHeader"
@@ -35,55 +73,23 @@
             android:id="@+id/imgBtnPerfil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="360dp"
+            android:layout_marginLeft="340dp"
             android:layout_marginTop="1dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/Login"
             android:minHeight="48dp"
-            android:scaleType="centerInside"
+            android:scaleType="center"
             app:srcCompat="@drawable/iconuser" />
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewFooter"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        app:cardBackgroundColor="#F6CFE0"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:queryHint="@string/Pesquisar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageButton
-            android:id="@+id/imageButton14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
-            android:backgroundTint="#00FFFFFF"
-            android:contentDescription="@string/PesquisaIcon"
-            android:minHeight="48dp"
-            app:srcCompat="@drawable/iconsearchoff" />
-
-        <ImageButton
-            android:id="@+id/imageButton15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="280dp"
-            android:backgroundTint="#00FFFFFF"
-            android:contentDescription="@string/CarrinhoIcon"
-            android:minHeight="48dp"
-            app:srcCompat="@drawable/iconcarrinhooff" />
-
-        <ImageButton
-            android:id="@+id/imageButton16"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="180dp"
-            android:backgroundTint="#00FFFFFF"
-            android:contentDescription="@string/HomeIcon"
-            android:minHeight="48dp"
-            app:srcCompat="@drawable/iconhomeon" />
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewHeader" />
 
     <TextView
         android:id="@+id/textView16"
@@ -99,35 +105,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
-    <ImageButton
-        android:id="@+id/imageButton18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginBottom="270dp"
-        android:backgroundTint="#00000000"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/cardViewFooter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/livroevelynhugo2" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <ImageButton
-        android:id="@+id/imageButton19"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
-        android:layout_marginEnd="190dp"
-        android:layout_marginBottom="270dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toTopOf="@+id/cardViewFooter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/livroevelynhugo1" />
+        <FrameLayout
+            android:id="@+id/fragment_containerResultados"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="409dp"
-        android:layout_height="269dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="412dp" />
+        </FrameLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
