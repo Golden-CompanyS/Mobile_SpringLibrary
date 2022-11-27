@@ -7,6 +7,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
+import retrofit2.http.QueryName;
 
 public interface RESTService {
     //*********************//
@@ -14,11 +15,12 @@ public interface RESTService {
     //*********************//
     @GET("getLivByGenero?")
     Call<List<Livro>> MostraProdPorCat(@Query("genero") String gen);
+
     @GET("getAllLivros")
     Call<List<Livro>> ShowAllLivros();
 
-    @GET("ProdDetalhado?")
-    Call<Livro> MostraProdDetalhes(@Query("idProd") int codProd);
+    @GET("getLivByISBN")
+    Call<List<Livro>> MostraProdDetalhes(@Query("isbn") String ISBNLiv);
 
     @GET("getLivByName?")
     Call<List<Livro>>  PesquisaProduto(@Query("txtPesquisa") String txtPesquisa);

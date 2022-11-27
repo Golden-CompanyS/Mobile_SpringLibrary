@@ -52,10 +52,8 @@ public class fragment_livros extends Fragment {
     TextView txtTitLiv, txtPrecoLiv, txtISBNLiv;
     ImageView imgLivro;
     // Link da API
-    String LinkApi = "https://smallbrushedroof2.conveyor.cloud/api/SpringLibrary/";
+    String LinkApi = "https://differentgreendog2.conveyor.cloud/api/SpringLibrary/";
 
-    ProgressBar progressBar;
-    ScrollView TelaToda;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -75,7 +73,6 @@ public class fragment_livros extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_livros, container, false);
-       // View item_livro = inflater.inflate(R.layout.item_livro, container, false);
         //INICIA AS TEXT VIEW
         txtTitLiv = (TextView) view.findViewById(R.id.txtTitLivro);
         txtPrecoLiv = (TextView) view.findViewById(R.id.TxtViewProdPreco);
@@ -86,9 +83,6 @@ public class fragment_livros extends Fragment {
         recyclerViewLivros.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         adapterLivro = new AdapterHomeRecycler(getContext(), produtoList);
         recyclerViewLivros.setAdapter(adapterLivro);
-
-        //TelaToda = (ScrollView) view.findViewById(R.id.TelaToda);
-        //TelaToda.setVisibility(View.GONE);
 
         return view;
     }

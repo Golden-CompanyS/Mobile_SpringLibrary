@@ -1,22 +1,11 @@
 package com.example.appmobilespringlibrary.BD;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.appmobilespringlibrary.Activities.Carrinho;
-import com.example.appmobilespringlibrary.R;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import org.json.JSONArray;
+import java.util.List;
 
-import java.io.Serializable;
-
-public class Livro extends JSONArray implements Serializable {
+public class Livro {
     @SerializedName("ISBNLiv")
     @Expose
     public String ISBN;
@@ -45,9 +34,13 @@ public class Livro extends JSONArray implements Serializable {
     @Expose
     public String imgLivro;
 
-    public Livro(){}
+    @SerializedName("NomEdit")
+    @Expose
+    public String Editora;
 
-    public Livro(String isbn, String prodNome, Double prodValor,String sinopLiv, Integer anoLiv, Integer numPag, String imgLivro) {
+    public Livro(List<Livro> livros){}
+
+    public Livro(String isbn, String prodNome, Double prodValor,String sinopLiv, Integer anoLiv, Integer numPag, String imgLivro, String editora) {
         this.ISBN=isbn;
         this.titLivro=prodNome;
         this.precoLiv=prodValor;
@@ -55,6 +48,7 @@ public class Livro extends JSONArray implements Serializable {
         this.anoLiv=anoLiv;
         this.numPag=numPag;
         this.imgLivro=imgLivro;
+        this.Editora=editora;
     }
 
     public String getISBN() {
@@ -110,17 +104,22 @@ public class Livro extends JSONArray implements Serializable {
         imgLivro = ImgLivro;
     }
 
+    public String getEditora() {
+        return Editora;
+    }
+
+    public void setEditora(String editora) {
+        Editora = editora;
+    }
     @Override
     public String toString() {
         return "ISBN: " + getISBN() +
                 "\n titLivro: " + getProdNome()+
                 "\n sinopLiv: " + getSinopLiv()+
                 "\n PrecoLiv: " + getPrecoLiv()+
-                "\n ImgLivro: " + getImgLivro()+"\n";
+                "\n ImgLivro: " + getImgLivro()+
+                "\n NomEdit: " + getEditora()+"\n";
     }
 
-
-    //IMPLEMENTAR URL E CONCATENAR COM O MÉTODO DA API DE ENCONTRAR LIVRO POR NOME
-    // /LISTAR TODOS OS LIVROS/INFO DE LIVRO ESPECÍFICO
 
 }
