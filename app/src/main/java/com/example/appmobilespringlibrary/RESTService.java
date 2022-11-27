@@ -14,11 +14,12 @@ public interface RESTService {
     //*********************//
     @GET("getLivByGenero?")
     Call<List<Livro>> MostraProdPorCat(@Query("genero") String gen);
+
     @GET("getAllLivros")
     Call<List<Livro>> ShowAllLivros();
 
-    @GET("ProdDetalhado?")
-    Call<Livro> MostraProdDetalhes(@Query("idProd") int codProd);
+    @GET("getLivByISBN?")
+    Call<Livro> MostraProdDetalhes(@Query("isbn") String ISBNLiv);
 
     @GET("getLivByName?")
     Call<List<Livro>>  PesquisaProduto(@Query("txtPesquisa") String txtPesquisa);

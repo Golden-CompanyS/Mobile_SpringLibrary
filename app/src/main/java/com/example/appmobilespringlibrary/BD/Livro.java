@@ -45,9 +45,13 @@ public class Livro extends JSONArray implements Serializable {
     @Expose
     public String imgLivro;
 
+    @SerializedName("NomEdit")
+    @Expose
+    public String Editora;
+
     public Livro(){}
 
-    public Livro(String isbn, String prodNome, Double prodValor,String sinopLiv, Integer anoLiv, Integer numPag, String imgLivro) {
+    public Livro(String isbn, String prodNome, Double prodValor,String sinopLiv, Integer anoLiv, Integer numPag, String imgLivro, String editora) {
         this.ISBN=isbn;
         this.titLivro=prodNome;
         this.precoLiv=prodValor;
@@ -55,6 +59,7 @@ public class Livro extends JSONArray implements Serializable {
         this.anoLiv=anoLiv;
         this.numPag=numPag;
         this.imgLivro=imgLivro;
+        this.Editora=editora;
     }
 
     public String getISBN() {
@@ -110,17 +115,22 @@ public class Livro extends JSONArray implements Serializable {
         imgLivro = ImgLivro;
     }
 
+    public String getEditora() {
+        return Editora;
+    }
+
+    public void setEditora(String editora) {
+        Editora = editora;
+    }
     @Override
     public String toString() {
         return "ISBN: " + getISBN() +
                 "\n titLivro: " + getProdNome()+
                 "\n sinopLiv: " + getSinopLiv()+
                 "\n PrecoLiv: " + getPrecoLiv()+
-                "\n ImgLivro: " + getImgLivro()+"\n";
+                "\n ImgLivro: " + getImgLivro()+
+                "\n NomEdit: " + getEditora()+"\n";
     }
 
-
-    //IMPLEMENTAR URL E CONCATENAR COM O MÉTODO DA API DE ENCONTRAR LIVRO POR NOME
-    // /LISTAR TODOS OS LIVROS/INFO DE LIVRO ESPECÍFICO
 
 }

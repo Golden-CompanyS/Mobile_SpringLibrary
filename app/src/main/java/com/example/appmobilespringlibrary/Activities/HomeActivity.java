@@ -21,7 +21,7 @@ public class HomeActivity extends AppCompatActivity {
        // Intent intent = getIntent();
 
             //inicia na home
-            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,
+            getSupportFragmentManager().beginTransaction().add(R.id.fragment_containerIndicados,
                     new fragment_livros()).commit();
 
         ImageButton ImgBtnConta = (ImageButton) findViewById(R.id.imgBtnConta);
@@ -51,17 +51,5 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        /*CONFIGURAR RECYCLER VIEW
-        RecyclerView recycleViewLivros = (RecyclerView) findViewById(R.id.recyleViewLivros);
-        recycleViewLivros.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getBaseContext(), LivrosActivity.class));
-                finish();
-            }
-        });*/
     }
-
-
-
 }

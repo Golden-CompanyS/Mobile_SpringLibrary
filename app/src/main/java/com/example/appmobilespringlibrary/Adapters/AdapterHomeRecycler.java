@@ -75,9 +75,11 @@ public class AdapterHomeRecycler extends RecyclerView.Adapter<AdapterHomeRecycle
                 .error(R.mipmap.ic_launcher_round)
                 .into(holder.imgLivro);
 
+        //seta o preço do livro de acordo com a busca na API
         String prodNome =livroList.get(position).getProdNome();
         holder.txtTitLivro.setText(prodNome);
 
+        //seta o preço do livro de acordo com a busca na API
         String precoProd=livroList.get(position).getPrecoLiv().toString();
         holder.txtPrecoLiv.setText("R$ "+precoProd);
 

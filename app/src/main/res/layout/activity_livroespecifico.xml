@@ -143,14 +143,14 @@
                     android:textSize="32sp" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/txtISBN"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="90dp"
                     android:text="@string/CodLivro" />
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/txtNomeLiv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="120dp"
@@ -158,21 +158,21 @@
                     android:textSize="24sp" />
 
                 <TextView
-                    android:id="@+id/textView13"
+                    android:id="@+id/txtAutorLiv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="160dp"
                     android:text="@string/Autor" />
 
                 <TextView
-                    android:id="@+id/textView14"
+                    android:id="@+id/txtViewAnoEdicao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="180dp"
                     android:text="@string/AnoEdit" />
 
                 <TextView
-                    android:id="@+id/textView15"
+                    android:id="@+id/txtEdit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="200dp"
