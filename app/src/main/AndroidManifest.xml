@@ -41,7 +41,7 @@
             android:name="com.example.appmobilespringlibrary.Resultado"
             android:exported="false"/>
         <activity
-            android:name="com.example.appmobilespringlibrary.Pesquisa"
+            android:name="com.example.appmobilespringlibrary.Activities.Pesquisa"
             android:exported="false"/>
         <activity
             android:name="com.example.appmobilespringlibrary.Activities.PerfilUser"

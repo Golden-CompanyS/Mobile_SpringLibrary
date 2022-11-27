@@ -7,7 +7,6 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.appmobilespringlibrary.Pesquisa;
 import com.example.appmobilespringlibrary.R;
 import com.example.appmobilespringlibrary.fragment_livros;
 

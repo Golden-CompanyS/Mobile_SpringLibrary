@@ -7,25 +7,18 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.appmobilespringlibrary.Adapters.AdapterCarrinhoList;
 import com.example.appmobilespringlibrary.BD.Livro;
-import com.example.appmobilespringlibrary.Pesquisa;
 import com.example.appmobilespringlibrary.R;
 import com.example.appmobilespringlibrary.RESTService;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import jp.wasabeef.picasso.transformations.CropSquareTransformation;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;

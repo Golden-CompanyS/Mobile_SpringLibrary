@@ -7,8 +7,6 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.appmobilespringlibrary.Activities.HomeActivity;
-import com.example.appmobilespringlibrary.Pesquisa;
 import com.example.appmobilespringlibrary.R;
 
 public class Compra extends AppCompatActivity {
