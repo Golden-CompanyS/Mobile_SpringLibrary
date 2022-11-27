@@ -71,12 +71,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
+        android:contentDescription="TODO"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toTopOf="@+id/editTextPersonNomePerfil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/userphoto"
-        android:contentDescription="TODO" />
+        app:srcCompat="@drawable/userphoto" />
 
     <TextView
         android:id="@+id/textView45"

@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Resultado">>
+    tools:context=".Resultado"><![CDATA[>
+
+    ]]>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewFooter"
@@ -25,7 +27,8 @@
             android:contentDescription="@string/PesquisaIcon"
             android:focusable="true"
             android:minHeight="48dp"
-            app:srcCompat="@drawable/iconsearchoff" />
+            app:srcCompat="@drawable/iconsearchoff"
+            tools:ignore="DuplicateSpeakableTextCheck" />
 
         <ImageButton
             android:id="@+id/imgBtnCarrinho"
@@ -73,7 +76,7 @@
             android:id="@+id/imgBtnPerfil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="340dp"
+            android:layout_marginStart="340dp"
             android:layout_marginTop="1dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/Login"
@@ -82,11 +85,18 @@
             app:srcCompat="@drawable/iconuser" />
     </androidx.cardview.widget.CardView>
 
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="409dp"
+    <EditText
+        android:id="@+id/edtPesquisarResultados"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:queryHint="@string/Pesquisar"
+        android:drawableStart="?android:attr/actionModeWebSearchDrawable"
+        android:drawablePadding="10sp"
+        android:ems="10"
+        android:hint="@string/Pesquisar"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:paddingStart="10sp"
+        android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardViewHeader" />
@@ -95,7 +105,7 @@
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#00FFFFFF"
         android:text="@string/ResultEvelynHugo"
         android:textAlignment="center"
@@ -103,7 +113,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+        app:layout_constraintTop_toBottomOf="@+id/edtPesquisarResultados" />
 
     <LinearLayout
         android:layout_width="match_parent"
