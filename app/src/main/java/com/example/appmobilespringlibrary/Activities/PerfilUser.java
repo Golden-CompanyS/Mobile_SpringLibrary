@@ -40,7 +40,7 @@ public class PerfilUser extends AppCompatActivity {
     // Banco de Dados
     private DatabaseHelper mydb ;
     int id_to_update = 0;
-
+    ImageButton btnPesquisar, btnHome, btnCart;
     EditText edtNomCli, edtEmail, edtSenha, edtCPF, edtDataNasc, edtCel;
 
     @Override
@@ -51,9 +51,12 @@ public class PerfilUser extends AppCompatActivity {
         imgUser = (ImageView) findViewById(R.id.imgPerfil);
         edtNomCli = (EditText)findViewById(R.id.editTextPersonNomePerfil);
         edtEmail = (EditText) findViewById(R.id.editTextEmailPerfil);
-        edtCel = (EditText) findViewById(R.id.editTextCelPerfil);
+        edtSenha = (EditText) findViewById(R.id.editTextSenha);
         edtCPF = (EditText) findViewById(R.id.editTextNumberCPF);
         edtDataNasc = (EditText) findViewById(R.id.editTextDateDataNasc);
+        btnPesquisar = (ImageButton) findViewById(R.id.imgBtnPesquisar);
+        btnCart = (ImageButton) findViewById(R.id.imgBtnCarrinho);
+        btnHome = (ImageButton) findViewById(R.id.imgBtnHome);
 
 
         ImageButton ImgBtnVoltar = (ImageButton) findViewById(R.id.imgBtnVoltar);
@@ -65,8 +68,8 @@ public class PerfilUser extends AppCompatActivity {
             }
         });
 
-        ImageButton ImgBtnHome = (ImageButton) findViewById(R.id.imgBtnHome);
-        ImgBtnHome.setOnClickListener(new View.OnClickListener(){
+       // ImageButton ImgBtnHome = (ImageButton) findViewById(R.id.imgBtnHome);
+        btnHome.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getBaseContext(), HomeActivity.class));
@@ -74,8 +77,8 @@ public class PerfilUser extends AppCompatActivity {
             }
         });
 
-        ImageButton ImgBtnPesquisa = (ImageButton) findViewById(R.id.imgBtnPesquisar);
-        ImgBtnPesquisa.setOnClickListener(new View.OnClickListener(){
+        //ImageButton ImgBtnPesquisa = (ImageButton) findViewById(R.id.imgBtnPesquisar);
+        btnPesquisar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getBaseContext(), Pesquisa.class));
@@ -83,8 +86,8 @@ public class PerfilUser extends AppCompatActivity {
             }
         });
 
-        ImageButton ImgBtnCarrinho = (ImageButton) findViewById(R.id.imgBtnCarrinho);
-        ImgBtnCarrinho.setOnClickListener(new View.OnClickListener(){
+       // ImageButton ImgBtnCarrinho = (ImageButton) findViewById(R.id.imgBtnCarrinho);
+        btnCart.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getBaseContext(), Carrinho.class));

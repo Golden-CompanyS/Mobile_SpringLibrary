@@ -1,12 +1,16 @@
 package com.example.appmobilespringlibrary;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
@@ -45,15 +49,15 @@ public class fragment_livros extends Fragment {
 
     List<Livro> produtoList;
     private Retrofit retrofitHomeProd;
-    AdapterHomeRecycler adapterLivro;
-    public RecyclerView recyclerViewLivros;
+    AdapterHomeRecycler adapterLivro, adapterPesquisa;
+    public RecyclerView recyclerViewLivros, recyclerViewPesquisa;
 
 
     TextView txtTitLiv, txtPrecoLiv, txtISBNLiv;
     ImageView imgLivro;
     // Link da API
-    String LinkApi = "https://nextpurplerock7.conveyor.cloud/api/SpringLibrary/";
-
+    String LinkApi = "https://differentashsled32.conveyor.cloud/api/SpringLibrary/";
+    //public String gen;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,6 +69,7 @@ public class fragment_livros extends Fragment {
 
         // inicia a mostra de livros
         MostraLivros();
+        PesquisaProds();
     }
 
     @SuppressLint("MissingInflatedId")
@@ -77,6 +82,10 @@ public class fragment_livros extends Fragment {
         txtTitLiv = (TextView) view.findViewById(R.id.txtTitLivro);
         txtPrecoLiv = (TextView) view.findViewById(R.id.TxtViewProdPreco);
         imgLivro = (ImageView) view.findViewById(R.id.imgviewProd);
+        ImageButton btnPesq = (ImageButton) view.findViewById(R.id.btnPesq);
+
+        EditText edtPesq = view.findViewById(R.id.edtPesquisar);
+
 
         //inicia o recyclerView
         recyclerViewLivros = (RecyclerView) view.findViewById(R.id.recyclerview_livros);
@@ -84,9 +93,39 @@ public class fragment_livros extends Fragment {
         adapterLivro = new AdapterHomeRecycler(getContext(), produtoList);
         recyclerViewLivros.setAdapter(adapterLivro);
 
+        //RECYCLER PARA PESQUISA
+        recyclerViewPesquisa = (RecyclerView) view.findViewById(R.id.recyclerview_livros);
+        recyclerViewPesquisa.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+        adapterPesquisa = new AdapterHomeRecycler(getContext(), produtoList);
+        recyclerViewPesquisa.setAdapter(adapterPesquisa);
+
         return view;
     }
+    public void PesquisaProds() {
+        //pega pesquisa
+        Intent intent = getActivity().getIntent();
+        String gen = intent.getStringExtra("genero");
+        //pesquisa
+        RESTService restService = retrofitHomeProd.create(RESTService.class);
+        Call<List<Livro>> call= restService.MostraProdPorCat(gen);
+        //executa e mostra a requisisao
+        call.enqueue(new Callback<List<Livro>>() {
+            @Override
+            public void onResponse(Call<List<Livro>> call, Response<List<Livro>> response) {
+                if (response.isSuccessful()) {
+                    produtoList = response.body();
+                    adapterPesquisa.setLivroList(produtoList);
+                    Log.i("livros pesquisados", String.valueOf(produtoList));
+                }
+            }
 
+            @SuppressLint("LongLogTag")
+            @Override
+            public void onFailure(Call<List<Livro>> call, Throwable t) {
+                Log.i("Ocorreu um erro ao tentar consultar o Perfil. Erro:", t.getMessage());
+            }
+        });
+    }
     public void MostraLivros() {
         //pesquisa
         RESTService restService = retrofitHomeProd.create(RESTService.class);
@@ -109,4 +148,6 @@ public class fragment_livros extends Fragment {
         });
 
     }
+
+
 }

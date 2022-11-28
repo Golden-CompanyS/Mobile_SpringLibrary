@@ -13,7 +13,7 @@ public interface RESTService {
     //*********************//
     //      Produto       //
     //*********************//
-    @GET("getLivByGenero?")
+    @GET("getLivByGenero")
     Call<List<Livro>> MostraProdPorCat(@Query("genero") String gen);
 
     @GET("getAllLivros")

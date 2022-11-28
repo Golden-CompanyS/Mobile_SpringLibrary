@@ -32,7 +32,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LivroEspecifico extends AppCompatActivity {
-    String LinkApi = "https://nextpurplerock7.conveyor.cloud/api/SpringLibrary/";
+    String LinkApi = "https://differentashsled32.conveyor.cloud/api/SpringLibrary/";
 
     private Retrofit retrofitProd;
 

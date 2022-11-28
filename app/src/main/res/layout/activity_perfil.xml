@@ -68,8 +68,8 @@
 
     <ImageView
         android:id="@+id/imgPerfil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250px"
+        android:layout_height="250px"
         android:layout_marginBottom="20dp"
         android:contentDescription="TODO"
         android:scaleType="centerInside"
@@ -112,7 +112,7 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextCelPerfil"
+        app:layout_constraintBottom_toTopOf="@+id/editTextSenha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent" />
@@ -133,19 +133,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="270dp"
-        android:text="@string/Celular"
-        app:layout_constraintBottom_toTopOf="@+id/editTextCelPerfil"
+        android:text="@string/Senha"
+        app:layout_constraintBottom_toTopOf="@+id/editTextSenha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextCelPerfil"
+        android:id="@+id/editTextSenha"
         android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="@string/HintCel"
+        android:hint="@string/Senha"
         android:inputType="phone"
         android:minHeight="48dp"
         android:textColorHint="#757575"
@@ -159,7 +159,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="185dp"
-        android:text="@string/Telefone"
+        android:text="@string/ConfirmarSenha"
         app:layout_constraintBottom_toTopOf="@+id/editTextTelPerfil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -171,8 +171,8 @@
         android:layout_marginBottom="90dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="@string/HintCel"
-        android:inputType="phone"
+        android:hint="@string/Senha"
+        android:inputType="textWebPassword"
         android:minHeight="48dp"
         android:textColorHint="#757575"
         app:layout_constraintBottom_toTopOf="@+id/btnSalvar"

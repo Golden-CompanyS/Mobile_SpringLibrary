@@ -11,7 +11,6 @@ import com.example.appmobilespringlibrary.R;
 import com.example.appmobilespringlibrary.fragment_livros;
 
 public class HomeActivity extends AppCompatActivity {
-   // private List<LivrosActivity> mlistLiv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
