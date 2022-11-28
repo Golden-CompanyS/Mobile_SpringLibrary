@@ -14,59 +14,46 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@android:style/Theme.NoTitleBar"
+        android:theme="@style/Theme.AppMobileSpringLibrary.NoActionBar"
         tools:targetApi="31">
         <activity
             android:name="com.example.appmobilespringlibrary.Activities.Compra"
-            android:theme="@android:style/Theme.NoTitleBar"
             android:exported="false"/>
         <activity
             android:name="com.example.appmobilespringlibrary.Activities.Credito"
-                  android:theme="@android:style/Theme.NoTitleBar"
             android:exported="false"/>
         <activity
             android:name="com.example.appmobilespringlibrary.Pagamento"
-                  android:theme="@android:style/Theme.NoTitleBar"
             android:exported="false"/>
         <activity
             android:name="com.example.appmobilespringlibrary.Activities.Dados"
-                  android:theme="@android:style/Theme.NoTitleBar"
             android:exported="false"/>
         <activity
             android:name="com.example.appmobilespringlibrary.Activities.Carrinho"
-                  android:theme="@android:style/Theme.NoTitleBar"
             android:exported="false"/>
         <activity
             android:name="com.example.appmobilespringlibrary.Activities.LivroEspecifico"
-                  android:theme="@android:style/Theme.NoTitleBar"
             android:exported="true"/>
         <activity
             android:name="com.example.appmobilespringlibrary.Activities.LivrosActivity"
-                  android:theme="@android:style/Theme.NoTitleBar"
             android:exported="false"/>
         <activity
             android:name="com.example.appmobilespringlibrary.Resultado"
-                  android:theme="@android:style/Theme.NoTitleBar"
             android:exported="false"/>
         <activity
             android:name="com.example.appmobilespringlibrary.Activities.Pesquisa"
-                  android:theme="@android:style/Theme.NoTitleBar"
             android:exported="false"/>
         <activity
             android:name="com.example.appmobilespringlibrary.Activities.PerfilUser"
-                  android:theme="@android:style/Theme.NoTitleBar"
             android:exported="false"/>
         <activity
             android:name="com.example.appmobilespringlibrary.Activities.HomeActivity"
-                  android:theme="@android:style/Theme.NoTitleBar"
             android:exported="false"/>
         <activity
             android:name="com.example.appmobilespringlibrary.Activities.cadastroActivity"
-                  android:theme="@android:style/Theme.NoTitleBar"
             android:exported="false"/>
         <activity
             android:name="com.example.appmobilespringlibrary.Activities.loginActivity"
-                  android:theme="@android:style/Theme.NoTitleBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
