@@ -116,7 +116,7 @@ public class LivroEspecifico extends AppCompatActivity {
                     titLivro = textNomeProd.toString();
                     precoLiv = textPreco.toString();
                     imgLivro = imgProd.toString();
-                    
+
                     mydb = new DatabaseHelper(LivroEspecifico.this);
                     Livro livro = new Livro();
                     String precoProd = liv.getPrecoLiv().toString();
