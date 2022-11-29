@@ -17,9 +17,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.appmobilespringlibrary.BD.Livro;
 import com.example.appmobilespringlibrary.R;
 import com.example.appmobilespringlibrary.RESTService;
+import com.example.mobile_springlibrary.ClassesBanco.DatabaseHelper;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import jp.wasabeef.picasso.transformations.CropSquareTransformation;
@@ -42,6 +42,8 @@ public class LivroEspecifico extends AppCompatActivity {
     ImageView imgProd;
     TextView textNomeProd, textISBN, textDateLanc, textDesc, textPreco, textEditora;
     String ISBN;
+    String ISBNLiv, titLivro, precoLiv, imgLivro, anoliv, sinopse;
+    DatabaseHelper mydb;
     ScrollView TelaToda;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,15 +75,17 @@ public class LivroEspecifico extends AppCompatActivity {
         //ADICIONAR LIVRO NO CARRINHO
         Button addCarrinho = (Button) findViewById(R.id.btnAddCarrinho);
         addCarrinho.setOnClickListener(new View.OnClickListener(){
-            @Override
             public void onClick(View v) {
                 Intent addCart = new Intent(LivroEspecifico.this, Carrinho.class);
                 addCart.putExtra("ISBNLiv", ISBN);
                 startActivity(addCart);
+                mydb = new DatabaseHelper(LivroEspecifico.this);
+                mydb.selectLivByISBN(ISBN);
             }
         });
         MostraLivro();
     }
+
 
     private void MostraLivro() {
         //pesquisa
@@ -108,6 +112,13 @@ public class LivroEspecifico extends AppCompatActivity {
                     textDesc.setText(liv.getSinopLiv());
                     textEditora.setText(liv.getEditora());
 
+                    ISBNLiv = textISBN.toString();
+                    titLivro = textNomeProd.toString();
+                    precoLiv = textPreco.toString();
+                    imgLivro = imgProd.toString();
+                    
+                    mydb = new DatabaseHelper(LivroEspecifico.this);
+                    Livro livro = new Livro();
                     String precoProd = liv.getPrecoLiv().toString();
                     String penultimaChar = String.valueOf(precoProd.charAt(precoProd.length() - 2));
                     if (penultimaChar.equals(".")) {
@@ -115,6 +126,7 @@ public class LivroEspecifico extends AppCompatActivity {
                     } else{
                         textPreco.setText("R$" + precoProd);
                 }
+
 
                 }
             }

@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.appmobilespringlibrary.BD.Cliente;
+import com.example.appmobilespringlibrary.BD.Livro;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -27,11 +28,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     "UserEmail TEXT NOT NULL," +
                     "UserPassword TEXT NOT NULL)");
             db.execSQL("CREATE TABLE Livro(" +
-                    "ISBNLivro INTEGER PRIMARY KEY," +
+                    "ISBNLivro TEXT PRIMARY KEY," +
                     "titLivro TEXT NOT NULL," +
                     "titOriLiv TEXT NOT NULL," +
                     "sinopLiv TEXT NOT NULL," +
-                    "imgLiv BYTE," +
+                    "imgLiv TEXT," +
                     "precoLiv FLOAT NOT NULL," +
                     "numPagLiv INTEGER NOT NULL," +
                     "anoLiv INTEGER NOT NULL," +
@@ -74,7 +75,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return db.insert("Cliente", null, values);
     }
-        //Consultar dados e apresentar na tela do perfil do usuário (selecionar a apartir do email
+    //Consultar dados e apresentar na tela do perfil do usuário (selecionar a apartir do email
     public Cursor getDataCli(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery( "SELECT * FROM " + "Cliente" + " AS c"
@@ -138,5 +139,43 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
         return user;
+    }
+
+    //SELECIONAR O LIVRO PARA COLOCAR NA PÁGINA DE CARRINHO
+    public long insertLivro(Livro livro){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("ISBN", livro.getISBN());
+        values.put("titLivro", livro.getProdNome());
+        values.put("precoLiv", livro.getPrecoLiv());
+        values.put("imgLiv", livro.getImgLivro());
+        values.put("anoLiv", livro.getAnoLiv());
+        values.put("sinopLiv", livro.getSinopLiv());
+        values.put("numPag", livro.getNumPag());
+
+        return db.insert("Livro", null, values);
+    }
+    public Livro selectLivByISBN(String ISBN){
+            Livro livro = new Livro();
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor cursor = db.query("Livro",
+                    new String[]{
+                            "ISBN, "+
+                                    "titLivro, "+
+                                    "imgLiv, " +
+                                    "precoLiv"
+                    },
+                    "ISBN= ?",
+                    new String[]{ISBN}, null, null, null,
+                    String.valueOf(1));
+
+            while(cursor.moveToNext()){
+                livro.setISBN(cursor.getString(0));
+                livro.setProdNome(cursor.getString(1));
+                livro.setImgLivro(cursor.getString(2));
+                livro.setPrecoLiv(Double.valueOf(cursor.getString(3)));
+            }
+            return livro;
     }
 }

@@ -38,11 +38,11 @@ public class PerfilUser extends AppCompatActivity {
     public static final String PREFERENCIAS_NAME = "com.example.android.usuario";
     private SharedPreferences mPreferences;
     // Banco de Dados
-    private DatabaseHelper mydb ;
     int id_to_update = 0;
     ImageButton btnPesquisar, btnHome, btnCart;
-    EditText edtNomCli, edtEmail, edtSenha, edtCPF, edtDataNasc, edtCel;
-
+    EditText edtNomCli, edtEmail, edtSenha, edtCPF, edtDataNasc;
+    public DatabaseHelper db ;
+    String emailCli;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +58,11 @@ public class PerfilUser extends AppCompatActivity {
         btnCart = (ImageButton) findViewById(R.id.imgBtnCarrinho);
         btnHome = (ImageButton) findViewById(R.id.imgBtnHome);
 
+        Intent intent = getIntent();
+        emailCli = intent.getStringExtra("UserEmail");
+        db = new DatabaseHelper(this);
+        db.getDataCli(emailCli);
+        edtEmail.setText(emailCli);
 
         ImageButton ImgBtnVoltar = (ImageButton) findViewById(R.id.imgBtnVoltar);
         ImgBtnVoltar.setOnClickListener(new View.OnClickListener(){
@@ -110,7 +115,7 @@ public class PerfilUser extends AppCompatActivity {
         // Banco de Dados
         id_to_update = preferencias.getInt("cliIdSession", 0);
 
-        mydb = new DatabaseHelper(this);
+        db = new DatabaseHelper(this);
 
 
         //inicializa as preferências do usuário

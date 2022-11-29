@@ -55,6 +55,10 @@ public class Livro {
 
     }
 
+    public Livro(String toString, String toString1, String toString2, String toString3, String toString4, String toString5) {
+
+    }
+
     public String getISBN() {
         return ISBN;
     }

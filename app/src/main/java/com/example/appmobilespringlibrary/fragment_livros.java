@@ -101,6 +101,8 @@ public class fragment_livros extends Fragment {
 
         return view;
     }
+
+    //RETORNA PESQUISA DE GÊNERO
     public void PesquisaProds() {
         //pega pesquisa
         Intent intent = getActivity().getIntent();
@@ -126,6 +128,8 @@ public class fragment_livros extends Fragment {
             }
         });
     }
+
+    //MOSTRA TODOS OS LIVROS
     public void MostraLivros() {
         //pesquisa
         RESTService restService = retrofitHomeProd.create(RESTService.class);

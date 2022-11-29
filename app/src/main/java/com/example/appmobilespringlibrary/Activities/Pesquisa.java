@@ -106,32 +106,6 @@ public class Pesquisa extends AppCompatActivity {
         });
 
     }
-
-    /*public void PesquisaProds() {
-        //pega pesquisa
-        Intent intent = getIntent();
-        String gen = intent.getStringExtra("genero");
-        //pesquisa
-        RESTService restService = retrofitPesquisaProd.create(RESTService.class);
-        Call<List<Livro>> call= restService.MostraProdPorCat(gen);
-        //executa e mostra a requisisao
-        call.enqueue(new Callback<List<Livro>>() {
-            @Override
-            public void onResponse(Call<List<Livro>> call, Response<List<Livro>> response) {
-                if (response.isSuccessful()) {
-                    produtoList = response.body();
-                    adapterPesquisas.setLivroList(produtoList);
-                    Log.i("livros pesquisados", String.valueOf(produtoList));
-                }
-            }
-
-            @SuppressLint("LongLogTag")
-            @Override
-            public void onFailure(Call<List<Livro>> call, Throwable t) {
-                Log.i("Ocorreu um erro ao tentar consultar o Perfil. Erro:", t.getMessage());
-            }
-        });
-    }*/
     public  void NewPesquisa(){
         if(!edtPesq.equals("")){
             String TxtPesquisa=edtPesq.getText().toString();
