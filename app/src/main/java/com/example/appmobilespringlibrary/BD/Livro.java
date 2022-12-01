@@ -40,22 +40,16 @@ public class Livro {
 
     public Livro(List<Livro> livros){}
 
-    public Livro(String isbn, String prodNome, Double prodValor,String sinopLiv, Integer anoLiv, Integer numPag, String imgLivro, String editora) {
+    public Livro(String isbn, String prodNome, Double prodValor,String sinopLiv, Integer anoLiv, String imgLivro) {
         this.ISBN=isbn;
         this.titLivro=prodNome;
         this.precoLiv=prodValor;
         this.sinopLiv=sinopLiv;
         this.anoLiv=anoLiv;
-        this.numPag=numPag;
         this.imgLivro=imgLivro;
-        this.Editora=editora;
     }
 
     public Livro() {
-
-    }
-
-    public Livro(String toString, String toString1, String toString2, String toString3, String toString4, String toString5) {
 
     }
 

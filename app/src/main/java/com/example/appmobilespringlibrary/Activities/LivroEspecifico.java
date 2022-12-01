@@ -114,11 +114,17 @@ public class LivroEspecifico extends AppCompatActivity {
 
                     ISBNLiv = textISBN.toString();
                     titLivro = textNomeProd.toString();
-                    precoLiv = textPreco.toString();
+                    //precoLiv = textPreco.toString();
                     imgLivro = imgProd.toString();
+                    sinopse = textDesc.toString();
+                    //anoliv = textDateLanc.toString();
+
 
                     mydb = new DatabaseHelper(LivroEspecifico.this);
-                    Livro livro = new Livro();
+                    Livro livro = new Livro(ISBNLiv, titLivro, liv.getPrecoLiv(), sinopse, liv.getAnoLiv(), imgLivro);
+
+                    mydb.insertLivro(livro);
+
                     String precoProd = liv.getPrecoLiv().toString();
                     String penultimaChar = String.valueOf(precoProd.charAt(precoProd.length() - 2));
                     if (penultimaChar.equals(".")) {

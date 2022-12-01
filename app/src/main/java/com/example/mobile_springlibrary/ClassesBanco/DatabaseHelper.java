@@ -9,6 +9,8 @@ import android.database.sqlite.SQLiteDatabase;
 import com.example.appmobilespringlibrary.BD.Cliente;
 import com.example.appmobilespringlibrary.BD.Livro;
 
+import java.util.ArrayList;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
 
@@ -34,18 +36,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     "sinopLiv TEXT NOT NULL," +
                     "imgLiv TEXT," +
                     "precoLiv FLOAT NOT NULL," +
-                    "numPagLiv INTEGER NOT NULL," +
                     "anoLiv INTEGER NOT NULL," +
                     "numEdicaoLiv INTEGER NOT NULL)");
             db.execSQL("CREATE TABLE Carrinho(" +
                     "IdCarrinho INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "valTotal FLOAT NOT NULL)");
             db.execSQL("CREATE TABLE ItemCarrinho(" +
-                    "IdItem INTEGER PRIMARY KEY," +
+                    "IdItem INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "nomItem TEXT NOT NULL," +
                     "PrecoItem FLOAT NOT NULL," +
-                    "qtdItem INTEGER NOT NULL," +
-                    "IdProd INTEGER NOT NULL," +
+                    "qtdItem INTEGER," +
+                    "IdProd TEXT NOT NULL," +
                     "FOREIGN KEY (IdProd) REFERENCES Livro(ISBNLivro))");
         }
 
@@ -152,7 +153,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put("imgLiv", livro.getImgLivro());
         values.put("anoLiv", livro.getAnoLiv());
         values.put("sinopLiv", livro.getSinopLiv());
-        values.put("numPag", livro.getNumPag());
 
         return db.insert("Livro", null, values);
     }
@@ -178,4 +178,45 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
             return livro;
     }
+    public long insertItemCarrinho(Livro livro){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("IdProd", livro.getISBN());
+        values.put("nomItem", livro.getProdNome());
+        values.put("precoItem", livro.getPrecoLiv());
+
+        return db.insert("ItemCarrinho", null, values);
+    }
+
+    public Cursor getDataItemCarrinho(String ISBN){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.query("ItemCarrinho",
+                new String[]{
+                        "IdItem, "+
+                                "nomItem, "+
+                                "IdProd, " +
+                                "precoItem"
+                },
+                "IdProd= ?",
+                new String[]{ISBN}, null, null, null,
+                String.valueOf(1));
+
+        return cursor;
+    }
+
+    public ArrayList<String> getAllItemCarrinho() {
+        ArrayList<String> array_list = new ArrayList<String>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery( "SELECT " + "IdItem, nomItem, IdProd, precoItem" + " FROM " + "ItemCarrinho", null );
+        cursor.moveToFirst();
+
+        while(!cursor.isAfterLast()){
+            array_list.add(cursor.getString(cursor.getColumnIndexOrThrow("IdProd")));
+            cursor.moveToNext();
+        }
+        return array_list;
+    }
+
 }

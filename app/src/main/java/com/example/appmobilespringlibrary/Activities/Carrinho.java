@@ -2,9 +2,12 @@ package com.example.appmobilespringlibrary.Activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -13,10 +16,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appmobilespringlibrary.Adapters.AdapterCarrinhoList;
+import com.example.appmobilespringlibrary.BD.ItemCarrinho;
 import com.example.appmobilespringlibrary.BD.Livro;
 import com.example.appmobilespringlibrary.R;
 import com.example.appmobilespringlibrary.RESTService;
+import com.example.mobile_springlibrary.ClassesBanco.DatabaseHelper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.OkHttpClient;
@@ -41,10 +47,30 @@ public class Carrinho extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_carrinho);
+        DatabaseHelper mydb = new DatabaseHelper(Carrinho.this);
 
         //PEGAR O CÓDIGO DO LIVRO (ISBN)
         Intent intent = getIntent();
         ISBN = intent.getStringExtra("ISBNLiv");
+
+        //SETAR A LISTA COM OS PRODUTOS NO CARRINHO
+        ListView lista = (ListView)findViewById(R.id.listViewCarrinho);
+        ArrayList arrayList = mydb.getAllItemCarrinho();
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this, R.layout.listview_carrinho , arrayList);
+        lista.setAdapter(arrayAdapter);
+        Cursor cursor = mydb.getDataItemCarrinho(ISBN);
+        cursor.moveToFirst();
+
+        ItemCarrinho item = new ItemCarrinho();
+        item.setIdProd(cursor.getString(cursor.getColumnIndexOrThrow("IdProd")));
+        item.setProdNome(cursor.getString(cursor.getColumnIndexOrThrow("nomItem")));
+        item.setPrecoProd(Double.valueOf(cursor.getString(cursor.getColumnIndexOrThrow("PrecoItem"))));
+        item.setQtdProd(Integer.valueOf(cursor.getString(cursor.getColumnIndexOrThrow("qtdItem"))));
+
+        if (!cursor.isClosed()){
+            cursor.close();
+        }
+
 
         //mostra prod
         retrofitProd = new Retrofit.Builder()
@@ -111,6 +137,8 @@ public class Carrinho extends AppCompatActivity {
                     livro = response.body();
                     liv = livro.get(0);
                     adapterCarrinhoList.setLivroList(livro);
+                    DatabaseHelper mydb = new DatabaseHelper(Carrinho.this);
+                    mydb.insertItemCarrinho(liv);
                 }
             }
 
@@ -121,4 +149,6 @@ public class Carrinho extends AppCompatActivity {
                 Toast.makeText(Carrinho.this, "Ocorreu um erro", Toast.LENGTH_SHORT).show();
             }
         });
-    }}
+    }
+
+}
