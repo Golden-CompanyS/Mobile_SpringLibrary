@@ -26,6 +26,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class PerfilUser extends AppCompatActivity {
     //IMAGE PICKER Para Imagem do Usuário
     private static final String ARQUIVO_PREFERENCIAS = "ArquivoPreferencias";
@@ -48,7 +50,7 @@ public class PerfilUser extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
         btnSave = (Button) findViewById(R.id.btnSalvar);
-        imgUser = (ImageView) findViewById(R.id.imgPerfil);
+        imgUser = (CircleImageView) findViewById(R.id.imgPerfil);
         edtNomCli = (EditText)findViewById(R.id.editTextPersonNomePerfil);
         edtEmail = (EditText) findViewById(R.id.editTextEmailPerfil);
         edtSenha = (EditText) findViewById(R.id.editTextSenha);
