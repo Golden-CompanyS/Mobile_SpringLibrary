@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.appmobilespringlibrary.BD.ItemCarrinho;
 import com.example.appmobilespringlibrary.BD.Livro;
 import com.example.appmobilespringlibrary.R;
 

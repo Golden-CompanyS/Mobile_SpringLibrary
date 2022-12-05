@@ -53,6 +53,12 @@ public class Livro {
 
     }
 
+    public Livro(String isbnLiv, String titLiv, Double preco) {
+        this.ISBN=isbnLiv;
+        this.titLivro=titLiv;
+        this.precoLiv=preco;
+    }
+
     public String getISBN() {
         return ISBN;
     }

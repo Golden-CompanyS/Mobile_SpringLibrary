@@ -41,7 +41,7 @@ public class Pesquisa extends AppCompatActivity {
 
     AdapterHomeRecycler adapterPesquisas = new AdapterHomeRecycler(Pesquisa.this, produtoList);
     public RecyclerView recyclerViewPesquisa;
-    String LinkApi = "https://differentashsled32.conveyor.cloud/api/SpringLibrary/";
+    String LinkApi = "https://fastgoldpage14.conveyor.cloud/api/SpringLibrary/";
     String gen;
     EditText edtPesq;
     ImageButton btnPesq;

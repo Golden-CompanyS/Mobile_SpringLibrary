@@ -36,10 +36,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Carrinho extends AppCompatActivity {
 
     ListView listCart;
+    List<ItemCarrinho> carrinhoList = new ArrayList<ItemCarrinho>();
     AdapterCarrinhoList adapterCarrinhoList;
-
     String ISBN;
-    String LinkApi = "https://nextpurplerock7.conveyor.cloud/api/SpringLibrary/";
+    String LinkApi = "https://fastgoldpage14.conveyor.cloud/api/SpringLibrary/";
     List<Livro> livro;
     Livro liv = new Livro();
     private Retrofit retrofitProd;
@@ -65,8 +65,11 @@ public class Carrinho extends AppCompatActivity {
         item.setIdProd(cursor.getString(cursor.getColumnIndexOrThrow("IdProd")));
         item.setProdNome(cursor.getString(cursor.getColumnIndexOrThrow("nomItem")));
         item.setPrecoProd(Double.valueOf(cursor.getString(cursor.getColumnIndexOrThrow("PrecoItem"))));
-        item.setQtdProd(Integer.valueOf(cursor.getString(cursor.getColumnIndexOrThrow("qtdItem"))));
 
+        carrinhoList.add(item);
+        listCart=(ListView) findViewById(R.id.listViewCarrinho);
+        adapterCarrinhoList = new AdapterCarrinhoList(getApplicationContext(), livro);
+        listCart.setAdapter(adapterCarrinhoList);
         if (!cursor.isClosed()){
             cursor.close();
         }
@@ -83,9 +86,7 @@ public class Carrinho extends AppCompatActivity {
 
         OkHttpClient okHttpClient=new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build();
 
-        listCart=(ListView) findViewById(R.id.listViewCarrinho);
-        adapterCarrinhoList = new AdapterCarrinhoList(getApplicationContext(), livro);
-        listCart.setAdapter(adapterCarrinhoList);
+
         Button continuarCarrinho = (Button) findViewById(R.id.btnContinuarCarrinho);
         continuarCarrinho.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -137,8 +138,6 @@ public class Carrinho extends AppCompatActivity {
                     livro = response.body();
                     liv = livro.get(0);
                     adapterCarrinhoList.setLivroList(livro);
-                    DatabaseHelper mydb = new DatabaseHelper(Carrinho.this);
-                    mydb.insertItemCarrinho(liv);
                 }
             }
 

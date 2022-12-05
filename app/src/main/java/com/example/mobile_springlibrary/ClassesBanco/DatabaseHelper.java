@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.appmobilespringlibrary.BD.Cliente;
+import com.example.appmobilespringlibrary.BD.ItemCarrinho;
 import com.example.appmobilespringlibrary.BD.Livro;
 
 import java.util.ArrayList;
@@ -23,6 +24,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         @Override
         public void onCreate(SQLiteDatabase db){
+            db.execSQL( "drop table if exists Livro");
+
             db.execSQL("CREATE TABLE Cliente(" +
                     COLUMN_ID_CLI +
                     " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -32,12 +35,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.execSQL("CREATE TABLE Livro(" +
                     "ISBNLivro TEXT PRIMARY KEY," +
                     "titLivro TEXT NOT NULL," +
-                    "titOriLiv TEXT NOT NULL," +
+                    "titOriLiv TEXT," +
                     "sinopLiv TEXT NOT NULL," +
                     "imgLiv TEXT," +
                     "precoLiv FLOAT NOT NULL," +
                     "anoLiv INTEGER NOT NULL," +
-                    "numEdicaoLiv INTEGER NOT NULL)");
+                    "numEdicaoLiv INTEGER)");
             db.execSQL("CREATE TABLE Carrinho(" +
                     "IdCarrinho INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "valTotal FLOAT NOT NULL)");
@@ -147,7 +150,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put("ISBN", livro.getISBN());
+        values.put("ISBNLivro", livro.getISBN());
         values.put("titLivro", livro.getProdNome());
         values.put("precoLiv", livro.getPrecoLiv());
         values.put("imgLiv", livro.getImgLivro());
@@ -161,12 +164,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             SQLiteDatabase db = this.getWritableDatabase();
             Cursor cursor = db.query("Livro",
                     new String[]{
-                            "ISBN, "+
+                            "ISBNLivro, "+
                                     "titLivro, "+
                                     "imgLiv, " +
                                     "precoLiv"
                     },
-                    "ISBN= ?",
+                    "ISBNLivro= ?",
                     new String[]{ISBN}, null, null, null,
                     String.valueOf(1));
 
@@ -178,13 +181,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
             return livro;
     }
-    public long insertItemCarrinho(Livro livro){
+    public long insertItemCarrinho(ItemCarrinho livro){
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put("IdProd", livro.getISBN());
+        values.put("IdProd", livro.getIdProd());
         values.put("nomItem", livro.getProdNome());
-        values.put("precoItem", livro.getPrecoLiv());
+        values.put("precoItem", livro.getPrecoProd());
+        values.put("qtdItem", 1);
 
         return db.insert("ItemCarrinho", null, values);
     }

@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.appmobilespringlibrary.BD.ItemCarrinho;
 import com.example.appmobilespringlibrary.BD.Livro;
 import com.example.appmobilespringlibrary.R;
 import com.example.appmobilespringlibrary.RESTService;
@@ -32,7 +33,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LivroEspecifico extends AppCompatActivity {
-    String LinkApi = "https://differentashsled32.conveyor.cloud/api/SpringLibrary/";
+    String LinkApi = "https://fastgoldpage14.conveyor.cloud/api/SpringLibrary/";
 
     private Retrofit retrofitProd;
 
@@ -79,8 +80,11 @@ public class LivroEspecifico extends AppCompatActivity {
                 Intent addCart = new Intent(LivroEspecifico.this, Carrinho.class);
                 addCart.putExtra("ISBNLiv", ISBN);
                 startActivity(addCart);
+                ItemCarrinho itemCarrinho = new ItemCarrinho(ISBNLiv, titLivro, liv.getPrecoLiv());
+
                 mydb = new DatabaseHelper(LivroEspecifico.this);
-                mydb.selectLivByISBN(ISBN);
+                mydb.insertItemCarrinho(itemCarrinho);
+
             }
         });
         MostraLivro();
@@ -112,12 +116,12 @@ public class LivroEspecifico extends AppCompatActivity {
                     textDesc.setText(liv.getSinopLiv());
                     textEditora.setText(liv.getEditora());
 
-                    ISBNLiv = textISBN.toString();
-                    titLivro = textNomeProd.toString();
+                    ISBNLiv = textISBN.getText().toString();
+                    titLivro = textNomeProd.getText().toString();
                     //precoLiv = textPreco.toString();
                     imgLivro = imgProd.toString();
-                    sinopse = textDesc.toString();
-                    //anoliv = textDateLanc.toString();
+                    sinopse = textDesc.getText().toString();
+                   // anoliv = textDateLanc.toString();
 
 
                     mydb = new DatabaseHelper(LivroEspecifico.this);

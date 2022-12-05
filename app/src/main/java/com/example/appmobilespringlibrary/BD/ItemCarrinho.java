@@ -15,6 +15,13 @@ public class ItemCarrinho {
     public ItemCarrinho() {
 
     }
+
+    public ItemCarrinho(String isbnLiv, String titLivro, Double precoLiv) {
+        this.IdProd=isbnLiv;
+        this.NomItem=titLivro;
+        this.precoProd=precoLiv;
+    }
+
     public int getIdItem(){return IdItem;}
 
     public void setIdItem(int idItem){IdItem=idItem;}

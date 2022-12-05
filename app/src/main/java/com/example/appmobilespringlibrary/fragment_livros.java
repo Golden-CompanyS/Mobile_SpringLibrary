@@ -56,7 +56,7 @@ public class fragment_livros extends Fragment {
     TextView txtTitLiv, txtPrecoLiv, txtISBNLiv;
     ImageView imgLivro;
     // Link da API
-    String LinkApi = "https://differentashsled32.conveyor.cloud/api/SpringLibrary/";
+    String LinkApi = "https://fastgoldpage14.conveyor.cloud/api/SpringLibrary/";
     //public String gen;
 
     @Override
