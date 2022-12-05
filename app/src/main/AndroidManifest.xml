@@ -17,9 +17,6 @@
         android:theme="@style/Theme.AppMobileSpringLibrary.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name="com.example.appmobilespringlibrary.Activities.Compra"
-            android:exported="false"/>
-        <activity
             android:name="com.example.appmobilespringlibrary.Activities.Credito"
             android:exported="false"/>
         <activity

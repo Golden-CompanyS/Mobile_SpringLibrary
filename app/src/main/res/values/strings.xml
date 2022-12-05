@@ -19,7 +19,7 @@
     <string name="Senha">Senha</string>
     <string name="Login">Login</string>
     <string name="SemConta">Não possui uma conta?</string>
-    <string name="Registre">Registre-se no site</string>
+    <string name="Registre">Clique aqui</string>
 
     <!-- Tela de Home -->
     <string name="Indicados">Indicados</string>
@@ -50,7 +50,7 @@
     <string name="Drama3Desc">Harry Potter - O Cálice de Fogo</string>
 
     <!-- Tela de Livro Especifico -->
-    <string name="LivroTitulo">Os Sete Maridos de Evelyn Hugo</string>
+    <string name="LivroTitulo">Frankenstein</string>
     <string name="AddCarrinho">Adicionar ao carrinho</string>
     <string name="Preco">R$00,00</string>
     <string name="CodLivro">(Cód: 0000001)</string>
@@ -183,7 +183,7 @@
     <string name="TxtPreco">Preço</string>
 
     <!-- Tela de listview_carrinho -->
-    <string name="TxtPrecoExemplo">R$0,00</string>
+    <string name="TxtPrecoExemplo">R$39.99</string>
 
 
     <string name="hello_first_fragment">Hello first fragment</string>

@@ -49,6 +49,7 @@ public class Carrinho extends AppCompatActivity {
         setContentView(R.layout.activity_carrinho);
         DatabaseHelper mydb = new DatabaseHelper(Carrinho.this);
 
+        /*
         //PEGAR O CÓDIGO DO LIVRO (ISBN)
         Intent intent = getIntent();
         ISBN = intent.getStringExtra("ISBNLiv");
@@ -95,7 +96,7 @@ public class Carrinho extends AppCompatActivity {
                 finish();
             }
         });
-
+*/
         ImageButton ImgBtnConta = (ImageButton) findViewById(R.id.imgBtnConta);
         ImgBtnConta.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -122,9 +123,19 @@ public class Carrinho extends AppCompatActivity {
                 finish();
             }
         });
-        MostraLivro();
-    }
 
+        Button BtnContinuar = (Button) findViewById(R.id.btnContinuarCarrinho);
+        BtnContinuar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), Dados.class));
+                finish();
+            }
+        });
+
+        //MostraLivro();
+    }
+/*
     private void MostraLivro() {
         //pesquisa
         RESTService restService = retrofitProd.create(RESTService.class);
@@ -148,6 +159,6 @@ public class Carrinho extends AppCompatActivity {
                 Toast.makeText(Carrinho.this, "Ocorreu um erro", Toast.LENGTH_SHORT).show();
             }
         });
-    }
+    }*/
 
 }
