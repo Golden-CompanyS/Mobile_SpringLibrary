@@ -9,8 +9,9 @@
 ![image](https://user-images.githubusercontent.com/80417466/205521539-e6f8519b-a243-455c-a31e-f6512c1eadd4.png)
 
 ## Perfil da desenvolvedora e seus respectivos contribuinte:
-| [<img src="https://avatars.githubusercontent.com/u/82535458?v=4" width=115><br><sub>Larissa Sonoda</sub>](https://github.com/LarissaSonoda) | [<img src="https://avatars.githubusercontent.com/u/85853884?v=4" width=115><br><sub>Wesley Spiandorim</sub>](https://github.com/Wesley123HD) |
 
+| [<img src="https://avatars.githubusercontent.com/u/82535458?v=4" width=115><br><sub>Larissa Sonoda</sub>](https://github.com/LarissaSonoda) | [<img src="https://avatars.githubusercontent.com/u/85853884?v=4" width=115><br><sub>Wesley Spiandorim</sub>](https://github.com/Wesley123HD) |
+| :---: | :---: | :---: 
 
 ## Objetivo
 
